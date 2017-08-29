@@ -11,29 +11,34 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/syntastic' "git reset --hard  36ead6d 
-Plug 'nvie/vim-flake8'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'honza/vim-snippets'
+Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'jacoborus/tender' " Color
-Plug 'ervandew/supertab'
+Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
+Plug 'sirver/ultisnips'
+" Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
+" Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/python.snippets
 
-"Plug 'sirver/ultisnips'
-"Plug 'honza/vim-snippets'
-"Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
-"Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/python.snippets
-
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'valloric/youcompleteme' " Too slow
+"Plug 'nvie/vim-flake8' # Conflicts with spell checking:
+"Plug 'scrooloose/nerdcommenter'
+"Plug 'davidhalter/jedi-vim' """ TO annoying
 "Plug 'vim-latex/vim-latex'
 "Plug 'gi1242/vim-tex-autoclose'  " Use \c to close enviroments
-
 "Plug 'klen/python-mode'
-"Plug 'bling/vim-airline'
-"Plug 'valloric/youcompleteme'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'junegunn/seoul256.vim'
 "Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
+setlocal foldmethod=manual
+let g:pymode_rope = 0
+let g:jedi#show_call_signatures = "0"
 
 """"""""""""""""""""""""
 " Setup plugins settings
@@ -42,16 +47,30 @@ syntax enable
 syntax on
 let python_highlight_all=1
 
+"let g:indent_guides_enable_on_vim_startup = 1 
+
 let g:rehash256 = 1
 let g:solarized_termcolors=256
 set t_Co=256 
 set background=dark
 colorscheme tender
+"colorscheme monokai
+"colorscheme solarized
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+"
+"
+"Nerdcommenter
+" let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+noremap <C-l> :CtrlP ../<CR>
 noremap <C-x> :CtrlP ~/QI<CR>
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
@@ -101,6 +120,7 @@ nmap <F5> :w<CR> :! ./%<CR>
 
 highlight Search term=standout ctermfg=3 cterm=standout
 highlight Visual term=standout ctermfg=4 cterm=standout
+set breakindent
 set hlsearch
 set backspace+=start,eol,indent
 set backupdir=./.backup,.,/tmp
@@ -149,15 +169,15 @@ highlight SpellLocal term=underline ctermfg=1 cterm=underline
 
 "switch spellcheck languages
 let g:myLang = 0
-"let g:myLangList = [ "nospell", "en_us", "da" ]
-let g:myLangList = [ "nospell", "en_us" ]
+let g:myLangList = [ "nospell", "en_us", "da" ]
+"let g:myLangList = [ "nospell", "en_us" ]
 function! MySpellLang()
   "loop through languages
   let g:myLang = g:myLang + 1
   if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
   if g:myLang == 0 | set nospell | endif
   if g:myLang == 1 | setlocal spell spelllang=en_us | endif
-"  if g:myLang == 2 | setlocal spell spelllang=da | endif
+  if g:myLang == 2 | setlocal spell spelllang=da | endif
   echo "language:" g:myLangList[g:myLang]
 endf
 map <F7> :call MySpellLang()<CR>
@@ -175,8 +195,6 @@ imap <F7> <C-o>:call MySpellLang()<CR>
 " n... : where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
 " when we reload, tell vim to restore the cursor to the saved position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif

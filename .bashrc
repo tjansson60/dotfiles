@@ -24,13 +24,12 @@ export GS_OPTIONS="-sPAPERSIZE=a4"
 shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in xterm*|rxvt*)
+#    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+#    ;;
+#*)
+#    ;;
+#esac
 
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
