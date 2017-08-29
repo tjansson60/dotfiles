@@ -19,7 +19,7 @@ Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'jacoborus/tender' " Color
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
-Plug 'sirver/ultisnips'
+"Plug 'sirver/ultisnips'
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/python.snippets
 
