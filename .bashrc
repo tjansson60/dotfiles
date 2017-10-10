@@ -16,6 +16,7 @@ shopt -s histappend histreedit histverify
 shopt -s globstar #If set, the pattern ** used in a pathname expansion context will match all files and zero or more directories and subdirectories
 export HISTFILESIZE=5000 # the bash history should save 3000 commands
 export HISTCONTROL=ignoredups #don't put duplicate lines in the history.
+export HISTIGNORE="&:ls:cd:bg:fg:ll" # ignore these commands in history
 
 #export VIMRUNTIME=/share/distro/vim/8.0.435/share/vim/vim80 # Only needed for custom compiled on some systems
 export EDITOR=vim
@@ -24,6 +25,10 @@ export GIT_EDITOR=vim
 export VISUAL=vim
 alias vim="vim -p"
 
+export FIGNORE=".svn:.git" # $FIGNORE is just a colon-separated list of suffixes to ignore when doing tab completion. 
+export PROMPT_DIRTRIM=3
+eval "`dircolors -b`"
+alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users. 
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 export GS_OPTIONS="-sPAPERSIZE=a4"
 ulimit -S -c 0 # Don't want coredumps.
