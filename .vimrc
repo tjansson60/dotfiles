@@ -10,14 +10,18 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/syntastic' "git reset --hard  36ead6d 
+Plug 'scrooloose/syntastic'
+Plug 'nvie/vim-flake8'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ervandew/supertab'
-Plug 'honza/vim-snippets'
-Plug 'bling/vim-airline'
 Plug 'godlygeek/tabular'
 Plug 'jacoborus/tender' " Color
+Plug 'ervandew/supertab'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
 "Plug 'sirver/ultisnips'
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
@@ -47,24 +51,22 @@ syntax enable
 syntax on
 let python_highlight_all=1
 
-"let g:indent_guides_enable_on_vim_startup = 1 
+"let g:indent_guides_enable_on_vim_startup = 1
 
 let g:rehash256 = 1
 let g:solarized_termcolors=256
-set t_Co=256 
+set t_Co=256
 set background=dark
 colorscheme tender
-"colorscheme monokai
-"colorscheme solarized
 
+" Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
-"
-"
+
 "Nerdcommenter
 " let g:NERDSpaceDelims = 1
 let g:NERDCommentEmptyLines = 1
@@ -77,9 +79,9 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
-" Only tabularize the first = 
-map <S-F5> :Tabularize /^[^=]*\zs=<cr> 
-" Align all the , in alist of dicts or tupples 
+" Only tabularize the first =
+map <S-F5> :Tabularize /^[^=]*\zs=<cr>
+" Align all the , in alist of dicts or tupples
 map <S-F6> :Tabularize /,\zs<cr>
 " Tabularize elements of a dict
 map <S-F7> :Tabularize /:\zs<cr>
@@ -88,6 +90,7 @@ set tabpagemax=50
 map <F8> :tabp<cr>
 map <F9> :tabn<cr>
 
+" NERDtree
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeDirArrowExpandable = '+'
@@ -127,8 +130,8 @@ set backupdir=./.backup,.,/tmp
 set directory=.,./.backup,/tmp
 set expandtab
 set ignorecase
-set noerrorbells 
-set novisualbell 
+set noerrorbells
+set novisualbell
 set nowrap
 set shiftwidth=4
 set showmatch
@@ -143,7 +146,7 @@ set ttyfast
 
 command! Q  quit
 command! W  write
-command! Wq wq 
+command! Wq wq
 
 """"""""""""""""""
 "" Filetypes

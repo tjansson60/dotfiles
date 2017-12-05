@@ -1,8 +1,8 @@
 # Programs to install
 keepass2 calibre tigervnc chrome guake vim vlc nfs-common rsnapshot autofs
 gkrellm texlive-latex-recommended tigervnc-viewer git docker audacity
-tesseract-ocr handbrake  gimp fdupes darktable calibre autofs build-essential
-texlive-lang-european texlive-latex-extra evince
+tesseract-ocr handbrake gimp fdupes darktable calibre autofs build-essential
+texlive-lang-european texlive-latex-extra evince filezilla htop
 
 # Setup autofs to enable auto mount on /net
 Change the line in /etc/auto.master
