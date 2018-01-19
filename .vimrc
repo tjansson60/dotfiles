@@ -1,6 +1,10 @@
 " Thomas Jansson 2018
 
 " VIM PLUG SETUP and some downloads, see http://vimawesome.com/
+" Consider installing the following: 
+"   sudo apt install curl vim exuberant-ctags git ack-grep pep8 flake8 pyflakes isort
+"   sudo pip install pep8 flake8 pyflakes isort yapf
+"
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
@@ -20,6 +24,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'jacoborus/tender' " Color
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
+Plug 'davidhalter/jedi-vim'
 "Plug 'sirver/ultisnips'
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/python.snippets
@@ -39,6 +44,9 @@ let g:pymode_rope = 0
 syntax enable
 syntax on
 let python_highlight_all=1
+
+"Jedi
+let g:jedi#use_tabs_not_buffers = 1
 
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -63,7 +71,7 @@ map <F8> :tabp<cr> "Move to previous tab
 map <F9> :tabn<cr> "Move to previous tab 
 
 " NERDtree
-map <C-n> :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore = ['\.pyc$']
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
