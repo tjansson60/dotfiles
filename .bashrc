@@ -35,7 +35,7 @@ ulimit -S -c 0 # Don't want coredumps.
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 if [ "$TERM" != "dumb" ]; then
-    PS1='$\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     eval "`dircolors -b`"
     alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users. 
 fi
