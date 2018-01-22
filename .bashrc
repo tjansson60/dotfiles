@@ -54,7 +54,10 @@ alias pylab="ipython --pylab"
 if [ $HOSTNAME = "virt092" ]; then
     xmodmap -e 'keycode 94 = backslash bar' # Setup US keyboard correctly on virtual machine
     export PATH="/home/tja092/anaconda2/bin:$PATH"
+    export PYTHONPATH="/home/tja092/anaconda2/lib/python2.7/site-packages":$PYTHONPATH
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
+    export VIMRUNTIME="/home/tja092/.vimbuild/vim/runtime"
+    alias vim='/home/tja092/.vimbuild/vim/src/vim'
 fi
 
 # added by Anaconda3 4.4.0 installer
