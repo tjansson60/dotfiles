@@ -61,14 +61,19 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
-map <S-F5> :Tabularize /^[^=]*\zs=<cr> "Only tabularize the first =
-map <S-F6> :Tabularize /,\zs<cr>       "Align all the , in alist of dicts or tupples
-map <S-F7> :Tabularize /:\zs<cr>       "Tabularize elements of a dict
-map <S-F8> :Tabularize /;\zs<cr>       "Tabularize elements of a CSV
+"Only tabularize the first = 
+map <S-F5> :Tabularize /^[^=]*\zs=<cr>
+"Align all the , in alist of dicts or tupples 
+map <S-F6> :Tabularize /,\zs<cr>       
+"Tabularize elements of a dict 
+map <S-F7> :Tabularize /:\zs<cr>       
+"Tabularize elements of a CSV 
+map <S-F8> :Tabularize /;\zs<cr>       
 
-set tabpagemax=50
-map <F8> :tabp<cr> "Move to previous tab
-map <F9> :tabn<cr> "Move to previous tab 
+set tabpagemax=50   
+" Move between tabs
+map <F8> :tabp<cr> 
+map <F9> :tabn<cr>
 
 " NERDtree
 map <F3> :NERDTreeToggle<CR>
@@ -85,8 +90,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type": "style" }
 
-" My hacks
-nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> " Remove trailing whitespaces from all lines
+" Remove trailing whitespaces from all lines 
+nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> 
 nmap <F5> :w<CR> :! ./%<CR>
 command! Q  quit
 command! W  write
