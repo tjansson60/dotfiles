@@ -99,7 +99,9 @@ command! Wq wq
 
 highlight Search term=standout ctermfg=3 cterm=standout
 highlight Visual term=standout ctermfg=4 cterm=standout
-set breakindent
+if v:version > 74338
+    set breakindent
+endif
 set hlsearch
 set backspace+=start,eol,indent
 set backupdir=./.backup,.,/tmp
