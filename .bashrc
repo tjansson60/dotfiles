@@ -38,7 +38,9 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 if [ "$TERM" != "dumb" ]; then
     if hash __git_ps1; then
         # Show the git branch if possible
-        PS1="\[\033[01;32m\]\u@\h\\[\033[32m\] \A\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[01;31m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
+        GIT_PS1_SHOWDIRTYSTATE=1
+        GIT_PS1_SHOWCOLORHINTS=1
+        PS1="\[\033[01;32m\]\u@\h\\[\033[32m\] \A\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
     else
         PS1="\[\033[01;32m\]\u@\h\\[\033[32m\] \A\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[00m\]$ "
     fi
