@@ -67,6 +67,8 @@ if [ $HOSTNAME = "virt092" ]; then
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
     export VIMRUNTIME="/home/tja092/.vimbuild/vim/runtime"
     alias vim='/home/tja092/.vimbuild/vim/src/vim -p'
+if [ $HOSTNAME = "scrbmaldkbal001" ]; then
+    export PATH=/opt/anaconda/bin/:$PATH
 fi
 
 # added by Anaconda3 4.4.0 installer
