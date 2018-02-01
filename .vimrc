@@ -36,6 +36,7 @@ let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
 colorscheme tender
+set t_BE= "Avoid 0~ and 1~ when copy pasting
 
 " Setup plugins settings
 setlocal foldmethod=manual
