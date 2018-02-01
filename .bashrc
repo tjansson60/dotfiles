@@ -60,16 +60,15 @@ alias grep='grep --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias sshdyn="ssh tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
 alias pylab="ipython --pylab"
 
-if [ $HOSTNAME = "virt092" ]; then
-    xmodmap -e 'keycode 94 = backslash bar' # Setup US keyboard correctly on virtual machine
+if [ $HOSTNAME == "virt092" ]; then
     export PATH="/home/tja092/anaconda2/bin:$PATH"
     export PYTHONPATH="/home/tja092/anaconda2/lib/python2.7/site-packages":$PYTHONPATH
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
     export VIMRUNTIME="/home/tja092/.vimbuild/vim/runtime"
-    alias vim='/home/tja092/.vimbuild/vim/src/vim -p'
-elif [ $HOSTNAME = "scrbmaldkbal001" ]; then
+    alias vim="/home/tja092/.vimbuild/vim/src/vim -p"
+elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
     export PATH=/opt/anaconda/bin/:$PATH
 fi
 
-# added by Anaconda3 4.4.0 installer
-alias conda_load='export PATH="/home/tjansson/.anaconda3/bin:$PATH"'
+# Load the conda 3 enviroment
+alias load_conda3='export PATH="~/anaconda3/bin:$PATH"'
