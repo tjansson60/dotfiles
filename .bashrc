@@ -61,8 +61,8 @@ alias sshdyn="ssh tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids fire
 alias pylab="ipython --pylab"
 
 if [ $HOSTNAME == "virt092" ]; then
-    export PATH="/home/tja092/anaconda2/bin:$PATH"
-    export PYTHONPATH="/home/tja092/anaconda2/lib/python2.7/site-packages":$PYTHONPATH
+    source ~/anaconda2/etc/profile.d/conda.sh # New method in conda 4.4.8
+    conda activate
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
     export VIMRUNTIME="/home/tja092/.vimbuild/vim/runtime"
     alias vim="/home/tja092/.vimbuild/vim/src/vim -p"
