@@ -36,7 +36,7 @@ unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
 if [ "$TERM" != "dumb" ]; then
-    if hash __git_ps1; then
+    if hash __git_ps1 &> /dev/null; then
         # Show the git branch if possible
         GIT_PS1_SHOWDIRTYSTATE=1
         GIT_PS1_SHOWCOLORHINTS=1
