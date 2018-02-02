@@ -60,15 +60,21 @@ alias grep='grep --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias sshdyn="ssh tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
 alias pylab="ipython --pylab"
 
-if [ $HOSTNAME == "virt092" ]; then
+
+# Anaconda python installation
+if [ -d "$HOME/anaconda2/" ]; then
     source ~/anaconda2/etc/profile.d/conda.sh # New method in conda 4.4.8
     conda activate
+elif [ -d "$HOME/anaconda3/" ]; then
+    source ~/anaconda3/etc/profile.d/conda.sh # New method in conda 4.4.8
+    conda activate
+fi
+
+# Host specific setup
+if [ $HOSTNAME == "virt092" ]; then
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
-    export VIMRUNTIME="/home/tja092/.vimbuild/vim/runtime"
-    alias vim="/home/tja092/.vimbuild/vim/src/vim -p"
+    export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
+    alias vim="$HOME/.vimbuild/vim/src/vim -p"
 elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
     export PATH=/opt/anaconda/bin/:$PATH
 fi
-
-# Load the conda 3 enviroment
-alias load_conda3='export PATH="~/anaconda3/bin:$PATH"'
