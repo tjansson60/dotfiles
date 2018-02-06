@@ -75,6 +75,8 @@ if [ $HOSTNAME == "virt092" ]; then
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
     export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
-elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
-    export PATH=/opt/anaconda/bin/:$PATH
+elif [ $HOSTNAME = "scrbmaldkbal001" ]; then
+    export PATH=/opt/anaconda/bin/:/usr/local/texlive/2017/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH
 fi
