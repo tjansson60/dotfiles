@@ -82,7 +82,9 @@ if [ $HOSTNAME == "virt092" ]; then
     export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
 elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
-    export PATH=/opt/anaconda/bin/:$PATH
+    export PATH=/opt/anaconda/bin/:/usr/local/texlive/2017/bin/x86_64-linux:$PATH
+    export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
+    export INFOPATH=/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH
 elif [ $HOSTNAME == "balder" ]; then
     source /anaconda/bin/activate py35
 fi
