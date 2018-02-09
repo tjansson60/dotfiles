@@ -35,6 +35,12 @@ ulimit -S -c 0 # Don't want coredumps.
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
+# Try to load git __git_ps1 if possible 
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh  ]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh 
+fi
+
+# Set up the prompt with GIT niceness if available  
 if [ "$TERM" != "dumb" ]; then
     if hash __git_ps1 &> /dev/null; then
         # Show the git branch if possible
@@ -75,8 +81,10 @@ if [ $HOSTNAME == "virt092" ]; then
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
     export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
-elif [ $HOSTNAME = "scrbmaldkbal001" ]; then
+elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
     export PATH=/opt/anaconda/bin/:/usr/local/texlive/2017/bin/x86_64-linux:$PATH
     export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
     export INFOPATH=/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH
+elif [ $HOSTNAME == "balder" ]; then
+    source /anaconda/bin/activate py35
 fi
