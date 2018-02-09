@@ -77,4 +77,6 @@ if [ $HOSTNAME == "virt092" ]; then
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
 elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
     export PATH=/opt/anaconda/bin/:$PATH
+elif [ $HOSTNAME == "balder" ]; then
+    source /anaconda/bin/activate py35
 fi
