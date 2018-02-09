@@ -35,6 +35,12 @@ ulimit -S -c 0 # Don't want coredumps.
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
+# Try to load git __git_ps1 if possible 
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh  ]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh 
+fi
+
+# Set up the prompt with GIT niceness if available  
 if [ "$TERM" != "dumb" ]; then
     if hash __git_ps1 &> /dev/null; then
         # Show the git branch if possible
