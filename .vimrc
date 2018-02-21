@@ -49,6 +49,9 @@ let python_highlight_all=1
 "JEDI -  Remember to have a working PYTHONPATH
 "let g:jedi#use_tabs_not_buffers = 1
 
+" Reformat JSON using pythons json tool
+nmap =j :%!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2)"<CR>
+
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -154,8 +157,8 @@ function! MySpellLang()  "loop through languages
   if g:myLang == 2 | setlocal spell spelllang=da | endif
   echo "language:" g:myLangList[g:myLang]
 endf
-map <F7> :call MySpellLang()<CR>
-imap <F7> <C-o>:call MySpellLang()<CR>
+map <F6> :call MySpellLang()<CR>
+imap <F6> <C-o>:call MySpellLang()<CR>
 
 " Tell vim to remember certain things when we exit, see http://vim.wikia.com/wiki/VimTip80
 set viminfo='20,\"300,:20,%,n~/.viminfo
