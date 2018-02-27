@@ -50,7 +50,7 @@ let python_highlight_all=1
 "let g:jedi#use_tabs_not_buffers = 1
 
 " Reformat JSON using pythons json tool
-nmap =j :%!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2)"<CR>
+nmap =j :%!python -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2))"<CR>
 
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
