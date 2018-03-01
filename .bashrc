@@ -30,7 +30,7 @@ alias vim="vim -p" # Open multiple files in tabs
 # Shell and prompt configuration
 export GS_OPTIONS="-sPAPERSIZE=a4"
 export FIGNORE=".svn:.git" # $FIGNORE is just a colon-separated list of suffixes to ignore when doing tab completion. 
-export PROMPT_DIRTRIM=3
+export PROMPT_DIRTRIM=2
 ulimit -S -c 0 # Don't want coredumps.
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
@@ -47,9 +47,14 @@ if [ "$TERM" != "dumb" ]; then
         GIT_PS1_SHOWDIRTYSTATE=1
         GIT_PS1_SHOWCOLORHINTS=1
         GIT_PS1_SHOWUPSTREAM="auto"
-        PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \A\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
+
+        # With timestamp
+        #PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \A\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
+
+        # Without timestamp
+        PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
     else
-        PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \A\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[00m\]$ "
+        PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[00m\]$ "
     fi
     eval "`dircolors -b`"
     alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users. 
