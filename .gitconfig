@@ -26,3 +26,9 @@
     br = branch
     st = status
     last = log -1 HEAD
+
+[log]
+    date = relative
+
+[format]
+    pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
