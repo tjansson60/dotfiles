@@ -23,7 +23,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'jacoborus/tender' " Color
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
-"Plug 'valloric/youcompleteme'
+
+" You complete me need custom compiled vim on some systems and installing the plugin it needs to be compiled.
+Plug 'valloric/youcompleteme'
+"In the folder .vim/plugged/youcompleteme run the command ./install.py
+"let g:ycm_python_binary_path = '/usr/bin/python3'
+
 "Plug 'davidhalter/jedi-vim'
 
 "Plug 'sirver/ultisnips'
