@@ -19,13 +19,6 @@ export HISTFILESIZE=5000 # the bash history should save 3000 commands
 export HISTCONTROL=ignoredups #don't put duplicate lines in the history.
 export HISTIGNORE="&:ls:cd:bg:fg:ll" # ignore these commands in history
 
-# VIM setup
-export EDITOR=vim
-export SVN_EDITOR=vim
-export GIT_EDITOR=vim
-export VISUAL=vim
-#export VIMRUNTIME=/share/distro/vim/8.0.435/share/vim/vim80 # Only needed for custom compiled on some systems
-alias vim="vim -p" # Open multiple files in tabs
 
 # Shell and prompt configuration
 export GS_OPTIONS="-sPAPERSIZE=a4"
@@ -70,8 +63,19 @@ alias ll="ls -lrth"
 alias llz="ls -lrSh"
 alias grep='grep --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias sshdyn="ssh tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
-alias pylab="ipython --pylab"
+alias pylab="echo 'Remember bpython'; ipython --pylab"
 
+# VIM setup
+export EDITOR=vim
+export SVN_EDITOR=vim
+export GIT_EDITOR=vim
+export VISUAL=vim
+alias vim="vim -p" # Open multiple files in tabs
+# If vim have been build then use this instead
+if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
+    export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
+    alias vim="$HOME/.vimbuild/vim/src/vim -p"
+fi 
 
 # Anaconda python installation
 if [ -d "$HOME/anaconda2/" ]; then
@@ -85,8 +89,6 @@ fi
 # Host specific setup
 if [ $HOSTNAME == "virt092" ]; then
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
-    export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
-    alias vim="$HOME/.vimbuild/vim/src/vim -p"
 elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
     export PATH=/opt/anaconda/bin/:/usr/local/texlive/2017/bin/x86_64-linux:$PATH
     export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
