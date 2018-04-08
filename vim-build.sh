@@ -1,5 +1,6 @@
 #!/bin/sh
 
+sudo apt-get build-dep vim
 sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
@@ -24,6 +25,6 @@ cd vim
             --prefix=/usr/local
 make
 
-# Add something like this to the .bashrc
-#export VIMRUNTIME="~/.vimbuild/vim/runtime"                                                              
-#alias vim='~/.vimbuild/vim/src/vim
+echo "Add something like this to the .bashrc"
+echo '#export VIMRUNTIME="~/.vimbuild/vim/runtime"'
+echo '#alias vim="~/.vimbuild/vim/src/vim"'

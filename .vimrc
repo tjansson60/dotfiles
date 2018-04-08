@@ -17,14 +17,15 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'ervandew/supertab'
-Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'jacoborus/tender' " Color
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
+"Plug 'valloric/youcompleteme'
 "Plug 'davidhalter/jedi-vim'
+
 "Plug 'sirver/ultisnips'
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/python.snippets
