@@ -9,3 +9,4 @@ This might be a interesting template for others, but mostly it is just for me to
 * `curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher`
 * `fisher edc/bass omf/theme-bobthefish`
 * `chsh -s /usr/bin/fish `
+* `~/.config/fish/config.fish`
