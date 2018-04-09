@@ -89,6 +89,8 @@ fi
 # Host specific setup
 if [ $HOSTNAME == "virt092" ]; then
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
+elif [ $HOSTNAME == "bohr" ]; then
+    alias sshdyn="ssh -X kelvin"
 elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
     export PATH=/opt/anaconda/bin/:/usr/local/texlive/2017/bin/x86_64-linux:$PATH
     export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
