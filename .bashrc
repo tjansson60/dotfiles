@@ -90,6 +90,8 @@ fi
 if [ $HOSTNAME == "virt092" ]; then
     export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
     export PATH=$PATH:~/tools/flyway-5.0.7
+elif [ $HOSTNAME == "mtddev001" ]; then
+    export PATH=$PATH:~/tools/flyway-5.0.7
 elif [ $HOSTNAME == "bohr" ]; then
     alias sshdyn="ssh -X kelvin"
 elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
