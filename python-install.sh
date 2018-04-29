@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Download the lastest 3.6 python
+# Download the lastest python 3 through Anaconda:
+# https://www.anaconda.com/download/#linux
 
 # Install 
 conda install shapely pyproj tqdm seaborn xlrd keras
