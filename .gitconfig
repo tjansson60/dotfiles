@@ -37,3 +37,6 @@
 [mergetool "meld"]
     trustExitCode = true
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+
+[core]
+	autocrlf = input
