@@ -58,7 +58,6 @@ if [ "$TERM" != "dumb" ]; then
     else
         export CLICOLOR=1
         export LSCOLORS=GxFxCxDxBxegedabagaced
-        alias ls='ls --hide=*~' # Hide the annoying tmp files from emacs users.
     fi
 fi
 
