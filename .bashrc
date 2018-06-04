@@ -22,18 +22,18 @@ export HISTIGNORE="&:ls:cd:bg:fg:ll" # ignore these commands in history
 
 # Shell and prompt configuration
 export GS_OPTIONS="-sPAPERSIZE=a4"
-export FIGNORE=".svn:.git" # $FIGNORE is just a colon-separated list of suffixes to ignore when doing tab completion. 
+export FIGNORE=".svn:.git" # $FIGNORE is just a colon-separated list of suffixes to ignore when doing tab completion.
 export PROMPT_DIRTRIM=2
 ulimit -S -c 0 # Don't want coredumps.
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
-# Try to load git __git_ps1 if possible 
+# Try to load git __git_ps1 if possible
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh  ]; then
-    source /usr/share/git-core/contrib/completion/git-prompt.sh 
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
-# Set up the prompt with GIT niceness if available  
+# Set up the prompt with GIT niceness if available
 if [ "$TERM" != "dumb" ]; then
     if hash __git_ps1 &> /dev/null; then
         # Show the git branch if possible
@@ -49,8 +49,17 @@ if [ "$TERM" != "dumb" ]; then
     else
         PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[00m\]$ "
     fi
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users. 
+
+    # Hack to support Mac not having dircolors
+        if dircolors 1> /dev/null 2>&1; then
+        echo 'numse'
+        eval "`dircolors -b`"
+        alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users.
+    else
+        export CLICOLOR=1
+        export LSCOLORS=GxFxCxDxBxegedabagaced
+        alias ls='ls --hide=*~' # Hide the annoying tmp files from emacs users.
+    fi
 fi
 
 # User specific aliases and functions
@@ -75,7 +84,7 @@ alias vim="vim -p" # Open multiple files in tabs
 if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
     export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
-fi 
+fi
 
 # Anaconda python installation
 if [ -d "$HOME/anaconda2/" ]; then
@@ -100,4 +109,6 @@ elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
     export INFOPATH=/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH
 elif [ $HOSTNAME == "balder" ]; then
     source /anaconda/bin/activate py35
+elif [ $HOSTNAME == "Thomass-MacBook-Pro.local" ]; then
+    export PATH="/anaconda3/bin:$PATH"
 fi
