@@ -96,4 +96,6 @@ fi
 # Host specific setup
 if [ $HOSTNAME == "bohr" ]; then
     alias sshdyn="ssh -X kelvin"
+elif [ $HOSTNAME == "T480s" ]; then
+    alias mountgoogle="google-drive-ocamlfuse ~google-drive"
 fi
