@@ -52,7 +52,6 @@ if [ "$TERM" != "dumb" ]; then
 
     # Hack to support Mac not having dircolors
         if dircolors 1> /dev/null 2>&1; then
-        echo 'numse'
         eval "`dircolors -b`"
         alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users.
     else

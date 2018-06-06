@@ -7,6 +7,6 @@
 # pip install --upgrade pip 
 
 # Install 
-conda install shapely pyproj tqdm seaborn xlrd
-conda install -c conda-forge keras tensorflow folium
-pip install pyvisgraph pyshp shapely geojson geopy openpyxl flask bpython fuzzywuzzy faker bcrypt
+conda install -y shapely pyproj tqdm seaborn xlrd
+conda install -y -c conda-forge keras tensorflow folium
+pip install msgpack pyvisgraph pyshp shapely geojson geopy openpyxl flask bpython fuzzywuzzy faker bcrypt

@@ -16,7 +16,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepass2 filezilla
     acidrip vlc calibre redshift darktable guake gkrellm nmap rsnapshot recordmydesktop x2goclient handbrake\
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git mediainfo pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common docker.io\
-    pylint 
+    pylint curl 
 
 # Download the google chrome deb and install 
 
