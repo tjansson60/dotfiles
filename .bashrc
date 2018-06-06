@@ -94,19 +94,6 @@ elif [ -d "$HOME/anaconda3/" ]; then
 fi
 
 # Host specific setup
-if [ $HOSTNAME == "virt092" ]; then
-    export PIP_CERT=/usr/share/ca-certificates/extra/cloud_services_root_ca_blue_coat.cer.crt
-    export PATH=$PATH:~/tools/flyway-5.0.7
-elif [ $HOSTNAME == "mtddev001" ]; then
-    export PATH=$PATH:~/tools/flyway-5.0.7
-elif [ $HOSTNAME == "bohr" ]; then
+if [ $HOSTNAME == "bohr" ]; then
     alias sshdyn="ssh -X kelvin"
-elif [ $HOSTNAME == "scrbmaldkbal001" ]; then
-    export PATH=/opt/anaconda/bin/:/usr/local/texlive/2017/bin/x86_64-linux:$PATH
-    export MANPATH=/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH
-    export INFOPATH=/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH
-elif [ $HOSTNAME == "balder" ]; then
-    source /anaconda/bin/activate py35
-elif [ $HOSTNAME == "Thomass-MacBook-Pro.local" ]; then
-    export PATH="/anaconda3/bin:$PATH"
 fi
