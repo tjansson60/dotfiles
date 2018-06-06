@@ -1,0 +1,17 @@
+# Install Anaconda: https://www.anaconda.com/download
+# Install keybase: https://keybase.io/download
+# Install DBeaver: https://dbeaver.io/download
+# Install Google Cloud SDK:
+
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
+sudo echo "debhttp://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
+sudo apt-get update -y && sudo apt-get install google-cloud-sdk -y
+
+gcloud init
+gcloud auth application-default login
+
+# Install Google Cloud SQL Proxy
+wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+chmod +x cloud_sql_proxy
+ 
