@@ -84,6 +84,11 @@ if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
 fi
 
+# Load external aliases if it exists
+if [ -f ~/.bash_aliases ]; then 
+    . ~/.bash_aliases
+fi
+
 # Anaconda python installation
 if [ -d "$HOME/anaconda2/" ]; then
     source ~/anaconda2/etc/profile.d/conda.sh # New method in conda 4.4.8
