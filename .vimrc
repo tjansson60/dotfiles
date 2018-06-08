@@ -93,12 +93,14 @@ let g:NERDTreeDirArrowCollapsible = '-'
 let g:python_version_2 = 1
 
 " Syntastic
-let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args="--ignore=E501"
+"let g:syntastic_python_checker_args = '--max-line-length=120'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = { "type": "style" }
+"let g:syntastic_quiet_messages = { "type": "style" }
 
 " Remove trailing whitespaces from all lines 
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> 
