@@ -76,6 +76,7 @@ alias llz="ls -lrSh"
 alias grep='grep --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias sshdyn="ssh tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
 alias pylab="echo 'Remember bpython'; ipython --pylab"
+alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
 
 # VIM setup
 export EDITOR=vim
