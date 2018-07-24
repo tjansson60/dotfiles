@@ -9,4 +9,6 @@
 # Install 
 conda install -y shapely pyproj tqdm seaborn xlrd
 conda install -y -c conda-forge keras tensorflow folium
+pip install --upgrade pip
 pip install msgpack pymysql pyvisgraph pyshp shapely geojson geopy openpyxl flask bpython fuzzywuzzy faker bcrypt feather-format
+pip install google-cloud-storage
