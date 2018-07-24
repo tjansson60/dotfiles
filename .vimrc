@@ -92,12 +92,16 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:python_version_2 = 1
 
-" Syntastic
+" Syntastic - https://lintlyci.github.io/Flake8Rules/
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args="--ignore=E501"
-"let g:syntastic_python_checker_args = '--max-line-length=120'
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
+" [E221] multiple spaces before operator
+" [E128] Continuation line under-indented for visual indent
+" [E221] multiple spaces before operator
+" [E265] block comment should start with '# '
+" [E501] Line too long (82 &gt; 79 characters)
+let g:syntastic_python_flake8_args="--ignore=E128,E221,E265,E501"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_quiet_messages = { "type": "style" }
