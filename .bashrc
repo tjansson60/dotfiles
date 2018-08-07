@@ -12,6 +12,8 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Export some options
+bind 'set show-all-if-ambiguous on' # Set tab-autocompletion to show options if not clear
+bind 'set completion-ignore-case on' # Ignores the case in the above
 shopt -s histappend histreedit histverify
 shopt -s globstar #If set, the pattern ** used in a pathname expansion context will match all files and zero or more directories and subdirectories
 shopt -s checkwinsize # Check the window size after each command, and update LINES and COLUMNS if the size has changed.
