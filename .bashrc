@@ -51,10 +51,10 @@ if [ "$TERM" != "dumb" ]; then
     else
         # With timestamp
         PS1="\[\033[01;33m\][\A]\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\]\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] $ "
-        
+
         # Without timestamp
         #PS1="\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[00m\]$ "
-        
+
     fi
 
     # Hack to support Mac not having dircolors
@@ -80,6 +80,10 @@ alias sshdyn="ssh tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids fire
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
 
+# https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
+alias gitpurge_deleted_branched="git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$1 }' | xargs -n 1 git branch -d"
+alias gitpurge_deleted_branched_dry="git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$1 }' "
+
 # VIM setup
 export EDITOR=vim
 export SVN_EDITOR=vim
@@ -93,7 +97,7 @@ if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
 fi
 
 # Load external aliases if it exists
-if [ -f ~/.bash_aliases ]; then 
+if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
