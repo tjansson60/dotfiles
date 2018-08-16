@@ -37,11 +37,15 @@ Plug 'sirver/ultisnips'
 call plug#end()
 
 " Colors
-let g:rehash256 = 1
-let g:solarized_termcolors=256
-set t_Co=256
+"let g:rehash256 = 1
+"let g:solarized_termcolors=256
+"set t_Co=256
 set background=dark
 colorscheme tender
+let g:airline_theme = 'tender'
+if (has("termguicolors"))
+    set termguicolors
+endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 
 " Setup plugins settings
