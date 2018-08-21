@@ -1,7 +1,7 @@
 " Thomas Jansson 2018
 
 " VIM PLUG SETUP and some downloads, see http://vimawesome.com/
-" Consider installing the following: 
+" Consider installing the following:
 "   sudo apt install curl vim exuberant-ctags git ack-grep pep8 flake8 pyflakes isort
 "   sudo pip install pep8 flake8 pyflakes isort yapf build-essential cmake
 "
@@ -29,7 +29,12 @@ Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&col
 "In the folder .vim/plugged/youcompleteme run the command ./install.py
 "let g:ycm_python_binary_path = '/usr/bin/python3'
 
-"Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim' " nice but slow
+" let g:pymode_rope_lookup_project = 0
+" let g:pymode_rope_complete_on_dot = 0
+" let g:pymode_rope = 0
+
+Plug 'python-mode/python-mode'
 
 Plug 'sirver/ultisnips'
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
@@ -51,7 +56,6 @@ set t_BE= "Avoid 0~ and 1~ when copy pasting
 " Setup plugins settings
 setlocal foldmethod=manual
 let g:airline#extensions#tabline#enabled = 1
-let g:pymode_rope = 0
 syntax enable
 syntax on
 let python_highlight_all=1
@@ -75,18 +79,18 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
-"Only tabularize the first = 
+"Only tabularize the first =
 map <S-F5> :Tabularize /^[^=]*\zs=<cr>
-"Align all the , in alist of dicts or tupples 
-map <S-F6> :Tabularize /,\zs<cr>       
-"Tabularize elements of a dict 
-map <S-F7> :Tabularize /:\zs<cr>       
-"Tabularize elements of a CSV 
-map <S-F8> :Tabularize /;\zs<cr>       
+"Align all the , in alist of dicts or tupples
+map <S-F6> :Tabularize /,\zs<cr>
+"Tabularize elements of a dict
+map <S-F7> :Tabularize /:\zs<cr>
+"Tabularize elements of a CSV
+map <S-F8> :Tabularize /;\zs<cr>
 
-set tabpagemax=50   
+set tabpagemax=50
 " Move between tabs
-map <F8> :tabp<cr> 
+map <F8> :tabp<cr>
 map <F9> :tabn<cr>
 
 " NERDtree
@@ -110,8 +114,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_quiet_messages = { "type": "style" }
 
-" Remove trailing whitespaces from all lines 
-nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR> 
+" Remove trailing whitespaces from all lines
+nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nmap <F5> :w<CR> :! ./%<CR>
 command! Q  quit
 command! W  write
@@ -145,9 +149,9 @@ set textwidth=120 " Not quite PEP8, but more readable on modern machines.
 set colorcolumn=120
 
 "" Filetypes
-filetype on
-filetype plugin on
-filetype indent on
+"filetype on
+"filetype plugin on
+"filetype indent on
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.tex set spell
 autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us
