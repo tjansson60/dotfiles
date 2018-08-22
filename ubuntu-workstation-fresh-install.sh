@@ -24,6 +24,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepass2 filezilla
 # VS code and SQL operations
 sudo snap install --classic vscode
 sudo snap install --classic slack
+sudo snap install aws-cli  --classic
 
 # Setup dockers
 sudo gpasswd -a $USER docker
