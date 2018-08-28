@@ -28,13 +28,14 @@ Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&col
 " Plug 'valloric/youcompleteme'
 "In the folder .vim/plugged/youcompleteme run the command ./install.py
 "let g:ycm_python_binary_path = '/usr/bin/python3'
+" let g:ycm_python_binary_path = '/home/tjansson/anaconda3/bin/python'
 
 " Plug 'davidhalter/jedi-vim' " nice but slow
 " let g:pymode_rope_lookup_project = 0
 " let g:pymode_rope_complete_on_dot = 0
 " let g:pymode_rope = 0
 
-Plug 'python-mode/python-mode'
+" Plug 'python-mode/python-mode'
 
 Plug 'sirver/ultisnips'
 " Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
@@ -54,6 +55,8 @@ endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 
 " Setup plugins settings
+set nofoldenable " Enabled from youcompleteme 
+set number relativenumber
 setlocal foldmethod=manual
 let g:airline#extensions#tabline#enabled = 1
 syntax enable
