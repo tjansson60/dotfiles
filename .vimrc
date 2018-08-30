@@ -54,8 +54,13 @@ if (has("termguicolors"))
 endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 
+" Folding
+" set nofoldenable " Enabled from youcompleteme 
+setlocal foldmethod=syntax
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
 " Setup plugins settings
-set nofoldenable " Enabled from youcompleteme 
 set number relativenumber " Turn line numbering on at startup
 " Toggle line numbers from none at all
 " " to relative numbering with current line number
