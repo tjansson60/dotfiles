@@ -56,7 +56,10 @@ set t_BE= "Avoid 0~ and 1~ when copy pasting
 
 " Setup plugins settings
 set nofoldenable " Enabled from youcompleteme 
-set number relativenumber
+set number relativenumber " Turn line numbering on at startup
+" Toggle line numbers from none at all
+" " to relative numbering with current line number
+noremap <F2> :set invnumber invrelativenumber<CR>
 setlocal foldmethod=manual
 let g:airline#extensions#tabline#enabled = 1
 syntax enable
