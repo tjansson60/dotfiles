@@ -3,6 +3,9 @@
 # Install DBeaver: https://dbeaver.io/download
 # Install Google Cloud SDK:
 
+# Follow
+# https://github.com/connectedcars/infrastructure/wiki/Google-Cloud-setup
+
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
 sudo echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
