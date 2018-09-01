@@ -118,7 +118,8 @@ let g:syntastic_python_checkers = ['flake8']
 " [E221] multiple spaces before operator
 " [E265] block comment should start with '# '
 " [E501] Line too long (82 &gt; 79 characters)
-let g:syntastic_python_flake8_args="--ignore=E128,E221,E265,E501"
+" [E241] Multiple spaces after ':'
+let g:syntastic_python_flake8_args="--ignore=E128,E221,E265,E501,E241"
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
@@ -157,6 +158,7 @@ set virtualedit=all
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set ttyfast
 set textwidth=120 " Not quite PEP8, but more readable on modern machines.
+set formatoptions-=t " Keeps the visual textwidth but doesn't add new line in insert mode.
 set colorcolumn=120
 
 "" Filetypes
