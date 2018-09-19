@@ -5,11 +5,20 @@
 "   sudo apt install curl vim exuberant-ctags git ack-grep pep8 flake8 pyflakes isort
 "   sudo pip install pep8 flake8 pyflakes isort yapf build-essential cmake
 "
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+if has('nvim')
+    if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    	silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    	autocmd VimEnter * PlugInstall | source $MYVIMRC
+    endif
+    call plug#begin('~/.vim/plugged')
+else
+    if empty(glob('~/.vim/autoload/plug.vim'))
+    	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    	autocmd VimEnter * PlugInstall | source $MYVIMRC
+    endif
+    call plug#begin()
 endif
-call plug#begin('~/.vim/plugged')
+
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/syntastic'
 Plug 'nvie/vim-flake8'
@@ -194,7 +203,11 @@ map <F6> :call MySpellLang()<CR>
 imap <F6> <C-o>:call MySpellLang()<CR>
 
 " Tell vim to remember certain things when we exit, see http://vim.wikia.com/wiki/VimTip80
-set viminfo='20,\"300,:20,%,n~/.viminfo
+if has('nvim')
+    set viminfo='20,\"300,:20,%,n~/.nviminfo
+else
+    set viminfo='20,\"300,:20,%,n~/.viminfo
+endif
 
 " when we reload, tell vim to restore the cursor to the saved position
 if has("autocmd")
