@@ -4,7 +4,12 @@
 " Consider installing the following:
 "   sudo apt install curl vim exuberant-ctags git ack-grep pep8 flake8 pyflakes isort
 "   sudo pip install pep8 flake8 pyflakes isort yapf build-essential cmake
-"
+
+" The following lines should be added to ~/.config/nvim/init.vim to make neovim read this config file
+" set runtimepath^=/.vim runtimepath+=~/.vim/after
+" let &packpath = &runtimepath
+" source ~/.vim/vimrc
+
 if has('nvim')
     if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     	silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
