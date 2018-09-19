@@ -12,5 +12,9 @@ conda install -y -c conda-forge keras tensorflow folium
 pip install --upgrade pip
 pip install msgpack pymysql pyvisgraph pyshp shapely geojson geopy \
     openpyxl flask bpython fuzzywuzzy faker bcrypt feather-format \
-    mysql-connector geojsoncontour py-spy
+    mysql-connector geojsoncontour py-spy afinn nltk
 pip install --upgrade google-cloud-storage google-cloud-bigquery 
+
+# For NLTK run this to download sources:
+#import nltk
+#nltk.download()
