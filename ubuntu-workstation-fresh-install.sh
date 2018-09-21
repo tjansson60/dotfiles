@@ -25,6 +25,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepass2 filezilla
 sudo snap install --classic vscode
 sudo snap install --classic slack
 sudo snap install aws-cli  --classic
+sudo snap install datagrip --classic
 
 # Setup dockers
 sudo gpasswd -a $USER docker
