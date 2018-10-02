@@ -3,8 +3,11 @@
 # Install DBeaver: https://dbeaver.io/download
 # Install Google Cloud SDK:
 
+# Follow
+# https://github.com/connectedcars/infrastructure/wiki/Google-Cloud-setup
+
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
-sudo echo "debhttp://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+sudo echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
 sudo apt-get update -y && sudo apt-get install google-cloud-sdk -y
 
@@ -14,4 +17,6 @@ gcloud auth application-default login
 # Install Google Cloud SQL Proxy
 wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
 chmod +x cloud_sql_proxy
- 
+
+# Check if the HP printer has been setup correctly
+# 'hp-check -r' and install the missing dependencies if needed
