@@ -12,7 +12,7 @@
 # comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
 # Standard tools needed for install 
-sudo apt install autofs fonts-powerline fonts-roboto vim meld keepass2 filezilla gimp gimp-ufraw evince baobab htop\
+sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc filezilla gimp gimp-ufraw evince baobab htop\
     acidrip vlc calibre redshift darktable guake gkrellm nmap rsnapshot recordmydesktop x2goclient handbrake\
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git mediainfo pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common docker.io\
