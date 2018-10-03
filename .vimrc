@@ -37,6 +37,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'jacoborus/tender' " Color
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
+"Plug 'ambv/black' " Python code linter/formatter, usage :Black
 
 " You complete me need custom compiled vim on some systems and installing the plugin it needs to be compiled.
 " Plug 'valloric/youcompleteme'
