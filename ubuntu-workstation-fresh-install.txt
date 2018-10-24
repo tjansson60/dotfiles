@@ -2,6 +2,7 @@
 # Install keybase: https://keybase.io/download
 # Install DBeaver: https://dbeaver.io/download
 # Install Google Cloud SDK:
+# Install ReMarkable: https://remarkableapp.github.io/linux/download.html
 
 # Follow
 # https://github.com/connectedcars/infrastructure/wiki/Google-Cloud-setup
