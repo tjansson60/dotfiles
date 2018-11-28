@@ -81,8 +81,8 @@ alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
 
 # https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
-alias gitpurge_deleted_branched="git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$1 }' | xargs -n 1 git branch -d"
-alias gitpurge_deleted_branched_dry="git fetch --all -p; echo '';  git branch -vv | grep ': gone]' | awk '{ print \$1 }' "
+alias gitpurge_deleted_branched="    git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$1 }' | xargs -n 1 git branch -d"
+alias gitpurge_deleted_branched_dry="git fetch --all -p; git branch -vv | grep ': gone]'"
 
 # VIM setup
 export EDITOR=vim
