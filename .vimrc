@@ -114,6 +114,10 @@ map <S-F7> :Tabularize /:\zs<cr>
 "Tabularize elements of a CSV
 map <S-F8> :Tabularize /;\zs<cr>
 
+" SUDO - write the file using sudo rights
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+
 set tabpagemax=50
 " Move between tabs
 map <F8> :tabp<cr>
