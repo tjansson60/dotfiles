@@ -182,6 +182,8 @@ set colorcolumn=120
 "filetype indent on
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.tex set spell
+autocmd BufRead,BufNewFile *.md set spell
+autocmd BufRead,BufNewFile *.txt set spell
 autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us
 
 " Spell checker
