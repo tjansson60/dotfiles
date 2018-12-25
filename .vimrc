@@ -24,6 +24,8 @@ else
     call plug#begin()
 endif
 
+Plug 'lilydjwg/colorizer' "Colorize HEX codes
+Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/syntastic'
 Plug 'nvie/vim-flake8'
@@ -38,6 +40,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'jacoborus/tender' " Color
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
 "Plug 'ambv/black' " Python code linter/formatter, usage :Black
+"
+hi link illuminatedWord Visual
 
 " You complete me need custom compiled vim on some systems and installing the plugin it needs to be compiled.
 " Plug 'valloric/youcompleteme'
