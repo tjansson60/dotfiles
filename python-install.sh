@@ -22,6 +22,11 @@ pip install msgpack pymysql pyvisgraph pyshp shapely geojson geopy \
 
 pip install --upgrade google-cloud-storage google-cloud-bigquery 
 
+# Jupyter enable plugins
+pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+jupyter nbextensions_configurator enable --user
+
 # For NLTK run this to download sources:
 #import nltk
 #nltk.download()
