@@ -117,7 +117,9 @@ map <S-F6> :Tabularize /,\zs<cr>
 "Tabularize elements of a dict
 map <S-F7> :Tabularize /:\zs<cr>
 "Tabularize elements of a CSV
-map <S-F8> :Tabularize /;\zs<cr>
+map <S-F8> :Tabularize /;\zs<cr>i
+" Python list of strings 
+map <S-F9> :Tabularize /',\zs<cr>
 
 " SUDO - write the file using sudo rights
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
