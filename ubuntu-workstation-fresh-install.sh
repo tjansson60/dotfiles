@@ -18,8 +18,12 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc filezill
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common docker.io\
     pylint curl eog fonts-hack fonts-hack-ttf
 
-# Download the google chrome deb and install
 # Download DBeaver for SLQ work, or SQL operations for MSSQL
+sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+sudo apt-get update
+sudo apt install dbeaver-ce
+
+# Download the google chrome deb and install
 # Download the dropbox deb file
 
 # VS code and SQL operations
