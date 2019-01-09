@@ -26,6 +26,7 @@ pip install --upgrade google-cloud-storage google-cloud-bigquery
 pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
+# Then visit http://localhost:8888/nbextensions after having started jupyter-notebook
 
 # For NLTK run this to download sources:
 #import nltk
