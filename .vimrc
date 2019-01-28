@@ -44,6 +44,12 @@ call plug#end()
 " RRethy/vim-illuminate
 hi link illuminatedWord Visual
 
+" Persistent undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=100          " How many undos
+set undoreload=10000        " number of lines to save for undo
+
 " Colors
 set t_Co=256
 set background=dark
