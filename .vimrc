@@ -24,58 +24,39 @@ else
     call plug#begin()
 endif
 
+
 Plug 'lilydjwg/colorizer' "Colorize HEX codes
-Plug 'tpope/vim-sensible'
-Plug 'scrooloose/syntastic'
-Plug 'nvie/vim-flake8'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'godlygeek/tabular'
-Plug 'ervandew/supertab'
-Plug 'honza/vim-snippets'
-Plug 'bling/vim-airline'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'jacoborus/tender' " Color
+Plug 'tpope/vim-sensible' "A universal set of defaults that (hopefully) everyone can agree on.
+Plug 'scrooloose/syntastic' "Syntastic is a syntax checking plugin
+Plug 'nvie/vim-flake8' "vim-flake8 is a Vim plugin that runs the currently open file through Flake8, a static syntax and style checker for Python 
+Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+Plug 'godlygeek/tabular' "Vim script for text filtering and alignment
+Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
+Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
+Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
+Plug 'jacoborus/tender' " Color theme
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
-"Plug 'ambv/black' " Python code linter/formatter, usage :Black
-"
-
 Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
-hi link illuminatedWord Visual
+Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
 
-" You complete me need custom compiled vim on some systems and installing the plugin it needs to be compiled.
-" Plug 'valloric/youcompleteme'
-"In the folder .vim/plugged/youcompleteme run the command ./install.py
-"let g:ycm_python_binary_path = '/usr/bin/python3'
-" let g:ycm_python_binary_path = '/home/tjansson/anaconda3/bin/python'
-
-" Plug 'davidhalter/jedi-vim' " nice but slow
-" let g:pymode_rope_lookup_project = 0
-" let g:pymode_rope_complete_on_dot = 0
-" let g:pymode_rope = 0
-
-" Plug 'python-mode/python-mode'
-
-Plug 'sirver/ultisnips'
-" Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/tex.snippets
-" Read https://github.com/honza/vim-snippets/blob/master/UltiSnips/python.snippets
 call plug#end()
 
+" RRethy/vim-illuminate
+hi link illuminatedWord Visual
+
 " Colors
-"let g:rehash256 = 1
-"let g:solarized_termcolors=256
-"set t_Co=256
+set t_Co=256
 set background=dark
 colorscheme tender
 let g:airline_theme = 'tender'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 if (has("termguicolors"))
     set termguicolors
 endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 
 " Folding
-" set nofoldenable " Enabled from youcompleteme 
 setlocal foldmethod=syntax
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
@@ -91,18 +72,10 @@ syntax enable
 syntax on
 let python_highlight_all=1
 
-"JEDI -  Remember to have a working PYTHONPATH
-"let g:jedi#use_tabs_not_buffers = 1
-
 " Reformat JSON using pythons json tool
 nmap =j :%!python -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2))"<CR>
 
-" Snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:ultisnips_python_style=0x3
-
+" ctrlpvim/ctrlp.vim
 noremap <C-l> :CtrlP ../<CR>
 noremap <C-x> :CtrlP ~/code<CR>
 let g:ctrlp_prompt_mappings = {
@@ -124,18 +97,10 @@ map <S-F9> :Tabularize /',\zs<cr>
 " SUDO - write the file using sudo rights
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-
-set tabpagemax=50
 " Move between tabs
+set tabpagemax=50
 map <F8> :tabp<cr>
 map <F9> :tabn<cr>
-
-" NERDtree
-map <F3> :NERDTreeToggle<CR>
-let g:NERDTreeIgnore = ['\.pyc$']
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let g:python_version_2 = 1
 
 " Syntastic - https://lintlyci.github.io/Flake8Rules/
 let g:syntastic_python_checkers = ['flake8']
@@ -188,9 +153,6 @@ set formatoptions-=t " Keeps the visual textwidth but doesn't add new line in in
 set colorcolumn=120
 
 "" Filetypes
-"filetype on
-"filetype plugin on
-"filetype indent on
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.tex set spell
 autocmd BufRead,BufNewFile *.md set spell
