@@ -27,8 +27,6 @@ endif
 
 Plug 'lilydjwg/colorizer' "Colorize HEX codes
 Plug 'tpope/vim-sensible' "A universal set of defaults that (hopefully) everyone can agree on.
-Plug 'scrooloose/syntastic' "Syntastic is a syntax checking plugin
-Plug 'nvie/vim-flake8' "vim-flake8 is a Vim plugin that runs the currently open file through Flake8, a static syntax and style checker for Python 
 Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'godlygeek/tabular' "Vim script for text filtering and alignment
 Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
@@ -38,6 +36,7 @@ Plug 'jacoborus/tender' " Color theme
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
 Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
 Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
+Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 
 call plug#end()
 
@@ -66,6 +65,9 @@ set t_BE= "Avoid 0~ and 1~ when copy pasting
 setlocal foldmethod=syntax
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" Toggle pasting mode on and off
+set pastetoggle=<F3>
 
 " Setup plugins settings
 set number relativenumber " Turn line numbering on at startup
@@ -108,20 +110,16 @@ set tabpagemax=50
 map <F8> :tabp<cr>
 map <F9> :tabn<cr>
 
-" Syntastic - https://lintlyci.github.io/Flake8Rules/
-let g:syntastic_python_checkers = ['flake8']
+" Code linting
+" https://lintlyci.github.io/Flake8Rules/
 " [E221] multiple spaces before operator
 " [E128] Continuation line under-indented for visual indent
 " [E221] multiple spaces before operator
 " [E265] block comment should start with '# '
 " [E501] Line too long (82 &gt; 79 characters)
 " [E241] Multiple spaces after ':'
-let g:syntastic_python_flake8_args="--ignore=E128,E221,E265,E501,E241"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_quiet_messages = { "type": "style" }
+" let b:ale_linters = {'python': ['flake8']}  "Remove this line to enble other linters as pylint, but is slower
+let g:ale_python_flake8_options="--ignore=E128,E221,E265,E501,E241"
 
 " Remove trailing whitespaces from all lines
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
