@@ -34,7 +34,7 @@ Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light 
 Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
 Plug 'jacoborus/tender' " Color theme
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
-Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
+"Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
 Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
 Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 
