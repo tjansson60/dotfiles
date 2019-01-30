@@ -16,9 +16,9 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc filezill
     acidrip vlc calibre redshift-gtk darktable guake gkrellm nmap rsnapshot recordmydesktop x2goclient handbrake\
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git mediainfo pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common docker.io\
-    pylint curl eog fonts-hack fonts-hack-ttf
+    pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes isort build-essential
 
-# Download DBeaver for SLQ work, or SQL operations for MSSQL
+# Download DBeaver for SLQ work, or SQL operations for MSSQL. Prefering datagrip
 sudo add-apt-repository ppa:serge-rider/dbeaver-ce
 sudo apt-get update
 sudo apt install dbeaver-ce
