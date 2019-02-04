@@ -3,14 +3,31 @@
 # Download the lastest python 3 through Anaconda:
 # https://www.anaconda.com/download/#linux
 
-# Update pip and conda
-# conda update -n base -c defaults conda
-# conda update -n base conda
+# Keep conda up to date
+# conda update -n root conda
+# conda update anaconda
+# conda update --all
+
+# Update pip
 # pip install --upgrade pip 
+
+# Jupyter lab extensions
+# See list on https://github.com/search?utf8=%E2%9C%93&q=topic%3Ajupyterlab-extension&type=Repositories
+# Interesting: https://github.com/jupyter-widgets/ipyleaflet
+#jupyter labextension enable
+#jupyter labextension install @jupyterlab/toc
+#
+#jupyter-nbextension install toc2/main
+#jupyter-nbextension install codefolding/main
+#jupyter-nbextension install execute_time/ExecuteTime
+#jupyter-nbextension install export_embedded/main
+#jupyter-nbextension install move_selected_cells/main
+#jupyter-nbextension install collapsible_headings/main
+#jupyter-nbextension install notify/notify
 
 # Install 
 conda install -y shapely pyproj tqdm seaborn xlrd
-conda install -y -c conda-forge keras tensorflow folium
+conda install -y -c conda-forge keras tensorflow folium nodejs # nodejs needed for jupyterlab extensions
 
 pip install --upgrade pip
 
