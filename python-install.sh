@@ -14,16 +14,21 @@
 # Jupyter lab extensions
 # See list on https://github.com/search?utf8=%E2%9C%93&q=topic%3Ajupyterlab-extension&type=Repositories
 # Interesting: https://github.com/jupyter-widgets/ipyleaflet
-#jupyter labextension enable
-#jupyter labextension install @jupyterlab/toc
-#
-#jupyter-nbextension install toc2/main
-#jupyter-nbextension install codefolding/main
-#jupyter-nbextension install execute_time/ExecuteTime
-#jupyter-nbextension install export_embedded/main
-#jupyter-nbextension install move_selected_cells/main
-#jupyter-nbextension install collapsible_headings/main
-#jupyter-nbextension install notify/notify
+# jupyter labextension enable
+# jupyter labextension install @jupyterlab/toc
+
+# Jupyter notebooks
+# pip install jupyter_contrib_nbextensions
+# jupyter contrib nbextension install --user
+# jupyter nbextensions_configurator enable --user
+# http://localhost:8888/nbextensions
+# * toc2/main
+# * codefolding/main
+# * execute_time/ExecuteTime
+# * export_embedded/main
+# * move_selected_cells/main
+# * collapsible_headings/main
+# * notify/notify
 
 # Install 
 conda install -y shapely pyproj tqdm seaborn xlrd
