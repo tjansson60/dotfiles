@@ -37,6 +37,12 @@ Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&col
 "Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
 Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
 Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
+Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
+
+Plug 'valloric/youcompleteme' " YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine for Vim.
+" Compiling YCM without semantic support for C-family languages:
+" cd ~/.vim/bundle/YouCompleteMe
+" python3 install.py
 
 call plug#end()
 
@@ -195,6 +201,6 @@ else
 endif
 
 " when we reload, tell vim to restore the cursor to the saved position
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+"if has("autocmd")
+"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"endif
