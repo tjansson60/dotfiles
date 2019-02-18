@@ -83,7 +83,7 @@ alias bc="bc -l"
 alias ll="ls -lrth"
 alias llz="ls -lrSh"
 alias grep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
-alias sshdyn="ssh tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
+alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
 
