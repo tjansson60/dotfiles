@@ -39,7 +39,8 @@ Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lin
 Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 
-Plug 'valloric/youcompleteme' " YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine for Vim.
+Plug 'ajh17/VimCompletesMe'
+"Plug 'valloric/youcompleteme' " YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine for Vim.
 " Compiling YCM without semantic support for C-family languages:
 " cd ~/.vim/bundle/YouCompleteMe
 " python3 install.py
@@ -71,6 +72,13 @@ set t_BE= "Avoid 0~ and 1~ when copy pasting
 setlocal foldmethod=syntax
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" Break bad habits of using arrow keys instead of hjkl and w, b, e, and ge (for jupmping to words)
+" https://github.com/takac/vim-hardtime
+" noremap <Up> <NOP>
+" noremap <Down> <NOP>
+" noremap <Left> <NOP>
+" noremap <Right> <NOP>
 
 " Toggle pasting mode on and off
 set pastetoggle=<F3>
