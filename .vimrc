@@ -77,13 +77,6 @@ set t_BE= "Avoid 0~ and 1~ when copy pasting
 
 " Toggle pasting mode on and off
 set pastetoggle=<F3>
-
-" Setup plugins settings
-set number relativenumber " Turn line numbering on at startup
-" Toggle line numbers from none at all
-" " to relative numbering with current line number
-noremap <F2> :set invnumber invrelativenumber<CR>
-
 let g:airline#extensions#tabline#enabled = 1
 syntax enable
 
@@ -139,6 +132,13 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 highlight Search term=standout ctermfg=3 cterm=standout
 highlight Visual term=standout ctermfg=4 cterm=standout
 
+" It seems Highlight_Matching_Pair is quite slow the following can help with this
+" set lazyredraw
+" Setup plugins settings
+" set number relativenumber " Turn line numbering on at startup - this is cool, but can be super slow in some files
+" Toggle line numbers from none at all
+" " to relative numbering with current line number
+" noremap <F2> :set invnumber invrelativenumber<CR>
 
 if v:version > 74338
     set breakindent
