@@ -70,9 +70,10 @@ endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 
 " Folding
-setlocal foldmethod=syntax
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
+"setlocal foldmethod=syntax
+"setlocal foldmethod=manual
+" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+" vnoremap <Space> zf
 
 " Toggle pasting mode on and off
 set pastetoggle=<F3>
@@ -82,11 +83,9 @@ set number relativenumber " Turn line numbering on at startup
 " Toggle line numbers from none at all
 " " to relative numbering with current line number
 noremap <F2> :set invnumber invrelativenumber<CR>
-setlocal foldmethod=manual
+
 let g:airline#extensions#tabline#enabled = 1
 syntax enable
-syntax on
-let python_highlight_all=1
 
 " Reformat JSON using pythons json tool
 nmap =j :%!python -c "import json, sys, collections; print(json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2))"<CR>
@@ -110,8 +109,6 @@ map <S-F8> :Tabularize /;\zs<cr>i
 " Python list of strings 
 map <S-F9> :Tabularize /',\zs<cr>
 
-" SUDO - write the file using sudo rights
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Move between tabs
 set tabpagemax=50
@@ -135,9 +132,14 @@ nmap <F5> :w<CR> :! ./%<CR>
 command! Q  quit
 command! W  write
 command! Wq wq
+" SUDO - write the file using sudo rights
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Make search more bright
 highlight Search term=standout ctermfg=3 cterm=standout
 highlight Visual term=standout ctermfg=4 cterm=standout
+
+
 if v:version > 74338
     set breakindent
 endif
@@ -183,7 +185,7 @@ highlight SpellLocal term=underline ctermfg=1 cterm=underline
 
 "switch spellcheck languages
 let g:myLang = 0
-let g:myLangList = [ "nospell", "en_us", "da" ]
+let g:myLangList = ["nospell", "en_us", "da"]
 function! MySpellLang()  "loop through languages
   let g:myLang = g:myLang + 1
   if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
@@ -194,15 +196,3 @@ function! MySpellLang()  "loop through languages
 endf
 map <F6> :call MySpellLang()<CR>
 imap <F6> <C-o>:call MySpellLang()<CR>
-
-" Tell vim to remember certain things when we exit, see http://vim.wikia.com/wiki/VimTip80
-if has('nvim')
-    set viminfo='20,\"300,:20,%,n~/.nviminfo
-else
-    set viminfo='20,\"300,:20,%,n~/.viminfo
-endif
-
-" when we reload, tell vim to restore the cursor to the saved position
-"if has("autocmd")
-"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-"endif
