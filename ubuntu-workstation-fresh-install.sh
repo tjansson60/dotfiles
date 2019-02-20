@@ -20,6 +20,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc filezill
 
 # Download DBeaver for SLQ work, or SQL operations for MSSQL. Prefering datagrip
 sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+sudo add-apt-repository ppa:jonathonf/vim-daily # Latests vim versions
 sudo apt-get update
 sudo apt install dbeaver-ce
 

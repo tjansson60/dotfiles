@@ -134,11 +134,13 @@ highlight Visual term=standout ctermfg=4 cterm=standout
 
 " It seems Highlight_Matching_Pair is quite slow the following can help with this
 " set lazyredraw
-" Setup plugins settings
-" set number relativenumber " Turn line numbering on at startup - this is cool, but can be super slow in some files
-" Toggle line numbers from none at all
-" " to relative numbering with current line number
-" noremap <F2> :set invnumber invrelativenumber<CR>
+if v:version >= 801
+    " Realative numbers are cool, but very slow in version 8.0. Fixed in 8.1
+    set number relativenumber
+    " Toggle line numbers from none at all
+    " to relative numbering with current line number
+    noremap <F2> :set invnumber invrelativenumber<CR>
+endif
 
 if v:version > 74338
     set breakindent
