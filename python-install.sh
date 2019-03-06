@@ -32,7 +32,7 @@
 
 # Install 
 conda install -y shapely pyproj tqdm seaborn xlrd
-conda install -y -c conda-forge keras tensorflow folium nodejs # nodejs needed for jupyterlab extensions
+conda install -y -c conda-forge keras tensorflow folium nodejs ipyvolume # nodejs needed for jupyterlab extensions
 
 pip install --upgrade pip
 
