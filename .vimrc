@@ -50,7 +50,7 @@ let g:hardtime_showmsg = 1
 
 " RRethy/vim-illuminate
 hi link illuminatedWord Visual
-let g:Illuminate_delay = 500 " Default 250 ms
+let g:Illuminate_delay = 250 " Default 250 ms
 
 " Persistent undo
 set undofile                " Save undo's after file closes
