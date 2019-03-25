@@ -41,6 +41,17 @@ Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit p
 Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
 
+"Completion
+Plug 'Shougo/deoplete.nvim' " Dark powered asynchronous completion framework for neovim/Vim8
+Plug 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc' " Requires pip install neovim
+Plug 'SirVer/ultisnips' " Code snippiets
+Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:deoplete#enable_at_startup = 1
+let g:jedi#use_tabs_not_buffers = 1
+
 call plug#end()
 
 " takac/vim-hardtime
