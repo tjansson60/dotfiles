@@ -29,7 +29,6 @@ Plug 'lilydjwg/colorizer' "Colorize HEX codes
 Plug 'tpope/vim-sensible' "A universal set of defaults that (hopefully) everyone can agree on.
 Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'godlygeek/tabular' "Vim script for text filtering and alignment
-Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
 Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
 Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
 Plug 'jacoborus/tender' " Color theme
@@ -38,21 +37,23 @@ Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matchi
 Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
 Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
-Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
 
 "Completion
+Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
+Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
 Plug 'Shougo/deoplete.nvim' " Dark powered asynchronous completion framework for neovim/Vim8
-Plug 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc' " Requires pip install neovim
 Plug 'SirVer/ultisnips' " Code snippiets
-Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:deoplete#enable_at_startup = 1
-let g:jedi#use_tabs_not_buffers = 1
+Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
 
 call plug#end()
+
+" Completion
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('auto_complete_delay', 50) " Default 200
 
 " takac/vim-hardtime
 " use :HardTimeToggle toggle it on an off
