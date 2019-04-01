@@ -132,7 +132,7 @@ map <F9> :tabn<cr>
 " [E501] Line too long (82 &gt; 79 characters)
 " [E241] Multiple spaces after ':'
 let b:ale_linters = {'python': ['flake8']}  "Remove this line to enable other linters as pylint, but this is slower
-let g:ale_python_flake8_options="--ignore=E128,E221,E265,E501,E241"
+let g:ale_python_flake8_options="--ignore=E128,E221,E265,E501,E241,W503" " https://lintlyci.github.io/Flake8Rules/
 
 " Remove trailing whitespaces from all lines
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>

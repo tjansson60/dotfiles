@@ -21,3 +21,11 @@ chmod +x cloud_sql_proxy
 
 # Check if the HP printer has been setup correctly
 # 'hp-check -r' and install the missing dependencies if needed
+
+
+#In Ubuntu MATE, you can customise what key is the compose key by opening “Keyboard”, clicking “Layouts”, then “Options…”
+#and checking a box under “Position of compose key”. I checked “Right Alt”, meaning my “AltGr” key is now the compose
+#key. https://help.ubuntu.com/community/GtkComposeTable
+# æ = Shift-RightAlt ae
+# ø = Shift-RightAlt o/
+# å = Shift-RightAlt aa
