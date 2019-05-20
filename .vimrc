@@ -125,14 +125,16 @@ map <F9> :tabn<cr>
 
 " Code linting
 " https://lintlyci.github.io/Flake8Rules/
-" [E221] multiple spaces before operator
 " [E128] Continuation line under-indented for visual indent
 " [E221] multiple spaces before operator
 " [E265] block comment should start with '# '
 " [E501] Line too long (82 &gt; 79 characters)
 " [E241] Multiple spaces after ':'
+" [W503] Line break occurred before a binary operator
 let b:ale_linters = {'python': ['flake8']}  "Remove this line to enable other linters as pylint, but this is slower
 let g:ale_python_flake8_options="--ignore=E128,E221,E265,E501,E241,W503" " https://lintlyci.github.io/Flake8Rules/
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Remove trailing whitespaces from all lines
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
