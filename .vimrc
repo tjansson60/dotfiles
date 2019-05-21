@@ -156,7 +156,7 @@ if v:version >= 801
     set number relativenumber
     " Toggle line numbers from none at all
     " to relative numbering with current line number
-    noremap <F2> :set invnumber invrelativenumber<CR>
+    noremap <F2> :set invnumber invrelativenumber <bar> :IndentLinesToggle<CR>
 endif
 
 if v:version > 74338
