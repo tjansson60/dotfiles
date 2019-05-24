@@ -31,13 +31,16 @@
 # * notify/notify
 
 # Install 
-conda install -y shapely pyproj tqdm seaborn xlrd
-conda install -y -c conda-forge keras tensorflow folium nodejs ipyvolume # nodejs needed for jupyterlab extensions
-
 pip install --upgrade pip
+conda install -y shapely pyproj tqdm seaborn xlrd
+conda install -y -c conda-forge folium nodejs ipyvolume # nodejs needed for jupyterlab extensions
+
+# Not needed at the moment
+#conda install -y -c conda-forge keras tensorflow
+#pip install flask faker
 
 pip install msgpack pymysql pymysql-pooling pyvisgraph pyshp shapely geojson geopy \
-    openpyxl flask bpython fuzzywuzzy faker bcrypt feather-format \
+    openpyxl bpython fuzzywuzzy bcrypt feather-format \
     mysql-connector geojsoncontour py-spy afinn nltk black shap \
     plotly pandas-gbq lime pdfminer.six geojsoncontour xgboost \
     selenium dexplot geocoder fpdf geopandas descartes mplleaflet
