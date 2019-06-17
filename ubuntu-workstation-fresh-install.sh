@@ -11,6 +11,12 @@
 # Find out what programs that have manually been installed on a system (usufull when clean-installing at upgrade):
 # comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
+# Thinkpad power management
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install tlp tlp-rdw
+sudo apt-get install tp-smapi-dkms acpi-call-dkms smartmontools
+
 # Standard tools needed for install 
 sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc filezilla gimp gimp-ufraw evince baobab htop\
     acidrip vlc calibre redshift-gtk darktable guake gkrellm nmap rsnapshot recordmydesktop x2goclient handbrake\
