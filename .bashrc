@@ -38,8 +38,8 @@ unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
 # Try to load git __git_ps1 if possible
-if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh  ]; then
-    source /usr/share/git-core/contrib/completion/git-prompt.sh
+if [ -f /usr/lib/git-core/git-sh-prompt  ]; then
+    source /usr/lib/git-core/git-sh-prompt
 fi
 
 # Set up the prompt with GIT niceness if available
@@ -49,6 +49,7 @@ if [ "$TERM" != "dumb" ]; then
         GIT_PS1_SHOWDIRTYSTATE=1
         GIT_PS1_SHOWCOLORHINTS=1
         GIT_PS1_SHOWUPSTREAM="auto"
+        GIT_PS1_SHOWSTASHSTATE=true 
 
         # With timestamp
         PS1="\[\033[01;33m\][\A]\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\]\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
