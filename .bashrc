@@ -28,6 +28,11 @@ export HISTFILESIZE=5000 # the bash history should save 3000 commands
 export HISTCONTROL=ignoredups #don't put duplicate lines in the history.
 export HISTIGNORE="&:ls:cd:bg:fg:ll" # ignore these commands in history
 
+# Make sure we are using the ibus for X11 input
+export GTK_IM_MODULE="ibus"
+export QT_IM_MODULE="ibus"
+export QT4_IM_MODULE="ibus"
+export XMODIFIERS="@im=ibus"
 
 # Shell and prompt configuration
 export GS_OPTIONS="-sPAPERSIZE=a4"
