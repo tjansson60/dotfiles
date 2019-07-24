@@ -43,7 +43,7 @@ pip install msgpack pymysql pymysql-pooling pyvisgraph pyshp shapely geojson geo
     openpyxl bpython fuzzywuzzy bcrypt feather-format \
     mysql-connector geojsoncontour py-spy afinn nltk black shap \
     plotly pandas-gbq lime pdfminer.six geojsoncontour xgboost \
-    selenium dexplot geocoder fpdf geopandas descartes mplleaflet nose-test snakeviz
+    selenium dexplot geocoder fpdf geopandas descartes mplleaflet nose-test snakeviz sqlint
 
 pip install --upgrade google-cloud-storage google-cloud-bigquery 
 

@@ -38,6 +38,7 @@ Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lin
 Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
+Plug 'shmup/vim-sql-syntax' " SQL syntax checker
 
 "Completion
 Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
