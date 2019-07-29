@@ -2,6 +2,25 @@
 
 # Download the lastest python 3 through Anaconda:
 # https://www.anaconda.com/download/#linux
+# Wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# Export current environment
+# conda env export > environment.yml
+
+# Create a environment based on a YAML file
+# conda env create -f environment.yml
+
+# Update a environment
+# conda env update –f environment.yml –n data_quality
+
+# Remove environment
+# conda remove --name data_quality --all
+
+# Activate a environment
+# conda activate data-quality
+
+# List environments
+# conda info --envs
 
 # Keep conda up to date
 # conda update -n root conda
@@ -10,6 +29,45 @@
 
 # Update pip
 # pip install --upgrade pip 
+
+
+
+#####################
+# Package install
+#####################
+
+# Install 
+conda install numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl XlsxWriter xlrd psutil \
+    SQLAlchemy mysql-connector-python nose shapely pyproj plotly pyshp nltk black bcrypt selenium \
+    geopandas descartes snakeviz
+conda install -c conda-forge google-cloud-bigquery google-cloud-storage slackclient \
+    sendgrid==5.6.0 folium nodejs ipyvolume jupyter_contrib_nbextensions
+conda install -c viascience fpdf 
+
+# Packages not possible to install using conda
+pip install msgpack pyvisgraph geojson geopy openpyxl bpython fuzzywuzzy feather-format py-spy afinn shap \
+    pandas-gbq lime pdfminer.six geojsoncontour xgboost dexplot geocoder mplleaflet sqlint
+
+# Upgrade Google elements
+#pip install --upgrade google-cloud-storage google-cloud-bigquery 
+
+# Not needed at the moment
+#conda install -y -c conda-forge keras tensorflow
+#pip install flask faker
+
+# For NLTK run this to download sources:
+#import nltk
+#nltk.download()
+
+
+
+#############
+# Jupyter
+#############
+# Jupyter enable plugins
+jupyter contrib nbextension install --user
+jupyter nbextensions_configurator enable --user
+# Then visit http://localhost:8888/nbextensions after having started jupyter-notebook
 
 # Jupyter lab extensions
 # See list on https://github.com/search?utf8=%E2%9C%93&q=topic%3Ajupyterlab-extension&type=Repositories
@@ -30,29 +88,3 @@
 # * collapsible_headings/main
 # * notify/notify
 
-# Install 
-pip install --upgrade pip
-conda install -y shapely pyproj tqdm seaborn xlrd
-conda install -y -c conda-forge folium nodejs ipyvolume # nodejs needed for jupyterlab extensions
-
-# Not needed at the moment
-#conda install -y -c conda-forge keras tensorflow
-#pip install flask faker
-
-pip install msgpack pymysql pymysql-pooling pyvisgraph pyshp shapely geojson geopy \
-    openpyxl bpython fuzzywuzzy bcrypt feather-format \
-    mysql-connector geojsoncontour py-spy afinn nltk black shap \
-    plotly pandas-gbq lime pdfminer.six geojsoncontour xgboost \
-    selenium dexplot geocoder fpdf geopandas descartes mplleaflet nose-test snakeviz sqlint
-
-pip install --upgrade google-cloud-storage google-cloud-bigquery 
-
-# Jupyter enable plugins
-pip install jupyter_nbextensions_configurator jupyter_contrib_nbextensions
-jupyter contrib nbextension install --user
-jupyter nbextensions_configurator enable --user
-# Then visit http://localhost:8888/nbextensions after having started jupyter-notebook
-
-# For NLTK run this to download sources:
-#import nltk
-#nltk.download()
