@@ -35,7 +35,7 @@ Plug 'jacoborus/tender' " Color theme
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
 Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
 Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
-Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
+Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
 Plug 'shmup/vim-sql-syntax' " SQL syntax checker
