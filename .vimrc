@@ -45,17 +45,20 @@ Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers
 Plug 'shmup/vim-sql-syntax' " SQL syntax checker
 
 "Completion
+"Plug 'maralla/completor.vim' " Completor is an asynchronous code completion framework for vim8.
 Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
 Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
-Plug 'maralla/completor.vim' " Completor is an asynchronous code completion framework for vim8.
 Plug 'SirVer/ultisnips' " Code snippiets
 Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
-
 call plug#end()
+
+" Set the terminal title
+set title
 
 " Completion
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:completor_complete_options = 'menuone,noselect,preview'
+
 
 " takac/vim-hardtime
 " use :HardTimeToggle toggle it on an off
