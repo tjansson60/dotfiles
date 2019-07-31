@@ -24,6 +24,10 @@ else
     call plug#begin()
 endif
 
+"# Setup python enviroment
+let g:python_host_prog = '~/miniconda3/bin/python'
+let g:python3_host_prog = '~/miniconda3/bin/python'
+
 
 Plug 'lilydjwg/colorizer' "Colorize HEX codes
 Plug 'tpope/vim-sensible' "A universal set of defaults that (hopefully) everyone can agree on.
@@ -43,9 +47,7 @@ Plug 'shmup/vim-sql-syntax' " SQL syntax checker
 "Completion
 Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
 Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
-Plug 'Shougo/deoplete.nvim' " Dark powered asynchronous completion framework for neovim/Vim8
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc' " Requires pip install neovim
+Plug 'maralla/completor.vim' " Completor is an asynchronous code completion framework for vim8.
 Plug 'SirVer/ultisnips' " Code snippiets
 Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
 
@@ -53,8 +55,7 @@ call plug#end()
 
 " Completion
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('auto_complete_delay', 50) " Default 200
+let g:completor_complete_options = 'menuone,noselect,preview'
 
 " takac/vim-hardtime
 " use :HardTimeToggle toggle it on an off
