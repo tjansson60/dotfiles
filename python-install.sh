@@ -41,7 +41,7 @@ conda install numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl Xlsx
     SQLAlchemy mysql-connector-python nose shapely pyproj plotly pyshp nltk black bcrypt selenium \
     geopandas descartes snakeviz
 conda install -c conda-forge google-cloud-bigquery google-cloud-storage slackclient \
-    sendgrid==5.6.0 folium nodejs ipyvolume jupyter_contrib_nbextensions
+    sendgrid folium nodejs ipyvolume jupyter_contrib_nbextensions
 conda install -c viascience fpdf 
 
 # Packages not possible to install using conda
