@@ -1,4 +1,11 @@
 # https://savannah.gnu.org/projects/screen/
+#
+# http://www.robmeerman.co.uk/unix/256colours
+# sudo apt-get build-dep screen # Install whatever's needed to compile screen
+# apt-get source screen  # Download + extract screen source to the local folder
+# cd ./screen-XXX
+# ./configure --enable-colors256
+# make
 
 # This should set it up as a login shell
 defshell -bash
