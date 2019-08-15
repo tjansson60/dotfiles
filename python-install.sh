@@ -1,8 +1,35 @@
 #!/bin/sh
 
-# Download the lastest python 3 through Anaconda:
-# https://www.anaconda.com/download/#linux
-# Wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# Download and install miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/Miniconda3-latest-Linux-x86_64.sh
+bash ~/Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
+
+# Install libs through conda and conda channels
+conda install -y numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl XlsxWriter xlrd psutil \
+    SQLAlchemy mysql-connector-python nose shapely pyproj plotly pyshp nltk black bcrypt selenium \
+    geopandas descartes snakeviz
+conda install -y -c conda-forge google-cloud-bigquery google-cloud-storage slackclient \
+    sendgrid folium nodejs ipyvolume jupyter_contrib_nbextensions
+conda install -y -c viascience fpdf 
+
+# Packages not possible to install using conda
+pip install msgpack pyvisgraph geojson geopy openpyxl bpython fuzzywuzzy feather-format py-spy afinn shap \
+    pandas-gbq lime pdfminer.six geojsoncontour xgboost dexplot geocoder mplleaflet sqlint
+
+# Upgrade Google elements
+# pip install --upgrade google-cloud-storage google-cloud-bigquery 
+
+# Not needed at the moment
+#conda install -y -c conda-forge keras tensorflow
+#pip install flask faker
+
+# For NLTK run this to download sources:
+#import nltk
+#nltk.download()
+
+#######################
+# Conda tips
+#######################
 
 # Export current environment
 # conda env export > environment.yml
@@ -32,32 +59,6 @@
 
 
 
-#####################
-# Package install
-#####################
-
-# Install 
-conda install numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl XlsxWriter xlrd psutil \
-    SQLAlchemy mysql-connector-python nose shapely pyproj plotly pyshp nltk black bcrypt selenium \
-    geopandas descartes snakeviz
-conda install -c conda-forge google-cloud-bigquery google-cloud-storage slackclient \
-    sendgrid folium nodejs ipyvolume jupyter_contrib_nbextensions
-conda install -c viascience fpdf 
-
-# Packages not possible to install using conda
-pip install msgpack pyvisgraph geojson geopy openpyxl bpython fuzzywuzzy feather-format py-spy afinn shap \
-    pandas-gbq lime pdfminer.six geojsoncontour xgboost dexplot geocoder mplleaflet sqlint
-
-# Upgrade Google elements
-#pip install --upgrade google-cloud-storage google-cloud-bigquery 
-
-# Not needed at the moment
-#conda install -y -c conda-forge keras tensorflow
-#pip install flask faker
-
-# For NLTK run this to download sources:
-#import nltk
-#nltk.download()
 
 
 
@@ -65,8 +66,8 @@ pip install msgpack pyvisgraph geojson geopy openpyxl bpython fuzzywuzzy feather
 # Jupyter
 #############
 # Jupyter enable plugins
-jupyter contrib nbextension install --user
-jupyter nbextensions_configurator enable --user
+# jupyter contrib nbextension install --user
+# jupyter nbextensions_configurator enable --user
 # Then visit http://localhost:8888/nbextensions after having started jupyter-notebook
 
 # Jupyter lab extensions
