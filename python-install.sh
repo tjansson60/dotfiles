@@ -7,9 +7,9 @@ bash ~/Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 # Install libs through conda and conda channels
 conda install -y numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl XlsxWriter xlrd psutil \
     SQLAlchemy mysql-connector-python nose shapely pyproj plotly pyshp nltk black bcrypt selenium \
-    geopandas descartes snakeviz
+    geopandas descartes snakeviz datashader holoviews
 conda install -y -c conda-forge google-cloud-bigquery google-cloud-storage slackclient \
-    sendgrid folium nodejs ipyvolume jupyter_contrib_nbextensions
+    sendgrid folium nodejs ipyvolume jupyter_contrib_nbextensions jupyterlab
 conda install -y -c viascience fpdf 
 
 # Packages not possible to install using conda
