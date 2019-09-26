@@ -89,11 +89,6 @@ if (has("termguicolors"))
 endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 
-" Folding
-"setlocal foldmethod=syntax
-"setlocal foldmethod=manual
-" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-" vnoremap <Space> zf
 
 " Toggle pasting mode on and off
 set pastetoggle=<F3>
@@ -118,9 +113,29 @@ map <S-F6> :Tabularize /,\zs<cr>
 "Tabularize elements of a dict
 map <S-F7> :Tabularize /:\zs<cr>
 "Tabularize elements of a CSV
-map <S-F8> :Tabularize /;\zs<cr>i
+map <S-F8> :Tabularize /;\zs<cr>
 " Python list of strings 
 map <S-F9> :Tabularize /',\zs<cr>
+
+
+" Folding
+setlocal foldmethod=indent
+set foldlevelstart=20
+"setlocal foldmethod=manual
+" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+" vnoremap <Space> zf
+nnoremap <F10> :call ToogleFold()<CR>
+function! ToogleFold()
+    if &foldlevel >= 20 
+		"Folds all  
+        normal! zM<CR> 
+        set foldlevel=0
+    else
+		" Uunfolds everything
+        normal! zR<CR>
+        set foldlevel=20
+    endif
+endfunction
 
 
 " Move between tabs
