@@ -28,21 +28,27 @@ endif
 let g:python_host_prog = '~/miniconda3/bin/python'
 let g:python3_host_prog = '~/miniconda3/bin/python'
 
-
-Plug 'lilydjwg/colorizer' "Colorize HEX codes
+" General
 Plug 'tpope/vim-sensible' "A universal set of defaults that (hopefully) everyone can agree on.
 Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'godlygeek/tabular' "Vim script for text filtering and alignment
 Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
 Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
-Plug 'jacoborus/tender' " Color theme
-Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
-Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
-Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
 Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
 Plug 'shmup/vim-sql-syntax' " SQL syntax checker
+Plug 'davidhalter/jedi-vim' " jedi-vim is a VIM binding to the autocompletion library Jedi.
+
+" Colors and highlighting
+Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
+Plug 'lilydjwg/colorizer' "Colorize HEX codes
+Plug 'jacoborus/tender' " Color theme
+Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
+Plug 'sainnhe/gruvbox-material' " Easy on the eyes colorscheme
+Plug 'morhetz/gruvbox' " Original gruvbox
+Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
+Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
 
 "Completion
 "Plug 'maralla/completor.vim' " Completor is an asynchronous code completion framework for vim8.
@@ -51,6 +57,9 @@ Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab>
 Plug 'SirVer/ultisnips' " Code snippiets
 Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
 call plug#end()
+
+" Set up supertab to use jedi-vim
+let g:SuperTabDefaultCompletionType = "context"
 
 " Set the terminal title
 set title
@@ -80,8 +89,22 @@ set undoreload=10000        " number of lines to save for undo
 " Colors
 set t_Co=256
 set background=dark
-colorscheme tender
-let g:airline_theme = 'tender'
+
+"tender
+"colorscheme tender
+"let g:airline_theme = 'tender'
+
+" gruvbox material
+"colorscheme gruvbox-material
+"let g:airline_theme = 'gruvbox_material'
+"let g:gruvbox_material_background = 'hard'
+"let g:gruvbox_material_enable_bold = 1
+
+" gruvbox
+colorscheme gruvbox
+let g:airline_theme = 'gruvbox'
+let g:gruvbox_background = 'medium'
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 if (has("termguicolors"))
