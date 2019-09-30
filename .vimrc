@@ -103,7 +103,7 @@ set background=dark
 " gruvbox
 colorscheme gruvbox
 let g:airline_theme = 'gruvbox'
-let g:gruvbox_background = 'medium'
+let g:gruvbox_background = 'hard'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
