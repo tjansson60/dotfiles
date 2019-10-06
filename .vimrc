@@ -38,7 +38,7 @@ Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for provid
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
 Plug 'shmup/vim-sql-syntax' " SQL syntax checker
-Plug 'davidhalter/jedi-vim' " jedi-vim is a VIM binding to the autocompletion library Jedi.
+" Plug 'davidhalter/jedi-vim' " jedi-vim is a VIM binding to the autocompletion library Jedi. But it is soooo slow.
 
 " Colors and highlighting
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
