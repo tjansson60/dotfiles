@@ -109,18 +109,24 @@ if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
 fi
 
-# Load external aliases if it exists
+# Host specific setup
+if [ $HOSTNAME == "pascal" ]; then
+    alias sshdyn="ssh -X 192.168.0.160"
+else
+    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
+fi
+
+# Load external aliases if it exists that should not be part of a public GH repo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# Host specific setup
-if [ $HOSTNAME == "bohr" ]; then
-    alias sshdyn="ssh -X kelvin"
-elif [ $HOSTNAME == "pascal" ]; then
-    alias sshdyn="ssh -X 192.168.0.160"
-else
-    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
+# If possible try to load conda aliases  
+if [ -f ~/code/connectedcars/data-quality/.conda_aliases ]; then
+    source ~/code/connectedcars/data-quality/.conda_aliases
+fi
+if [ -f ~/code/data-quality/.conda_aliases ]; then
+    source ~/code/data-quality/.conda_aliases
 fi
 
 # >>> conda initialize >>>
