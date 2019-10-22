@@ -91,8 +91,8 @@ set t_Co=256
 set background=dark
 
 "tender
-"colorscheme tender
-"let g:airline_theme = 'tender'
+colorscheme tender
+let g:airline_theme = 'tender'
 
 " gruvbox material
 "colorscheme gruvbox-material
@@ -101,9 +101,9 @@ set background=dark
 "let g:gruvbox_material_enable_bold = 1
 
 " gruvbox
-colorscheme gruvbox
-let g:airline_theme = 'gruvbox'
-let g:gruvbox_background = 'hard'
+"colorscheme gruvbox
+"let g:airline_theme = 'gruvbox'
+"let g:gruvbox_background = 'hard'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
