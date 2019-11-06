@@ -228,6 +228,9 @@ set textwidth=120 " Not quite PEP8, but more readable on modern machines.
 set formatoptions-=t " Keeps the visual textwidth but doesn't add new line in insert mode.
 set colorcolumn=120
 
+" Disables Vim's TeX plugin usage of "conceal"
+let g:tex_conceal = ""
+
 "" Filetypes
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.tex set spell
