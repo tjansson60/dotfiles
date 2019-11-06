@@ -1,11 +1,4 @@
 # https://savannah.gnu.org/projects/screen/
-#
-# http://www.robmeerman.co.uk/unix/256colours
-# sudo apt-get build-dep screen # Install whatever's needed to compile screen
-# apt-get source screen  # Download + extract screen source to the local folder
-# cd ./screen-XXX
-# ./configure --enable-colors256
-# make
 
 # This should set it up as a login shell
 defshell -bash
@@ -37,3 +30,11 @@ term screen-256color
 
 # Cache 30000 lines for scroll back
 defscrollback 30000
+
+# Sick of full-screen programs like vim remaining in the scrollback buffer after you've closed them? Wouldn't it be
+# great if they'd go away completely just like they do when you're not running screen?
+altscreen on
+
+# Show a line in the bottom with then session name of the screen, so it is easy to know which screen one is viewing 
+backtick 0 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"' # Get session id
+hardstatus alwayslastline "[%`] | Load: %l %= %c %Y-%m-%d"
