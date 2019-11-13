@@ -168,14 +168,17 @@ map <F9> :tabn<cr>
 
 " Code linting
 " https://lintlyci.github.io/Flake8Rules/
-" [E128] Continuation line under-indented for visual indent
-" [E221] multiple spaces before operator
-" [E265] block comment should start with '# '
-" [E501] Line too long (82 &gt; 79 characters)
-" [E241] Multiple spaces after ':'
-" [W503] Line break occurred before a binary operator
+" E128, # Continuation line under-indented for visual indent
+" E201, # Whitespace after [. Reason for exclusion: reduces readability of repeated elements of similar lines 
+" E221, # Multiple spaces before operator
+" E222, # Multiple spaces after operator. Reason for exclusion: increasing readability of repeated elements of similar lines 
+" E241, # Multiple spaces after ':'
+" E251, # Unexpected spaces around keyword / parameter equals
+" E272, # Multiple spaces before keyword. Reason for exclusion: reduces readability of repeated elements of similar lines
+" E501, # Line too long (82 > 79 characters). Reason for exclusion: reduces readability on modern screens
+" W503 # Line break occurred before a binary operator
 let b:ale_linters = {'python': ['flake8']}  "Remove this line to enable other linters as pylint, but this is slower
-let g:ale_python_flake8_options="--ignore=E128,E221,E265,E501,E241,W503" " https://lintlyci.github.io/Flake8Rules/
+let g:ale_python_flake8_options="--ignore=E128,E201,E221,E222,E241,E251,E272,E501,W503" " https://lintlyci.github.io/Flake8Rules/
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
