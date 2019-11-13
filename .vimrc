@@ -118,9 +118,6 @@ if (has("termguicolors"))
 endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 
-
-" Toggle pasting mode on and off
-set pastetoggle=<F3>
 let g:airline#extensions#tabline#enabled = 1
 syntax enable
 
@@ -135,25 +132,12 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
-"Only tabularize the first =
-map <S-F5> :Tabularize /^[^=]*\zs=<cr>
-"Align all the , in alist of dicts or tupples
-map <S-F6> :Tabularize /,\zs<cr>
-"Tabularize elements of a dict
-map <S-F7> :Tabularize /:\zs<cr>
-"Tabularize elements of a CSV
-map <S-F8> :Tabularize /;\zs<cr>
-" Python list of strings 
-map <S-F9> :Tabularize /',\zs<cr>
-
-
 " Folding
 setlocal foldmethod=indent
 set foldlevelstart=20
 "setlocal foldmethod=manual
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 " vnoremap <Space> zf
-nnoremap <F10> :call ToogleFold()<CR>
 function! ToogleFold()
     if &foldlevel >= 20 
 		"Folds all  
@@ -166,11 +150,8 @@ function! ToogleFold()
     endif
 endfunction
 
-
 " Move between tabs
 set tabpagemax=50
-map <F8> :tabp<cr>
-map <F9> :tabn<cr>
 
 " Code linting
 " https://lintlyci.github.io/Flake8Rules/
@@ -188,9 +169,6 @@ let g:ale_python_flake8_options="--ignore=E128,E201,E221,E222,E241,E251,E272,E50
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Remove trailing whitespaces from all lines
-nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-nmap <F5> :w<CR> :! ./%<CR>
 command! Q  quit
 command! W  write
 command! Wq wq
@@ -201,15 +179,6 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 highlight Search term=standout ctermfg=3 cterm=standout
 highlight Visual term=standout ctermfg=4 cterm=standout
 
-" It seems Highlight_Matching_Pair is quite slow the following can help with this
-" set lazyredraw
-if v:version >= 801
-    " Realative numbers are cool, but very slow in version 8.0. Fixed in 8.1
-    set number relativenumber
-
-    " Toogles all the decorators on the line on and off, so it easy to copy pase to and from the terminal
-    noremap <F2> :set invnumber invrelativenumber <bar> :IndentLinesToggle<CR> <bar> :GitGutterToggle<CR> <bar> :ALEToggle<CR>
-endif
 
 if v:version > 74338
     set breakindent
@@ -268,5 +237,52 @@ function! MySpellLang()  "loop through languages
   if g:myLang == 2 | setlocal spell spelllang=da | endif
   echo "language:" g:myLangList[g:myLang]
 endf
+
+""""""""""""""""""""""
+" Hot keys
+""""""""""""""""""""""
+" It seems Highlight_Matching_Pair is quite slow the following can help with this
+" set lazyredraw
+if v:version >= 801
+    " Realative numbers are cool, but very slow in version 8.0. Fixed in 8.1
+    set number relativenumber
+    " Toogles all the decorators on the line on and off, so it easy to copy pase to and from the terminal
+    noremap <F2> :set invnumber invrelativenumber <bar> :IndentLinesToggle<CR> <bar> :GitGutterToggle<CR> <bar> :ALEToggle<CR>
+endif
+
+" Toggle pasting mode on and off 
+set pastetoggle=<F3>
+
+" Remove trailing whitespaces from all lines
+nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Execute the file
+nmap <F5> :w<CR> :! ./%<CR>
+
 map <F6> :call MySpellLang()<CR>
 imap <F6> <C-o>:call MySpellLang()<CR>
+
+" Move between tabs
+map <F8> :tabp<cr>
+map <F9> :tabn<cr>
+
+" Toggle code folding on and off
+nnoremap <F10> :call ToogleFold()<CR>
+
+
+""""""""""""""""""""""
+" Hot keys, SHIFT
+""""""""""""""""""""""
+"vim -p `grep -il sid *`
+" map <S-F3> : execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
+"Only tabularize the first =
+map <S-F5> :Tabularize /^[^=]*\zs=<cr>
+"Align all the , in alist of dicts or tupples
+map <S-F6> :Tabularize /,\zs<cr>
+"Tabularize elements of a dict
+map <S-F7> :Tabularize /:\zs<cr>
+"Tabularize elements of a CSV
+map <S-F8> :Tabularize /;\zs<cr>
+" Python list of strings 
+map <S-F9> :Tabularize /',\zs<cr>
