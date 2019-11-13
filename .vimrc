@@ -68,6 +68,12 @@ set title
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:completor_complete_options = 'menuone,noselect,preview'
 
+" Indentline conceals certain characters which is very annoying. g:indentLine_setConceal = 0 disables this, but kills
+" indentline, so instead this disable indentline for certain filetypes:
+let g:indentLine_fileTypeExclude = ['haskell', 'json', 'yaml', 'markdown', 'text', 'sh', 'vim']
+let g:indentLine_conceallevel = 1 " may or may not be required
+let g:indentLine_setConceal = 1
+
 
 " takac/vim-hardtime
 " use :HardTimeToggle toggle it on an off
