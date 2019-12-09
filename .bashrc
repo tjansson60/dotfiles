@@ -144,3 +144,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Execute the dev enviroment if possible
+if [ -f "/home/tjansson/miniconda3/etc/profile.d/conda.sh" ]; then
+    conda activate dev
+fi
