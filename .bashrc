@@ -49,6 +49,8 @@ fi
 
 # Set up the prompt with GIT niceness if available
 if [ "$TERM" != "dumb" ]; then
+    export TERM=xterm-256color
+
     if hash __git_ps1 &> /dev/null; then
         # Show the git branch if possible
         GIT_PS1_SHOWDIRTYSTATE=1
