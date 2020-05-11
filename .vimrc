@@ -41,9 +41,11 @@ Plug 'shmup/vim-sql-syntax' " SQL syntax checker
 " Plug 'davidhalter/jedi-vim' " jedi-vim is a VIM binding to the autocompletion library Jedi. But it is soooo slow.
 
 " Colors and highlighting
+Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 Plug 'lilydjwg/colorizer' "Colorize HEX codes
 Plug 'jacoborus/tender' " Color theme
+Plug 'hzchirs/vim-material' " Color theme, https://github.com/hzchirs/vim-material
 Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
 Plug 'sainnhe/gruvbox-material' " Easy on the eyes colorscheme
 Plug 'morhetz/gruvbox' " Original gruvbox
@@ -97,14 +99,20 @@ set t_Co=256
 set background=dark
 
 "tender
-colorscheme tender
-let g:airline_theme = 'tender'
+" colorscheme tender
+" let g:airline_theme = 'tender'
+
+" Dark " Oceanic
+" let g:material_style='oceanic'
+colorscheme vim-material
+let g:airline_theme='material'
+
 
 " gruvbox material
-"colorscheme gruvbox-material
-"let g:airline_theme = 'gruvbox_material'
-"let g:gruvbox_material_background = 'hard'
-"let g:gruvbox_material_enable_bold = 1
+" colorscheme gruvbox-material
+" let g:airline_theme = 'gruvbox_material'
+" let g:gruvbox_material_background = 'hard'
+" let g:gruvbox_material_enable_bold = 1
 
 " gruvbox
 "colorscheme gruvbox
