@@ -101,6 +101,9 @@ set background=dark
 "tender
 " colorscheme tender
 " let g:airline_theme = 'tender'
+" Make search more bright
+" highlight Search term=standout ctermfg=3 cterm=standout
+" highlight Visual term=standout ctermfg=4 cterm=standout
 
 " Dark " Oceanic
 " let g:material_style='oceanic'
@@ -182,10 +185,6 @@ command! W  write
 command! Wq wq
 " SUDO - write the file using sudo rights
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
-" Make search more bright
-highlight Search term=standout ctermfg=3 cterm=standout
-highlight Visual term=standout ctermfg=4 cterm=standout
 
 
 if v:version > 74338
