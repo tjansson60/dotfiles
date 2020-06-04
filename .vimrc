@@ -44,13 +44,13 @@ Plug 'shmup/vim-sql-syntax' " SQL syntax checker
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 Plug 'lilydjwg/colorizer' "Colorize HEX codes
-Plug 'jacoborus/tender' " Color theme
 Plug 'hzchirs/vim-material' " Color theme, https://github.com/hzchirs/vim-material
-Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
-Plug 'sainnhe/gruvbox-material' " Easy on the eyes colorscheme
-Plug 'morhetz/gruvbox' " Original gruvbox
 Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
 Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
+" Plug 'sainnhe/gruvbox-material' " Easy on the eyes colorscheme
+" Plug 'morhetz/gruvbox' " Original gruvbox
+" Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
+" Plug 'jacoborus/tender' " Color theme
 
 "Completion
 "Plug 'maralla/completor.vim' " Completor is an asynchronous code completion framework for vim8.
@@ -98,6 +98,14 @@ set undoreload=10000        " number of lines to save for undo
 set t_Co=256
 set background=dark
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+if (has("termguicolors"))
+    set termguicolors
+endif
+set t_BE= "Avoid 0~ and 1~ when copy pasting
+let g:airline#extensions#tabline#enabled = 1
+
 "tender
 " colorscheme tender
 " let g:airline_theme = 'tender'
@@ -107,8 +115,10 @@ set background=dark
 
 " Dark " Oceanic
 " let g:material_style='oceanic'
+let g:material_terminal_italics = 1
 colorscheme vim-material
 let g:airline_theme='material'
+highlight clear SignColumn  " Change the color of the git-gutter to same color as linenumbers
 
 
 " gruvbox material
@@ -122,14 +132,6 @@ let g:airline_theme='material'
 "let g:airline_theme = 'gruvbox'
 "let g:gruvbox_background = 'hard'
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-if (has("termguicolors"))
-    set termguicolors
-endif
-set t_BE= "Avoid 0~ and 1~ when copy pasting
-
-let g:airline#extensions#tabline#enabled = 1
 syntax enable
 
 " Reformat JSON using pythons json tool
