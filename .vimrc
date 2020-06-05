@@ -119,6 +119,10 @@ let g:material_terminal_italics = 1
 colorscheme vim-material
 let g:airline_theme='material'
 highlight clear SignColumn  " Change the color of the git-gutter to same color as linenumbers
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
 
 
 " gruvbox material
