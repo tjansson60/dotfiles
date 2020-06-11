@@ -43,6 +43,9 @@ dconf load /apps/guake/ < guake.dconf # Load
 # dconf dump /com/canonical/indicator/datetime/ > indicator_datetime.dconf
 dconf load /com/canonical/indicator/datetime/ < indicator_datetime.dconf
 
+# Set up the background image
+dconf write  /org/mate/desktop/background/picture-filename "'/home/tjansson/code/dotfiles/traffic-in-denmark-background.png'"
+
 # Standard tools needed for install 
 sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince baobab htop\
     vlc redshift-gtk guake gkrellm nmap recordmydesktop \
