@@ -57,6 +57,7 @@ sudo snap install vscode --classic
 sudo snap install slack --classic
 sudo snap install aws-cli --classic
 sudo snap install datagrip --classic
+sudo snap install node --classic --edge  # Needed for jupyter
 
 # Install the Google cloud sdk
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list

@@ -4,7 +4,12 @@
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/Miniconda3-latest-Linux-x86_64.sh
 bash ~/Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 
+# Setup the dev environment based on the YML file
 conda env create --name dev --file conda-dev-python-environment.yml
+
+# Set up jupyter-notebook and jupyterlab
+./jupyter-setup.sh
+
 
 # Install libs through conda and conda channels
 # conda install -y numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl XlsxWriter xlrd psutil \
