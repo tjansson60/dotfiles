@@ -4,17 +4,19 @@
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/Miniconda3-latest-Linux-x86_64.sh
 bash ~/Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
 
-# Install libs through conda and conda channels
-conda install -y numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl XlsxWriter xlrd psutil \
-    SQLAlchemy mysql-connector-python nose shapely pyproj plotly pyshp nltk black bcrypt selenium \
-    geopandas descartes snakeviz datashader holoviews
-conda install -y -c conda-forge google-cloud-bigquery google-cloud-storage slackclient \
-    sendgrid folium nodejs ipyvolume jupyter_contrib_nbextensions jupyterlab pythreejs ipywidgets
-conda install -y -c viascience fpdf 
+conda env create --name dev --file conda-dev-python-environment.yml
 
-# Packages not possible to install using conda
-pip install msgpack pyvisgraph geojson geopy openpyxl bpython fuzzywuzzy feather-format py-spy afinn shap \
-    pandas-gbq lime pdfminer.six geojsoncontour xgboost dexplot geocoder mplleaflet sqlint
+# Install libs through conda and conda channels
+# conda install -y numpy pandas PyMySQL tqdm pyarrow matplotlib seaborn openpyxl XlsxWriter xlrd psutil \
+#     SQLAlchemy mysql-connector-python nose shapely pyproj plotly pyshp nltk black bcrypt selenium \
+#     geopandas descartes snakeviz datashader holoviews
+# conda install -y -c conda-forge google-cloud-bigquery google-cloud-storage slackclient \
+#     sendgrid folium nodejs ipyvolume jupyter_contrib_nbextensions jupyterlab pythreejs ipywidgets
+# conda install -y -c viascience fpdf 
+# 
+# # Packages not possible to install using conda
+# pip install msgpack pyvisgraph geojson geopy openpyxl bpython fuzzywuzzy feather-format py-spy afinn shap \
+#     pandas-gbq lime pdfminer.six geojsoncontour xgboost dexplot geocoder mplleaflet sqlint
 
 # Upgrade Google elements
 # pip install --upgrade google-cloud-storage google-cloud-bigquery 

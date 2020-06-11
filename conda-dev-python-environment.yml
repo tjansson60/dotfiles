@@ -1,0 +1,76 @@
+name: dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.2
+  - pip
+  - pip:
+      # Getting data
+      - mysql-connector-python
+      - SQLAlchemy
+      - google-cloud-bigquery
+      - google-cloud-monitoring
+      - google-cloud-core[grpc]
+      - google-cloud-bigquery-storage
+      # Data manipulating
+      - pandas
+      - numpy
+      - PyMySQL
+      - tqdm
+      - pyarrow
+      - GeoPandas
+      # Plotting tools
+      - matplotlib
+      - pillow
+      - seaborn
+      # Writing xlsx files
+      - openpyxl
+      - XlsxWriter
+      - xlrd
+      # Writing PDF files
+      - pypdf4
+      # Needed for cpu stats
+      - psutil
+      # Unit test
+      - pytest==5.3.5 # Pytest 5.4.x has a bug with the sugar plugin that breaks test suite.
+      - pytest-cov   # Computes test coverage
+      - pytest-sugar # Pretty formatting of output
+      - flake8 # Tool For Style Guide Enforcement
+      # Job execution
+      - networkx
+      - apscheduler # Advanced Python Scheduler (APScheduler) lets you schedule your Python code to be executed later, either just once or periodically.
+      # API access token encryption
+      - PyJWT
+      - cryptography
+      # Misc
+      - pypdf4 # Writing PDF files
+      - psutil # Needed for cpu stats
+      - slackclient # Send messages to slack channels and users
+      - pudb # Python debugging tool
+      - python-json-logger # Logging as json
+      - DateTimeRange # Datetime comparison
+      - holidays # Get list of holidays in different countries
+      - sendgrid # Needed to send mails
+      # For exploratory use
+      - shapely # Geometric objects, predicates, and operations
+      - pyproj # Python interface to PROJ (cartographic projections and coordinate transformations library)
+      - nltk # Natural Language Processing with Python
+      - snakeviz # A web-based viewer for Python profiler output
+      - descartes # Use geometric objects as matplotlib paths and patches
+      - datashader # Data visualization toolchain based on aggregating into a grid
+      - holoviews # Stop plotting your data - annotate your data and let it visualize itself.
+      - jupyterlab # The JupyterLab notebook server extension.
+      - jupyter_contrib_nbextensions # A collection of Jupyter nbextensions.
+      - folium # Make beautiful maps with Leaflet.js & Python
+      - geojsoncontour # Convert matplotlib contour plots to geojson
+      - dexplot # Simple plotting library for both long and wide data integrated with DataFrames
+      - shap # A unified approach to explain the output of any machine learning model.
+      - lime # Local Interpretable Model-Agnostic Explanations for machine learning classifiers
+      - geocoder # Geocoder is a simple and consistent geocoding library.
+      - geojsonio # Open GeoJSON data on geojson.io from Python. geojsonio.py also contains a command line utility that is a Python port of geojsonio-cli.
+      - bpython # Fancy Interface to the Python Interpreter
+      - scikit-learn # A set of python modules for machine learning and data mining
+      - flake8 # the modular source code checker: pep8, pyflakes and co
+      - pudb # A full-screen, console-based Python debugger
+      - keplergl # Kepler.gl is a data-agnostic, high-performance web-based application for visual exploration of large-scale geolocation data sets. Built on top of Mapbox GL and deck.gl, kepler.gl can render millions of points representing thousands of trips and perform spatial aggregations on the fly.
