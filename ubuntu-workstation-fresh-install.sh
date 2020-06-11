@@ -37,7 +37,7 @@
 
 # Guake settings
 # dconf dump /apps/guake/ > guake.dconf # Save
-# dconf load /apps/guake/ > guake.dconf # Load
+# dconf load /apps/guake/ < guake.dconf # Load
 
 # Standard tools needed for install 
 sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince baobab htop\
