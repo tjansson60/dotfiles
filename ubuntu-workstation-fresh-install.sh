@@ -31,6 +31,10 @@
 # Find out what programs that have manually been installed on a system (usufull when clean-installing at upgrade):
 # comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
+# Tilix settings
+# dconf dump /com/gexperts/Tilix/ > tilix.dconf   # Save
+# dconf load /com/gexperts/Tilix/ < tilix.dconf   # Load
+
 # Standard tools needed for install 
 sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince baobab htop\
     vlc redshift-gtk guake gkrellm nmap recordmydesktop \
