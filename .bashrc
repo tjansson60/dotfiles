@@ -56,7 +56,7 @@ if [ "$TERM" != "dumb" ]; then
         GIT_PS1_SHOWDIRTYSTATE=1
         GIT_PS1_SHOWCOLORHINTS=1
         GIT_PS1_SHOWUPSTREAM="auto"
-        GIT_PS1_SHOWSTASHSTATE=true 
+        GIT_PS1_SHOWSTASHSTATE=true
 
         # With timestamp
         PS1="\[\033[01;33m\][\A]\[\033[01;32m\]\u@\[\033[01;33m\]\h\\[\033[32m\]\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \[\033[01;35m\]\$(__git_ps1 '(%s)')\[\033[00m\]$ "
@@ -114,6 +114,8 @@ fi
 # Host specific setup
 if [ $HOSTNAME == "pascal" ]; then
     alias sshdyn="ssh -X 192.168.0.160"
+elif [ $HOSTNAME == "VirtualBox" ]; then
+    alias sshdyn="ssh -X 192.168.0.160"
 else
     alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
 fi
@@ -123,7 +125,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# If possible try to load conda aliases  
+# If possible try to load conda aliases
 if [ -f ~/code/connectedcars/data-quality/.conda_aliases ]; then
     source ~/code/connectedcars/data-quality/.conda_aliases
 fi
@@ -133,20 +135,20 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tjansson/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$("/home/$USER/miniconda3/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/tjansson/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tjansson/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/$USER/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/$USER/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/tjansson/miniconda3/bin:$PATH"
+        export PATH="/home/$USER/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
 # Execute the dev enviroment if possible
-if [ -f "/home/tjansson/miniconda3/etc/profile.d/conda.sh" ]; then
+if [ -f "/home/$USER/miniconda3/etc/profile.d/conda.sh" ]; then
     conda activate dev
 fi
