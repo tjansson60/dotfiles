@@ -1,0 +1,9 @@
+[/]
+show-auto-detected-location=true
+show-date=true
+show-day=true
+show-locations=true
+show-seconds=true
+show-week-numbers=true
+show-year=true
+time-format='24-hour'
