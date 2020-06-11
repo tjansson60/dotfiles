@@ -31,23 +31,6 @@
 # Find out what programs that have manually been installed on a system (usufull when clean-installing at upgrade):
 # comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
-# Tilix settings
-# dconf dump /com/gexperts/Tilix/ > settings-tilix.dconf # Save
-dconf load /com/gexperts/Tilix/ < settings-tilix.dconf # Load
-
-# Guake settings
-# dconf dump /apps/guake/ > settings-guake.dconf # Save
-dconf load /apps/guake/ < settings-guake.dconf # Load
-
-# Make clock settings (24-hour settings, week numbers etc)
-# dconf dump /com/canonical/indicator/datetime/ > settings-indicator-datetime.dconf
-dconf load /com/canonical/indicator/datetime/ < settings-indicator-datetime.dconf
-
-# Set up the background image
-# dconf write  /org/mate/desktop/background/picture-filename "'/home/tjansson/code/dotfiles/background-traffic-in-denmark.png'"
-# dconf dump /org/mate/desktop/background/ > settings-mate-desktop-background.dconf
-dconf load /org/mate/desktop/background/ < settings-mate-desktop-background.dconf
-
 # Standard tools needed for install 
 sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince baobab htop\
     vlc redshift-gtk guake gkrellm nmap recordmydesktop \
@@ -72,6 +55,23 @@ sudo snap install node --classic --edge  # Needed for jupyter
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+# Tilix settings
+# dconf dump /com/gexperts/Tilix/ > settings-tilix.dconf # Save
+dconf load /com/gexperts/Tilix/ < settings-tilix.dconf # Load
+
+# Guake settings
+# dconf dump /apps/guake/ > settings-guake.dconf # Save
+dconf load /apps/guake/ < settings-guake.dconf # Load
+
+# Make clock settings (24-hour settings, week numbers etc)
+# dconf dump /com/canonical/indicator/datetime/ > settings-indicator-datetime.dconf
+dconf load /com/canonical/indicator/datetime/ < settings-indicator-datetime.dconf
+
+# Set up the background image
+# dconf write  /org/mate/desktop/background/picture-filename "'/home/tjansson/code/dotfiles/background-traffic-in-denmark.png'"
+# dconf dump /org/mate/desktop/background/ > settings-mate-desktop-background.dconf
+dconf load /org/mate/desktop/background/ < settings-mate-desktop-background.dconf
 
 # Extra media
 # sudo apt install gimp-ufraw acidrip calibre darktablehandbrake mediainfo 
