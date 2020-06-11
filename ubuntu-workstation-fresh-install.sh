@@ -35,6 +35,10 @@
 # dconf dump /com/gexperts/Tilix/ > tilix.dconf   # Save
 # dconf load /com/gexperts/Tilix/ < tilix.dconf   # Load
 
+# Guake settings
+# dconf dump /apps/guake/ > guake.dconf # Save
+# dconf load /apps/guake/ > guake.dconf # Load
+
 # Standard tools needed for install 
 sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince baobab htop\
     vlc redshift-gtk guake gkrellm nmap recordmydesktop \
