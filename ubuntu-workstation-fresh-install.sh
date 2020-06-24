@@ -1,21 +1,21 @@
 #!/bin/sh
 
 # ## Installation
-# 
+#
 # * Install Anaconda: https://www.anaconda.com/download
 # * Install ReMarkable: https://remarkableapp.github.io/linux/download.html
-# 
+#
 # ## CC Google cloud setup
 # Follow https://github.com/connectedcars/infrastructure/wiki/Google-Cloud-setup
-# 
+#
 # ## HP Printer setup, install dependencies
-# Check if the HP printer has been setup correctly. Run `hp-check -r` and install the missing dependencies if needed. 
-# 
+# Check if the HP printer has been setup correctly. Run `hp-check -r` and install the missing dependencies if needed.
+#
 # ## US keyboard and compose key
 # In Ubuntu MATE, you can customise what key is the compose key by opening “Keyboard”, clicking “Layouts”, then “Options…”
 # and checking a box under “Position of compose key”. I checked “Right Alt”, meaning my “AltGr” key is now the compose
 # key. See:  https://help.ubuntu.com/community/GtkComposeTable
-# 
+#
 # *  æ =` Shift-RightAlt ae`
 # *  ø = `Shift-RightAlt o/`
 # *  å = `Shift-RightAlt aa`
@@ -31,13 +31,20 @@
 # Find out what programs that have manually been installed on a system (usufull when clean-installing at upgrade):
 # comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
-# Standard tools needed for install 
+# Standard tools needed for install
 sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince baobab htop\
     vlc redshift-gtk guake gkrellm nmap recordmydesktop \
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common\
     pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes isort build-essential\
     tilix cloudsql-proxy
+
+# Local MySQL Database for testing
+# $ sudo apt install mysql-server
+# $ sudo mysql
+# Do not execute the code below before setting a password
+# mysql> CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
+# mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
 # Install keybase
 curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
@@ -75,7 +82,7 @@ dconf load /com/canonical/indicator/datetime/ < settings-indicator-datetime.dcon
 dconf load /org/mate/desktop/background/ < settings-mate-desktop-background.dconf
 
 # Extra media
-# sudo apt install gimp-ufraw acidrip calibre darktablehandbrake mediainfo 
+# sudo apt install gimp-ufraw acidrip calibre darktablehandbrake mediainfo
 
 # Extra tools
 # sudo apt install spshotredshift-gtk filezilla x2goclient
