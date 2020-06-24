@@ -47,6 +47,7 @@ run_keybase
 # VS code and SQL operations
 sudo snap install vscode --classic
 sudo snap install slack --classic
+sudo snap install kubectl --classic
 sudo snap install aws-cli --classic
 sudo snap install datagrip --classic
 sudo snap install node --classic --edge  # Needed for jupyter
