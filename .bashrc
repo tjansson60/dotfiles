@@ -100,6 +100,7 @@ alias gitpurge_deleted_branched="    git fetch --all -p; git branch -vv | grep '
 alias gitpurge_deleted_branched_dry="git fetch --all -p; git branch -vv | grep ': gone]'"
 
 # VIM setup
+export PYTHONBREAKPOINT="pudb.set_trace"
 export EDITOR=vim
 export SVN_EDITOR=vim
 export GIT_EDITOR=vim
