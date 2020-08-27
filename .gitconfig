@@ -28,7 +28,7 @@
     br = branch
     st = status
     last = log -10 --graph
-    untage = reset --
+    unstage = reset --
 
 # Using meld as diff and merge tool
 [diff]

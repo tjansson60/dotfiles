@@ -31,13 +31,15 @@ let g:python3_host_prog = '~/miniconda3/bin/python'
 " General
 Plug 'tpope/vim-sensible' "A universal set of defaults that (hopefully) everyone can agree on.
 Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-Plug 'godlygeek/tabular' "Vim script for text filtering and alignment
+Plug 'godlygeek/tabular' "Vim script for text filtering and alignment, TODO: consider vim-easy-align
 Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
 Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
 Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
 Plug 'shmup/vim-sql-syntax' " SQL syntax checker
+Plug 'tpope/vim-commentary' " Comment stuff out. Use gcc to comment out a line (takes a count), gc to comment out the target 
+" Plug 'amdt/vim-niji'  " Niji (Rainbow) is yet another rainbow parentheses plugin for Vim.
 " Plug 'davidhalter/jedi-vim' " jedi-vim is a VIM binding to the autocompletion library Jedi. But it is soooo slow.
 
 " Colors and highlighting
