@@ -76,6 +76,10 @@ dconf load /apps/guake/ < settings-guake.dconf # Load
 # dconf dump /com/canonical/indicator/datetime/ > settings-indicator-datetime.dconf
 dconf load /com/canonical/indicator/datetime/ < settings-indicator-datetime.dconf
 
+# Make clock settings (24-hour settings, week numbers etc). After Mate 20.10
+# dconf dump /org/ayatana/indicator/datetime/ > settings-indicator-datetime-ayatana.dconf
+dconf load /org/ayatana/indicator/datetime/ < settings-indicator-datetime-ayatana.dconf
+
 # Set up the background image
 # dconf write  /org/mate/desktop/background/picture-filename "'/home/tjansson/code/dotfiles/background-traffic-in-denmark.png'"
 # dconf dump /org/mate/desktop/background/ > settings-mate-desktop-background.dconf
