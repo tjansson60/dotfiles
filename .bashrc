@@ -42,6 +42,10 @@ ulimit -S -c 0 # Don't want coredumps.
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
+# Set up simple markdown based notes
+export NOTE_DIR=$HOME/notes
+alias mynote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
+
 # Try to load git __git_ps1 if possible
 if [ -f /usr/lib/git-core/git-sh-prompt  ]; then
     source /usr/lib/git-core/git-sh-prompt
