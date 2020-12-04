@@ -45,6 +45,7 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 # Set up simple markdown based notes. Inspired by https://github.com/hachibu/note.sh and inplemented using:
 # * Syncthing on laptop: http://ubuntuhandbook.org/index.php/2020/11/install-syncthing-gtk-ubuntu-20-10/
 # * Syncthing on server: https://docs.syncthing.net/users/autostart.html#linux  using system level systemd
+# Monitor on server: sudo systemctl status syncthing@tjansson.service 
 export NOTE_DIR=$HOME/Documents/syncthing/notes
 alias mynote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
 
