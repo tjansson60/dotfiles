@@ -43,7 +43,7 @@ unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
 # Set up simple markdown based notes. Inspired by https://github.com/hachibu/note.sh
-export NOTE_DIR=$HOME/notes
+export NOTE_DIR=$HOME/Documents/syncthing/notes
 alias mynote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
 
 # Try to load git __git_ps1 if possible
