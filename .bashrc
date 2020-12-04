@@ -42,7 +42,7 @@ ulimit -S -c 0 # Don't want coredumps.
 unset MAILCHECK # Don't want my shell to warn me of incoming mail.
 export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 
-# Set up simple markdown based notes
+# Set up simple markdown based notes. Inspired by https://github.com/hachibu/note.sh
 export NOTE_DIR=$HOME/notes
 alias mynote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
 
