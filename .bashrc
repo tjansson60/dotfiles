@@ -46,6 +46,7 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 # * Syncthing on laptop: http://ubuntuhandbook.org/index.php/2020/11/install-syncthing-gtk-ubuntu-20-10/
 # * Syncthing on server: https://docs.syncthing.net/users/autostart.html#linux  using system level systemd
 # Monitor on server: sudo systemctl status syncthing@tjansson.service 
+# Manage: firefox https://127.0.0.1:8384/ (use special user and pw)
 export NOTE_DIR=$HOME/Documents/syncthing/notes
 alias takenote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
 
