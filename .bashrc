@@ -47,7 +47,7 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 # * Syncthing on server: https://docs.syncthing.net/users/autostart.html#linux  using system level systemd
 # Monitor on server: sudo systemctl status syncthing@tjansson.service 
 export NOTE_DIR=$HOME/Documents/syncthing/notes
-alias mynote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
+alias takenote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
 
 # Try to load git __git_ps1 if possible
 if [ -f /usr/lib/git-core/git-sh-prompt  ]; then
