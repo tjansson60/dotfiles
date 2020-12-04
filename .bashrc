@@ -49,6 +49,7 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 # Manage: firefox https://127.0.0.1:8384/ (use special user and pw)
 export NOTE_DIR=$HOME/Documents/syncthing/notes
 alias takenote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
+function takenotegrep() { grep -i -n --color='auto' "${1}" "$NOTE_DIR"/*.md; }
 
 # Try to load git __git_ps1 if possible
 if [ -f /usr/lib/git-core/git-sh-prompt  ]; then
