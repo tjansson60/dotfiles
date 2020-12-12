@@ -62,6 +62,13 @@ Plug 'SirVer/ultisnips' " Code snippiets
 Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
 call plug#end()
 
+" Tips from the article
+" Learn vim For the Last Time: A Tutorial and Primer
+" https://danielmiessler.com/study/vim/
+inoremap jk <ESC> 
+let mapleader = " " " remap the leader key to space
+set clipboard=unnamedplus
+
 " Set up supertab to use jedi-vim
 let g:SuperTabDefaultCompletionType = "context"
 
