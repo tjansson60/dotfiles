@@ -62,8 +62,7 @@ Plug 'SirVer/ultisnips' " Code snippiets
 Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
 call plug#end()
 
-" Tips from the article
-" Learn vim For the Last Time: A Tutorial and Primer
+" Tips from the article: Learn vim For the Last Time: A Tutorial and Primer
 " https://danielmiessler.com/study/vim/
 inoremap jk <ESC> 
 let mapleader = " " " remap the leader key to space
@@ -84,7 +83,6 @@ let g:completor_complete_options = 'menuone,noselect,preview'
 let g:indentLine_fileTypeExclude = ['haskell', 'json', 'yaml', 'markdown', 'text', 'sh', 'vim']
 let g:indentLine_conceallevel = 1 " may or may not be required
 let g:indentLine_setConceal = 1
-
 
 " takac/vim-hardtime
 " use :HardTimeToggle toggle it on an off
@@ -115,13 +113,6 @@ endif
 set t_BE= "Avoid 0~ and 1~ when copy pasting
 let g:airline#extensions#tabline#enabled = 1
 
-"tender
-" colorscheme tender
-" let g:airline_theme = 'tender'
-" Make search more bright
-" highlight Search term=standout ctermfg=3 cterm=standout
-" highlight Visual term=standout ctermfg=4 cterm=standout
-
 " Dark " Oceanic
 " let g:material_style='oceanic'
 let g:material_terminal_italics = 1
@@ -132,18 +123,6 @@ highlight GitGutterAdd ctermfg=green
 highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
-
-
-" gruvbox material
-" colorscheme gruvbox-material
-" let g:airline_theme = 'gruvbox_material'
-" let g:gruvbox_material_background = 'hard'
-" let g:gruvbox_material_enable_bold = 1
-
-" gruvbox
-"colorscheme gruvbox
-"let g:airline_theme = 'gruvbox'
-"let g:gruvbox_background = 'hard'
 
 syntax enable
 
