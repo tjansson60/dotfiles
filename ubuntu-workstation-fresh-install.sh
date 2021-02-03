@@ -36,7 +36,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
     vlc redshift-gtk guake gkrellm nmap recordmydesktop \
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common\
-    pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes isort build-essential\
+    pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes3 isort build-essential\
     tilix cloudsql-proxy
 
 # Local MySQL Database for testing
