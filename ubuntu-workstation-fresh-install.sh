@@ -64,9 +64,10 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 
-##############
+#########################################
 # I3 - Use mate with an i3 window manager
-##############
+# https://mattgreer.dev/blog/mate-and-i3/
+#########################################
 # dconf dump /org/mate/desktop/session/ > settings-mate-use-i3-as-wm.dconf
 dconf load /org/mate/desktop/session/ < settings-mate-use-i3-as-wm.dconf
 ln -s  ~/code/dotfiles/i3.config ~/.config/i3/config
