@@ -48,7 +48,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
 
 # Install keybase
 curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
-sudo apt install ./keybase_amd64.deb
+sudo apt install ./keybase_amd65.deb
 run_keybase
 
 # VS code and SQL operations
@@ -63,6 +63,13 @@ sudo snap install node --classic --edge  # Needed for jupyter
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
+
+##############
+# I3 - Use mate with an i3 window manager
+##############
+# dconf dump /org/mate/desktop/session/ > settings-mate-use-i3-as-wm.dconf
+dconf load /org/mate/desktop/session/ < settings-mate-use-i3-as-wm.dconf
+ln -s  ~/code/dotfiles/i3.config ~/.config/i3/config
 
 # Tilix settings
 # dconf dump /com/gexperts/Tilix/ > settings-tilix.dconf # Save

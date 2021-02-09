@@ -1,0 +1,7 @@
+[/]
+required-components-list=['windowmanager', 'panel']
+session-start=1612860764
+
+[required-components]
+dock=''
+windowmanager='i3'
