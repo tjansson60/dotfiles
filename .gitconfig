@@ -34,6 +34,7 @@
 [diff]
     tool = meld
     mnemonicprefix = true
+	colorMoved = zebra
 
 [difftool]
     prompt = false
@@ -52,3 +53,10 @@
     trustExitCode = true
     cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
+# Use rebasing instead of merge to avoid extra commits and cleaner history
+[pull]
+    rebase = true
+
+# Will delete inaccessible Git objects in your local repository that aren’t on remote. (removed old branches)
+[fetch]
+	prune = true
