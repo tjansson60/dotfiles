@@ -67,6 +67,9 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 #########################################
 # I3 - Use mate with an i3 window manager
 # https://mattgreer.dev/blog/mate-and-i3/
+# Use the dconf-editor. 
+# * Change  org > mate > desktop > session > required-components. Change windowmanager from marco to i3.
+# * Change  org > mate > desktop > session and in required-component-list, delete filemanager
 #########################################
 # dconf dump /org/mate/desktop/session/ > settings-mate-use-i3-as-wm.dconf
 dconf load /org/mate/desktop/session/ < settings-mate-use-i3-as-wm.dconf
