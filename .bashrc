@@ -136,11 +136,11 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # If possible try to load conda aliases
-if [ -f ~/code/connectedcars/data-quality/.conda_aliases ]; then
-    source ~/code/connectedcars/data-quality/.conda_aliases
+if [ -f ~/code/connectedcars/docker-python/.conda_aliases ]; then
+    source ~/code/connectedcars/docker-python/.conda_aliases
 fi
-if [ -f ~/code/data-quality/.conda_aliases ]; then
-    source ~/code/data-quality/.conda_aliases
+if [ -f ~/code/docker-python/.conda_aliases ]; then
+    source ~/code/docker-python/.conda_aliases
 fi
 
 # >>> conda initialize >>>
