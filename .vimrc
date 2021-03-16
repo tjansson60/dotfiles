@@ -34,6 +34,7 @@ Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder fo
 Plug 'godlygeek/tabular' "Vim script for text filtering and alignment, TODO: consider vim-easy-align
 Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
 Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
+Plug 'zivyangll/git-blame.vim' " See Git Blame information in the status bar for the currently selected line.
 Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
@@ -123,6 +124,15 @@ highlight GitGutterAdd ctermfg=green
 highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>gu <Plug>GitGutterUndoHunk
+
+" https://github.com/zivyangll/git-blame.vim
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
+" Changing vim’s option for updatetime from the default of 4000 to ~100 makes the gutter signs appear more responsive:
+set updatetime=100
 
 syntax enable
 
