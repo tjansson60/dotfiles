@@ -37,7 +37,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common\
     pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes3 isort build-essential\
-    tilix cloudsql-proxy i3
+    tilix cloudsql-proxy i3 clipit
 
 # Local MySQL Database for testing
 # $ sudo apt install mysql-server
