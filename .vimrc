@@ -34,7 +34,7 @@ Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder fo
 Plug 'godlygeek/tabular' "Vim script for text filtering and alignment, TODO: consider vim-easy-align
 Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
 Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
-Plug 'zivyangll/git-blame.vim' " See Git Blame information in the status bar for the currently selected line.
+Plug 'zivyangll/git-blame.vim' " See Git Blame information in the status bar for the currently selected line, Leader +s 
 Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
 Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
@@ -93,7 +93,8 @@ let g:hardtime_showmsg = 1
 " RRethy/vim-illuminate
 " you can output all groups currently active using a script that comes with Vim. Running :so
 " $VIMRUNTIME/syntax/hitest.vim will show something 
-hi link illuminatedWord TabLine
+" hi link illuminatedWord TabLine
+hi link illuminatedWord Visual
 let g:Illuminate_delay = 250 " Default 250 ms
 
 " Persistent undo
