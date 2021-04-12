@@ -149,9 +149,8 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " Folding
-setlocal foldmethod=indent
-set foldlevelstart=20
-"setlocal foldmethod=manual
+setlocal foldmethod=syntax
+set foldlevelstart=99
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 " vnoremap <Space> zf
 function! ToogleFold()
@@ -165,6 +164,9 @@ function! ToogleFold()
         set foldlevel=20
     endif
 endfunction
+
+" Toggle code folding on and off
+nnoremap <F10> :call ToogleFold()<CR>
 
 " Move between tabs
 set tabpagemax=50
@@ -277,9 +279,6 @@ imap <F6> <C-o>:call MySpellLang()<CR>
 " Move between tabs
 map <F8> :tabp<cr>
 map <F9> :tabn<cr>
-
-" Toggle code folding on and off
-nnoremap <F10> :call ToogleFold()<CR>
 
 
 """"""""""""""""""""""

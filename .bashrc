@@ -51,6 +51,9 @@ export NOTE_DIR=$HOME/Documents/syncthing/notes
 alias takenote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
 function takenotegrep() { grep -i -n --color='auto' "${1}" "$NOTE_DIR"/*.md; }
 
+# Use vim for manpages:
+export MANPAGER="vim -M +MANPAGER -"
+
 # Try to load git __git_ps1 if possible
 if [ -f /usr/lib/git-core/git-sh-prompt  ]; then
     source /usr/lib/git-core/git-sh-prompt
