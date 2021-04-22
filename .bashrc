@@ -21,9 +21,16 @@ else
     bind 'set completion-ignore-case on' # Ignores the case in the above
 fi
 
-shopt -s histappend histreedit histverify
-shopt -s globstar #If set, the pattern ** used in a pathname expansion context will match all files and zero or more directories and subdirectories
+set -C # The noclobber option prevents you from overwriting existing files with the > operator.
+shopt -s dirspell # attempts spelling correction on directory names during word completion if the directory name initially supplied does not exist.
+shopt -s cdspell # automatically corrects small typos in directory names
+shopt -s histappend # istory list is appended to the file named by the value of the HISTFILE variable when the shell exits, rather than overwriting the file.
+shopt -s histreedit # If set, and Readline is being used, a user is given the opportunity to re-edit a failed history substitution.
+shopt -s histverify # If set, and Readline is being used, the results of history substitution are not immediately passed to the shell parser. Instead, the resulting line is loaded into the Readline editing buffer, allowing further modification.
+shopt -s globstar # If set, the pattern ** used in a pathname expansion context will match all files and zero or more directories and subdirectories
+shopt -s nocaseglob # The nocaseglob option is similar to the dotglob option, except nocaseglob causes differences in upper- and lowercase letters in file names and directories to be ignored in name expansions.
 shopt -s checkwinsize # Check the window size after each command, and update LINES and COLUMNS if the size has changed.
+
 export HISTFILESIZE=5000 # the bash history should save 3000 commands
 export HISTCONTROL=ignoredups #don't put duplicate lines in the history.
 export HISTIGNORE="&:ls:cd:bg:fg:ll" # ignore these commands in history
