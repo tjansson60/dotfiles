@@ -42,7 +42,7 @@ Plug 'shmup/vim-sql-syntax' " SQL syntax checker
 Plug 'tpope/vim-commentary' " Comment stuff out. Use gcc to comment out a line (takes a count), gc to comment out the target
 " Plug 'amdt/vim-niji'  " Niji (Rainbow) is yet another rainbow parentheses plugin for Vim.
 " Plug 'davidhalter/jedi-vim' " jedi-vim is a VIM binding to the autocompletion library Jedi. But it is soooo slow.
-Plug 'ambv/black'  " Black is the uncompromising Python code formatter.
+Plug 'ambv/black'  " Black is the uncompromising Python code formatter. rm -rf ~/.vim/black and sudo apt-get install python3-venv
 
 " Colors and highlighting
 Plug 'vim-airline/vim-airline-themes'
