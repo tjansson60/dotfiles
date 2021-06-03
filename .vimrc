@@ -33,15 +33,16 @@ Plug 'tpope/vim-sensible' "A universal set of defaults that (hopefully) everyone
 Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plug 'godlygeek/tabular' "Vim script for text filtering and alignment, TODO: consider vim-easy-align
 Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
-Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed. 
-Plug 'zivyangll/git-blame.vim' " See Git Blame information in the status bar for the currently selected line, Leader +s 
-Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files 
+Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
+Plug 'zivyangll/git-blame.vim' " See Git Blame information in the status bar for the currently selected line, Leader +s
+Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
-Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience. 
+Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
 Plug 'shmup/vim-sql-syntax' " SQL syntax checker
-Plug 'tpope/vim-commentary' " Comment stuff out. Use gcc to comment out a line (takes a count), gc to comment out the target 
+Plug 'tpope/vim-commentary' " Comment stuff out. Use gcc to comment out a line (takes a count), gc to comment out the target
 " Plug 'amdt/vim-niji'  " Niji (Rainbow) is yet another rainbow parentheses plugin for Vim.
 " Plug 'davidhalter/jedi-vim' " jedi-vim is a VIM binding to the autocompletion library Jedi. But it is soooo slow.
+Plug 'ambv/black'  " Black is the uncompromising Python code formatter.
 
 " Colors and highlighting
 Plug 'vim-airline/vim-airline-themes'
@@ -49,7 +50,7 @@ Plug 'sheerun/vim-polyglot' " A collection of language packs for Vim.
 Plug 'lilydjwg/colorizer' "Colorize HEX codes
 Plug 'hzchirs/vim-material' " Color theme, https://github.com/hzchirs/vim-material
 Plug 'RRethy/vim-illuminate' " highlights the words in the current buffer matching the one under the cursor
-Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level 
+Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lines at each indentation level
 " Plug 'sainnhe/gruvbox-material' " Easy on the eyes colorscheme
 " Plug 'morhetz/gruvbox' " Original gruvbox
 " Plug 'flazz/vim-colorschemes' " http://vimcolors.com/?utf8=%E2%9C%93&bg=dark&colors=term&order=newest&page=3
@@ -65,7 +66,7 @@ call plug#end()
 
 " Tips from the article: Learn vim For the Last Time: A Tutorial and Primer
 " https://danielmiessler.com/study/vim/
-inoremap jk <ESC> 
+inoremap jk <ESC>
 let mapleader = " " " remap the leader key to space
 set clipboard=unnamedplus
 
@@ -85,6 +86,10 @@ let g:indentLine_fileTypeExclude = ['haskell', 'json', 'yaml', 'markdown', 'text
 let g:indentLine_conceallevel = 1 " may or may not be required
 let g:indentLine_setConceal = 1
 
+" Black
+let g:black_linelength = 120
+" autocmd BufWritePost *.py execute ':Black'
+
 " takac/vim-hardtime
 " use :HardTimeToggle toggle it on an off
 let g:hardtime_default_on = 0
@@ -92,7 +97,7 @@ let g:hardtime_showmsg = 1
 
 " RRethy/vim-illuminate
 " you can output all groups currently active using a script that comes with Vim. Running :so
-" $VIMRUNTIME/syntax/hitest.vim will show something 
+" $VIMRUNTIME/syntax/hitest.vim will show something
 " hi link illuminatedWord TabLine
 hi link illuminatedWord Visual
 let g:Illuminate_delay = 250 " Default 250 ms
@@ -154,9 +159,9 @@ set foldlevelstart=99
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 " vnoremap <Space> zf
 function! ToogleFold()
-    if &foldlevel >= 20 
-		"Folds all  
-        normal! zM<CR> 
+    if &foldlevel >= 20
+		"Folds all
+        normal! zM<CR>
         set foldlevel=0
     else
 		" Uunfolds everything
@@ -174,16 +179,16 @@ set tabpagemax=50
 " Code linting
 " https://lintlyci.github.io/Flake8Rules/
 " E128, # Continuation line under-indented for visual indent
-" E201, # Whitespace after [. Reason for exclusion: reduces readability of repeated elements of similar lines 
+" E201, # Whitespace after [. Reason for exclusion: reduces readability of repeated elements of similar lines
 " E221, # Multiple spaces before operator
-" E222, # Multiple spaces after operator. Reason for exclusion: increasing readability of repeated elements of similar lines 
+" E222, # Multiple spaces after operator. Reason for exclusion: increasing readability of repeated elements of similar lines
 " E241, # Multiple spaces after ':'
 " E251, # Unexpected spaces around keyword / parameter equals
 " E272, # Multiple spaces before keyword. Reason for exclusion: reduces readability of repeated elements of similar lines
 " E501, # Line too long (82 > 79 characters). Reason for exclusion: reduces readability on modern screens
 " W503 # Line break occurred before a binary operator
 let b:ale_linters = {'python': ['flake8']}  "Remove this line to enable other linters as pylint, but this is slower
-let g:ale_python_flake8_options="--ignore=E128,E201,E221,E222,E241,E251,E272,E501,W503" " https://lintlyci.github.io/Flake8Rules/
+let g:ale_python_flake8_options="--ignore=E128,E201,E221,E222,E241,E251,E272,E501,W503,E203" " https://lintlyci.github.io/Flake8Rules/, E203 removed due to Black https://github.com/psf/black/issues/315
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
@@ -264,7 +269,7 @@ if v:version >= 801
     noremap <F2> :set invnumber invrelativenumber <bar> :IndentLinesToggle<CR> <bar> :GitGutterToggle<CR> <bar> :ALEToggle<CR>
 endif
 
-" Toggle pasting mode on and off 
+" Toggle pasting mode on and off
 set pastetoggle=<F3>
 
 " Remove trailing whitespaces from all lines
@@ -295,5 +300,5 @@ map <S-F6> :Tabularize /,\zs<cr>
 map <S-F7> :Tabularize /:\zs<cr>
 "Tabularize elements of a CSV
 map <S-F8> :Tabularize /;\zs<cr>
-" Python list of strings 
+" Python list of strings
 map <S-F9> :Tabularize /',\zs<cr>
