@@ -54,9 +54,9 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 # * Syncthing on server: https://docs.syncthing.net/users/autostart.html#linux  using system level systemd
 # Monitor on server: sudo systemctl status syncthing@tjansson.service 
 # Manage: firefox https://127.0.0.1:8384/ (use special user and pw)
-export NOTE_DIR=$HOME/Documents/syncthing/notes
-alias takenote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
-function takenotegrep() { grep -i -n --color='auto' "${1}" "$NOTE_DIR"/*.md; }
+# export NOTE_DIR=$HOME/Documents/syncthing/notes
+# alias takenote="vim $NOTE_DIR/$(date +'%Y-%m-%d-'$HOSTNAME ).md"
+# function takenotegrep() { grep -i -n --color='auto' "${1}" "$NOTE_DIR"/*.md; }
 
 # Use vim for manpages:
 export MANPAGER="vim -M +MANPAGER -"
@@ -117,6 +117,13 @@ alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake 
 # https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
 alias gitpurge_deleted_branched="    git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$2 }' | xargs -n 1 git branch -d"
 alias gitpurge_deleted_branched_dry="git fetch --all -p; git branch -vv | grep ': gone]'"
+
+# Johnny decimal function
+cjdfunction() { 
+    pushd ~/**/${1}* 
+}
+export cjdfunction
+alias cjd='cjdfunction' # Or any other alias you prefer.
 
 # VIM setup
 export PYTHONBREAKPOINT="pudb.set_trace"
