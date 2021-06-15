@@ -15,6 +15,14 @@
 # In Ubuntu MATE, you can customise what key is the compose key by opening “Keyboard”, clicking “Layouts”, then “Options…”
 # and checking a box under “Position of compose key”. I checked “Right Alt”, meaning my “AltGr” key is now the compose
 # key. See:  https://help.ubuntu.com/community/GtkComposeTable
+# 
+# In vanilla ubuntu (gnome shell) the tool to install is gnome-tweaks and read:
+# https://help.ubuntu.com/stable/ubuntu-help/tips-specialchars.html.en
+# * Open the Activities overview and start typing Tweaks.
+# * Click Tweaks to open the application.
+# * Click the Keyboard & Mouse tab.
+# * Click Disabled next to the Compose Key setting.
+# * Turn the switch on in the dialog and pick the keyboard shortcut you want to use.
 #
 # *  æ =` Shift-RightAlt ae`
 # *  ø = `Shift-RightAlt o/`
