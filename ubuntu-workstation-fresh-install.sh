@@ -1,5 +1,5 @@
 #!/bin/sh
-
+       
 # ## Installation
 #
 # * Install Anaconda: https://www.anaconda.com/download
@@ -45,7 +45,17 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common\
     pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes3 isort build-essential\
-    tilix cloudsql-proxy i3 diodon
+    tilix cloudsql-proxy
+
+# Mate i3 setup
+sudo apt install i3 diodon
+
+# Gnome shell setup
+# sudo apt-get install chrome-gnome-shell gnome-shell-extensions gnome-shell-extension-weather\
+#     gnome-shell-extension-system-monitor gnome-shell-extension-multi-monitors gnome-shell-extension-caffeine\
+#     gnome-tweaks gnome-shell-extension-impatience gnome-shell-extension-no-annoyance
+# Install https://extensions.gnome.org/extension/28/gtile/ using firefox
+
 
 # Local MySQL Database for testing
 # $ sudo apt install mysql-server
