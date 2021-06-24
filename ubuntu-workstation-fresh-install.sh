@@ -45,7 +45,9 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
     iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git pwgen\
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common\
     pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes3 isort build-essential\
-    tilix cloudsql-proxy
+    tilix cloudsql-proxy 
+
+sudo apt install  gnome-shell-extension-tilix-shortcut gnome-shell-extension-tilix-dropdown
 
 # Mate i3 setup
 sudo apt install i3 diodon
