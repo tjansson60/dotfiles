@@ -47,6 +47,10 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
     pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes3 isort build-essential\
     tilix cloudsql-proxy 
 
+# Using tillix as a quake alternative - https://gnunn1.github.io/tilix-web/manual/quake/
+# When you register the hot key, simply bind it to the following command: `tilix --quake`
+# When Tilix is run with the --quake switch, it will check if a quake style window is already running and if so simply toggle the window’s visibility. If no quake style window has been created, then Tilix will create one and display it.
+# Configuring this hot key for GNOME is quite simple, simply open the Keyboard settings and configure a hot key as per the example in the screenshot below:
 sudo apt install  gnome-shell-extension-tilix-shortcut gnome-shell-extension-tilix-dropdown
 
 # Mate i3 setup
