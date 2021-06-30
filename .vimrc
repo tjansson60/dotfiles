@@ -99,7 +99,7 @@ let g:hardtime_showmsg = 1
 " you can output all groups currently active using a script that comes with Vim. Running :so
 " $VIMRUNTIME/syntax/hitest.vim will show something
 " hi link illuminatedWord TabLine
-hi link illuminatedWord Visual
+" hi link illuminatedWord Visual
 let g:Illuminate_delay = 250 " Default 250 ms
 
 " Persistent undo
