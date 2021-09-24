@@ -178,5 +178,7 @@ unset __conda_setup
 
 # Execute the dev enviroment if possible
 if [ -f "/home/$USER/miniconda3/etc/profile.d/conda.sh" ]; then
-    conda activate dev
+    if [ $HOSTNAME != "kelvin" ]; then
+        conda activate dev
+    fi
 fi
