@@ -54,13 +54,13 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
 sudo apt install  gnome-shell-extension-tilix-shortcut gnome-shell-extension-tilix-dropdown
 
 # Mate i3 setup
-sudo apt install i3 diodon
+# sudo apt install i3 diodon
 
 # Gnome shell setup
 # sudo apt-get install chrome-gnome-shell gnome-shell-extensions gnome-shell-extension-weather\
 #     gnome-shell-extension-system-monitor gnome-shell-extension-multi-monitors gnome-shell-extension-caffeine\
 #     gnome-tweaks gnome-shell-extension-impatience gnome-shell-extension-no-annoyance
-# Install https://extensions.gnome.org/extension/28/gtile/ using firefox
+# Install https://extensions.gnome.org/extension/28/gtile/ using firefox - tiling like fancyzones for windows, powertoys
 
 
 # Local MySQL Database for testing
