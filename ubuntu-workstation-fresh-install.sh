@@ -96,8 +96,8 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 # * Change  org > mate > desktop > session and in required-component-list, delete filemanager
 #########################################
 # dconf dump /org/mate/desktop/session/ > settings-mate-use-i3-as-wm.dconf
-dconf load /org/mate/desktop/session/ < settings-mate-use-i3-as-wm.dconf
-ln -s  ~/code/dotfiles/i3.config ~/.config/i3/config
+# dconf load /org/mate/desktop/session/ < settings-mate-use-i3-as-wm.dconf
+# ln -s  ~/code/dotfiles/i3.config ~/.config/i3/config
 
 # Tilix settings
 # dconf dump /com/gexperts/Tilix/ > settings-tilix.dconf # Save
