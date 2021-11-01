@@ -65,8 +65,8 @@ sudo apt install  gnome-shell-extension-tilix-shortcut gnome-shell-extension-til
 
 # Local MySQL Database for testing
 # $ sudo apt install mysql-server
+# $ sudo mysql_secure_installation # This sets the password
 # $ sudo mysql
-# Do not execute the code below before setting a password
 # mysql> CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
 # mysql> GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
