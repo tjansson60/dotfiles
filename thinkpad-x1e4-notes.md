@@ -1,8 +1,10 @@
 # Change the video modes 
-sudo prime-select intel  # Good battery, but not functional HDMI
-sudo prime-select nvidia  # Horrible battery, but good HDMI
-sudo prime-select on-demand  # Good battery, somewhat working HDMI
-sudo prime-select query
+`sudo prime-select intel`  # Good battery, but not functional HDMI
+`sudo prime-select nvidia`  # Horrible battery, but good HDMI
+`sudo prime-select on-demand`  # Good battery, somewhat working HDMI
+`sudo prime-select query`
+
+The best battery performance yet was archived by using the nouveau driver instead of the proprietary nvidia driver.
 
 # Powertop suggested recommendation
 ```
