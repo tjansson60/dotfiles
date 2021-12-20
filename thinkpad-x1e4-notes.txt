@@ -1,8 +1,0 @@
-sudo prime-select intel  # Good battery, but not functional HDMI
-sudo prime-select nvidia  # Horrible battery, but good HDMI
-sudo prime-select on-demand  # Good battery, somewhat working HDMI
-sudo prime-select query
-
-# Powertop suggested recommendation
-#sudo apt-get remove irqbalance
-http://konkor.github.io/cpufreq/faq/
