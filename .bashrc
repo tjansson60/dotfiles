@@ -102,6 +102,7 @@ if [ "$TERM" != "dumb" ]; then
 fi
 
 # User specific aliases and functions
+alias pwgen="pwgen 12"
 alias ccat="pygmentize -g" # Color highlighting cat function, requires pygmentize python program
 alias mv="mv -i"
 alias cp="cp -i"
