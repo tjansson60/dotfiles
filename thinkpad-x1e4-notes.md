@@ -6,6 +6,24 @@
 
 The best battery performance yet was archived by using the nouveau driver instead of the proprietary nvidia driver.
 
+
+# Lid suspends the laptop
+
+
+https://fostips.com/lid-close-action-ubuntu-21-04-laptop/
+
+Edit and uncomment `/etc/systemd/logind.conf`:
+
+* `#HandleLidSwitchDocked=ignore` – If your system is inserted in a docking station, or if more than one display is
+connected, then the action occurs if specified.
+* `#HandleLidSwitchExternalPower=suspend` – If your system is on external power, the action occurs if specified.
+* `#HandleLidSwitch=suspend` – For all other cases, the value of HandleLidSwitch will occur if enabled.
+
+Afterward restart
+```
+sudo systemctl restart systemd-logind.service
+```
+
 # Powertop suggested recommendation
 ```
 sudo apt-get remove irqbalance
