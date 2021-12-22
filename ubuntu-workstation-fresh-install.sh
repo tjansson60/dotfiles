@@ -120,6 +120,10 @@ dconf load /org/ayatana/indicator/datetime/ < settings-indicator-datetime-ayatan
 # dconf dump /org/mate/desktop/background/ > settings-mate-desktop-background.dconf
 dconf load /org/mate/desktop/background/ < settings-mate-desktop-background.dconf
 
+# Make Gnome Shell start a interactive screenshot tool and not the annoying automatic save to home default
+# dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > settings-gnome-screenshot.dconf
+dconf load /org/gnome/settings-daemon/plugins/media-keys/ < settings-gnome-screenshot.dconf 
+
 # Extra media
 # sudo apt install gimp-ufraw acidrip calibre darktablehandbrake mediainfo
 

@@ -1,0 +1,8 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+screenshot=@as []
+
+[custom-keybindings/custom0]
+binding='Print'
+command='gnome-screenshot -i'
+name='Screenshot'
