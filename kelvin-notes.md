@@ -1,5 +1,12 @@
 ## Disable daemons on Debian
 
+### 2022-may-30, netdata
+Disabled netdata alltogether as it is waking the server and is not used. 
+```
+sudo service netdata stop # Kill it now
+sudo systemctl disable netdata # Stop from running at boot
+```
+
 ### 2022-may-30, x2goserver
 Disabled netdata spamming apache acces_log:
 ```
