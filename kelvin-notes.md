@@ -1,5 +1,11 @@
 ## Disable daemons on Debian
 
+### 2022-may-30, x2goserver
+Disabled netdata spamming apache acces_log:
+```
+sudo /etc/netdata/edit-config python.d/apache.conf
+```
+Commented out all the logging. Munin monitoring is enough
 
 ### 2022-may-30, x2goserver
 Not used anymore.
