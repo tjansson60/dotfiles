@@ -2,7 +2,8 @@
 
 ## 2022-jun-12
 
-Removed `syncthing` and `openipmi`. Not used and causing wakeups
+* Removed `syncthing` and `openipmi`. Not used and causing wakeups
+* Applied `power-saveing.md` auto powertop application
 
 ### 2022-may-30, netdata
 Disabled netdata alltogether as it is waking the server and is not used. 
