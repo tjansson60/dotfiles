@@ -1,4 +1,7 @@
-## Disable daemons on Debian
+## Kelvin notes
+
+## 2022-jun-17
+Disabled powertop auto application again. Did make a difference and munin revealed higher utilization
 
 ## 2022-jun-12
 
