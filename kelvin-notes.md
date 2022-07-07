@@ -1,5 +1,22 @@
 ## Kelvin notes
 
+## 2022-jul-7
+
+Problems with apt, uninstalled unneeded libs. Fixed with as `sudo dpkg --configure -a`, `sudo apt-get install -f` didn't
+work
+
+```
+sudo dpkg --remove --force-remove-reinstreq libavcodec59 libavformat59 libgegl-0.4-0 gimp libgimp2.0 xsane
+libchromaprint-tools picard
+```
+
+Also saw this message, will monitor
+```
+plexmediaserver was not running
+/root/restart-plex.sh: line 7: service: command not found
+```
+
+
 ## 2022-jun-17
 Disabled powertop auto application again. Did make a difference and munin revealed higher utilization
 
