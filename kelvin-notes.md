@@ -1,5 +1,23 @@
 ## Kelvin notes
 
+## 2022-jul-29, more apt issues
+
+The problem seems to be libsvtav1enc0
+
+```
+sudo apt remove libsvtav1enc0 libavif14 libavif-dev  libgd-dev
+```
+
+## 2022-jul-9
+
+
+More apt issues removed more unused packages
+
+```
+ sudo apt remove libfreerdp2-2 libfreerdp-client2-2 libfreerdp-server2-2  gnome-remote-desktop  gnome-control-center
+ libavcodec59
+```
+
 ## 2022-jul-7
 
 Problems with apt, uninstalled unneeded libs. Fixed with as `sudo dpkg --configure -a`, `sudo apt-get install -f` didn't
@@ -27,7 +45,7 @@ Disabled powertop auto application again. Did make a difference and munin reveal
 * Removed `preload`
 
 ### 2022-may-30, netdata
-Disabled netdata alltogether as it is waking the server and is not used. 
+Disabled netdata alltogether as it is waking the server and is not used.
 ```
 sudo service netdata stop # Kill it now
 sudo systemctl disable netdata # Stop from running at boot
