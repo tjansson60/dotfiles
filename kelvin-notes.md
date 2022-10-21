@@ -1,4 +1,24 @@
-## Kelvin notes
+# Kelvin notes
+
+## 2022-oct-21, home-assistant
+
+After reinstalling docker using https://docs.docker.com/engine/install/debian/
+`docker system prune -af` was needed to clean up old images. 
+
+https://www.home-assistant.io/installation/linux
+```bash
+docker run -d \
+  --name homeassistant \
+  --privileged \
+  --restart=unless-stopped \
+  -e TZ=Europe/Copenhagen \
+  -v /etc/home-assistant:/config \
+  --network=host \
+  ghcr.io/home-assistant/home-assistant:stable
+```
+
+Access: http://192.168.0.160:8123/
+
 
 ## 2022-jul-29, more apt issues
 
