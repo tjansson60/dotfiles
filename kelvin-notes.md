@@ -16,8 +16,9 @@ docker run -d \
   --network=host \
   ghcr.io/home-assistant/home-assistant:stable
 ```
-
 Access: http://192.168.0.160:8123/
+
+Setup: HACS with https://hacs.xyz/docs/setup/download for container
 
 
 ## 2022-jul-29, more apt issues
