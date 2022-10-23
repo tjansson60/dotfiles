@@ -1,6 +1,35 @@
 # Kelvin notes
 
-## 2022-oct-21, home-assistant
+## 2022-oct-22, home-assistant as VM
+
+So as it can be seen in https://www.home-assistant.io/installation the container version of home-assistant does not
+support all the functionality, but I have kept it for now as the kvm setup is a bit involved at the moment as I need
+bios changes.
+
+```bash
+docker run -d \
+  --name homeassistant \
+  --privileged \
+  --restart=unless-stopped \
+  -e TZ=Europe/Copenhagen \
+  -v /etc/home-assistant/:/config \
+  --network=host \
+  ghcr.io/home-assistant/home-assistant:stable
+```
+
+Things to setup
+
+* Roborock
+* Landroid
+* Temperature sensors
+* Spotify
+* Control heating system
+* Wallbox/Monta
+* Weather
+* Electricity price, nordpool, el-pricer
+
+
+## 2022-oct-21, home-assistant in container
 
 After reinstalling docker using https://docs.docker.com/engine/install/debian/
 `docker system prune -af` was needed to clean up old images. 
