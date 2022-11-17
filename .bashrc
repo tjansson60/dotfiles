@@ -110,7 +110,7 @@ alias rm="rm -i"
 alias bc="bc -l"
 alias ll="ls -lrth"
 alias llz="ls -lrSh"
-alias grep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
+alias tgrep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
