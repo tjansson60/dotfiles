@@ -13,3 +13,4 @@ echo " "
 # Remove a kernel
 echo "Removing a specific kernel" 
 echo "Example: sudo apt remove linux-image-5.14.0-2-amd64"
+echo "Afterwards the following is a good idea: sudo apt autoremove"
