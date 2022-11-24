@@ -76,6 +76,9 @@ curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
 sudo apt install ./keybase_amd65.deb
 run_keybase
 
+# Avoid annoying ubuntu ads or news when using apt
+pro config set apt_news=false
+
 # VS code and SQL operations
 sudo snap install vscode --classic
 sudo snap install slack --classic
