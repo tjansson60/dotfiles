@@ -7,6 +7,8 @@ SFTP.
 The backup is now done monthly by running `rclone-backup-website.sh` through crontab. 
 `00 3   1 * * /home/tjansson/bin/rclone-backup-website.sh`
 
+The rsnapshot backup also does no longer directly backup website, but used the local copies.
+
 ## 2022-oct-22, home-assistant as VM
 
 So as it can be seen in https://www.home-assistant.io/installation the container version of home-assistant does not
