@@ -1,5 +1,12 @@
 # Kelvin notes
 
+## 2022-dec-04, moved away from rsync to rclone
+Moved away from backing up websites using rsync to rclone as one.com increased prices of accessing using SSH, but not
+SFTP. 
+
+The backup is now done monthly by running `rclone-backup-website.sh` through crontab. 
+`00 3   1 * * /home/tjansson/bin/rclone-backup-website.sh`
+
 ## 2022-oct-22, home-assistant as VM
 
 So as it can be seen in https://www.home-assistant.io/installation the container version of home-assistant does not
