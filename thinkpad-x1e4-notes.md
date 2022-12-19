@@ -7,9 +7,10 @@
 
 The best battery performance yet was archived by using the nouveau driver instead of the proprietary nvidia driver.
 
+## Battery stats
+`cat /sys/class/power_supply/BAT0/uevent` 
+
 # Lid suspends the laptop
-
-
 https://fostips.com/lid-close-action-ubuntu-21-04-laptop/
 
 Edit and uncomment `/etc/systemd/logind.conf`:
