@@ -1,5 +1,16 @@
 # Kelvin notes
 
+## 2022-dec-20, Joplin
+
+Installed joplin server using https://hub.docker.com/r/joplin/server and the docker compose file:
+
+* https://github.com/laurent22/joplin/blob/dev/docker-compose.server.ymL
+* https://noted.lol/install-joplin-server-using-docker-compose/
+
+Ended up not deploying
+
+
+
 ## 2022-dec-04, moved away from rsync to rclone
 Moved away from backing up websites using rsync to rclone as one.com increased prices of accessing using SSH, but not
 SFTP. 
