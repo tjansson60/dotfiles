@@ -1,14 +1,26 @@
-# Change the video modes 
+## 2022-dec-28, TLP
+
+> TLP will take care of the majority of settings that powertop --autotune would, and with less trial and error, see Powertop.
+
+https://linrunner.de/tlp/installation/ubuntu.html
+
+```bash
+sudo add-apt-repository ppa:linrunner/tlp # TLP latest
+# sudo add-apt-repository ppa:linuxuprising/apps # TLPUI latest
+sudo apt update
+sudo apt install tlp tlp-rdw
+# sudo apt install tlpui
+sudo apt remove power-profiles-daemon
+sudo apt install acpi-call-dkms
+```
+
+# Change the video modes
 * `sudo prime-select intel`  # Good battery, but not functional HDMI
 * `sudo prime-select nvidia`  # Horrible battery, but good HDMI
 * `sudo prime-select on-demand`  # Good battery, somewhat working HDMI
 * `sudo prime-select query`
 
-
 The best battery performance yet was archived by using the nouveau driver instead of the proprietary nvidia driver.
-
-## Battery stats
-`cat /sys/class/power_supply/BAT0/uevent` 
 
 # Lid suspends the laptop
 https://fostips.com/lid-close-action-ubuntu-21-04-laptop/
@@ -53,3 +65,6 @@ Then run:
 sudo update-grub
 ```
 And restart the laptop.
+
+## Battery stats
+`cat /sys/class/power_supply/BAT0/uevent`
