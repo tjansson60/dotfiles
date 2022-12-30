@@ -8,6 +8,11 @@ sudo apt update
 sudo apt install -y mainline
 ```
 
+Working afterwards, but reinstalling the nvidia driver:
+```
+sudo apt reinstall nvidia-driver-525
+```
+
 ## 2022-dec-28, TLP
 
 > TLP will take care of the majority of settings that powertop --autotune would, and with less trial and error, see Powertop.
