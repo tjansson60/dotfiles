@@ -1,3 +1,17 @@
+## 2023-jan-02, External screen 
+
+It is possible to control the brightness of an external screen. First find the names of the screens:
+```
+> xrandr -q | grep " connected"
+eDP-1 connected (normal left inverted right x axis y axis)
+DP-1-0 connected primary 2560x1440+0+0 (normal left inverted right x axis y axis) 600mm x 340mm
+```
+
+Then set the brightness:
+```
+xrandr --output DP-1-0 --brightness 0.80
+```
+
 ## 2022-dec-30, crashing
 
 Installed kernel 6.0.9 using the mainline tool
