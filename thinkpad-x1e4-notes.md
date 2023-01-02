@@ -12,6 +12,9 @@ Then set the brightness:
 xrandr --output DP-1-0 --brightness 0.80
 ```
 
+Alternatively install `gddccontrol` or `ddcutil` and the gnome extension called `Adjust Display Brightness`: 
+* https://extensions.gnome.org/extension/4652/adjust-display-brightness/
+
 ## 2022-dec-30, crashing
 
 Installed kernel 6.0.9 using the mainline tool
