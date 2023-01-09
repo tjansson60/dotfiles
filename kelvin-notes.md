@@ -7,7 +7,7 @@ Installed joplin server using https://hub.docker.com/r/joplin/server and the doc
 * https://github.com/laurent22/joplin/blob/dev/docker-compose.server.ymL
 * https://noted.lol/install-joplin-server-using-docker-compose/
 
-Ended up not deploying
+Ended up not deploying and using MS onedrive instead.
 
 
 
