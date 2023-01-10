@@ -1,3 +1,12 @@
+
+## 2023-01-10, TLP UI
+
+```
+sudo add-apt-repository ppa:linuxuprising/apps
+sudo apt update
+sudo apt install tlpui
+```
+
 ## 2023-jan-02, External screen 
 
 It is possible to control the brightness of an external screen. First find the names of the screens:
