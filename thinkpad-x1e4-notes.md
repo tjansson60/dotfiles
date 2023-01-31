@@ -1,4 +1,13 @@
 
+## 2023-01-31, remove TLP
+
+* After installing the mainline kernel 6.1.x everything seems more stable
+* TLP does some strange things every now and again. 
+```
+sudo apt remove tlp tlp-rdw tlpui
+sudo apt install power-profiles-daemon
+```
+
 ## 2023-01-10, TLP UI
 
 ```
