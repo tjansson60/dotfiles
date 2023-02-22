@@ -1,3 +1,12 @@
+## 2023-02-22, boot compression
+
+Changed `/etc/initramfs-tools/initramfs.conf` from `COMPRESS=zstd` to `COMPRESS=xz`
+
+Then rebuild the images using
+```
+sudo update-initramfs -u -k all
+```
+
 
 ## 2023-01-31, remove TLP
 
