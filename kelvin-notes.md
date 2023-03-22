@@ -1,5 +1,15 @@
 # Kelvin notes
 
+## 2023-03-22, Remove homeassistant docker
+
+Moving to a dedicated NUC
+
+```
+docker ps # Find the name of the docker
+docker stop homeassistant # Stop the docker container
+docker rm homeassistant # Remove the docker container
+```
+
 ## 2022-dec-20, Joplin
 
 Installed joplin server using https://hub.docker.com/r/joplin/server and the docker compose file:
