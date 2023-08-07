@@ -1,3 +1,33 @@
+## 2023-08-08, apt key problem
+
+Problem
+```
+$ sudo apt update
+Hit:1 http://mirror.one.com/ubuntu kinetic InRelease
+Hit:2 http://mirror.one.com/ubuntu kinetic-updates InRelease
+Hit:3 http://mirror.one.com/ubuntu kinetic-backports InRelease
+Hit:4 http://mirror.one.com/ubuntu kinetic-security InRelease
+Get:5 https://packages.cloud.google.com/apt cloud-sdk InRelease [6.361 B]
+Err:5 https://packages.cloud.google.com/apt cloud-sdk InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05
+  Reading package lists... Done
+  Building dependency tree... Done
+  Reading state information... Done
+  All packages are up to date.
+  W: An error occurred during the signature verification. The repository is not updated and the previous index files
+  will be used. GPG error: https://packages.cloud.google.com/apt cloud-sdk InRelease: The following signatures couldn't
+  be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05
+  W: Failed to fetch https://packages.cloud.google.com/apt/dists/cloud-sdk/InRelease  The following signatures couldn't
+  be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05
+  W: Some index files failed to download. They have been ignored, or old ones used instead.
+````
+
+Solved with
+```bash
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg
+add -
+```
+
 ## 2023-02-22, boot compression
 
 Changed `/etc/initramfs-tools/initramfs.conf` from `COMPRESS=zstd` to `COMPRESS=xz`
