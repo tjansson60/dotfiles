@@ -1,3 +1,21 @@
+## 2023-11-13, Nvidia problems
+
+https://bugs.launchpad.net/ubuntu/+source/linux-nvidia/+bug/2016924
+
+```
+# [drm:nv_drm_master_set [nvidia_drm]] *ERROR* [nvidia-drm] [GPU ID 0x00000100] Failed to grab modeset
+# [drm:nv_drm_master_set [nvidia_drm]] *ERROR* [nvidia-drm] [GPU ID 0x00000100] Failed to grab modeset
+```
+
+> Meshari E (idmbe) wrote on 2023-04-22:2023#1
+> I did to fix this steps:
+
+```
+$ su
+$ echo "blacklist i2c_nvidia_gpu" > /etc/modprobe.d/blacklist_i2c-nvidia-gpu.conf
+$ sudo update-initramfs -u
+```
+
 ## 2023-08-08, apt key problem
 
 Problem
@@ -27,6 +45,14 @@ Solved with
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg
 add -
 ```
+
+## 2023-06-26, Remove Xubuntu 
+
+* `sudo update-alternatives --config default.plymouth`
+* `sudo dpkg-reconfigure lightdm`
+* `sudo apt remove xfce4-appfinder`
+
+>>>>>>> Stashed changes
 
 ## 2023-02-22, boot compression
 
