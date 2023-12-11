@@ -127,7 +127,9 @@ cjdfunction() {
 export cjdfunction
 alias cjd='cjdfunction' # Or any other alias you prefer.
 
+###########
 # VIM setup
+###########
 export PYTHONBREAKPOINT="pudb.set_trace"
 export EDITOR=vim
 export SVN_EDITOR=vim
@@ -140,7 +142,9 @@ if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
 fi
 
+#####################
 # Host specific setup
+#####################
 if [ $HOSTNAME == "pascal" ]; then
     alias sshdyn="ssh -X 192.168.0.160"
 elif [ $HOSTNAME == "VirtualBox" ]; then
@@ -149,11 +153,17 @@ else
     alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
 fi
 
+################
+# Connected Cars
+################
 # Load external aliases if it exists that should not be part of a public GH repo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
+if [ $HOSTNAME == "x1" ]; then
+#    # export REGION='EU1'
+    source ~/code/docker-python/.connections
+fi
 # If possible try to load conda aliases
 if [ -f ~/code/connectedcars/docker-python/.conda_aliases ]; then
     source ~/code/connectedcars/docker-python/.conda_aliases
@@ -161,6 +171,10 @@ fi
 if [ -f ~/code/docker-python/.conda_aliases ]; then
     source ~/code/docker-python/.conda_aliases
 fi
+
+##############
+# CONDA python
+##############
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
