@@ -1,5 +1,21 @@
 # Kelvin notes
 
+## 2024-01-08, Fail2ban update
+
+Updated `/etc/fail2ban/jail.d/defaults-debian.conf`:
+```
++[DEFAULT]
++banaction = nftables
++banaction_allports = nftables[type=allports]
++backend = systemd
++
++ [sshd]
++  enabled = true
++  -maxretry = 10
++  -bantime = 86400
++  
+```
+
 ## 2023-03-22, Remove homeassistant docker
 
 Moving to a dedicated NUC
