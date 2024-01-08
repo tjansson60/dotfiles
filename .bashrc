@@ -150,7 +150,8 @@ if [ $HOSTNAME == "pascal" ]; then
 elif [ $HOSTNAME == "VirtualBox" ]; then
     alias sshdyn="ssh -X 192.168.0.160"
 else
-    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
+    # alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
+    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 22" # port 443 avoids firewalls
 fi
 
 ################
