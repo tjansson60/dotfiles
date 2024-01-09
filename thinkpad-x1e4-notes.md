@@ -1,3 +1,33 @@
+## 2024-01-09, WIFI issues
+
+https://forums.lenovo.com/t5/ThinkPad-X-Series-Laptops/My-nightmare-with-X1-Extreme-%E2%80%93-Very-bad-wifi-signal-%E2%80%93-Bad-design/m-p/4444158?page=3#5226821
+
+```bash
+$ sudo dmidecode -s system-serial-number
+R914MSED
+```
+
+```bash
+$ sudo dmidecode -s bios-version
+N40ET43W (1.25 )
+```
+
+Update to 1.26
+https://pcsupport.lenovo.com/dk/da/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-extreme-4th-gen-type-20y5-20y6/20y5/20y5cto1ww/r914msed/downloads/ds551052-bios-update-utility-bootable-cd-for-windows-10-64-bit-and-linux-thinkpad-p1-gen-4-x1-extreme-gen-4?category=BIOS
+
+> <N40UR23W>
+>  UEFI: 1.26 / ECP: 1.18
+> - [Important] Enhancement to address security vulnerability, CVE-2023-5058.
+> - [Important] Enhancement to address security vulnerability, CVE-2023-23583.
+> - (New) Updated the Diagnostics module to version 04.32.000.
+> - (New) Updated the CPU microcode.
+>     ¦   (Note) Above update will show "Self-Healing BIOS backup progressing ... xx %"
+>     ¦   ¦   ¦  message on screen during BIOS update process.
+> - (Fix) Updated some BIOS Setup help messages.
+> - (Fix) Fixed an issue where Dock power button override is working during firmware update.
+> - (Fix) Thermal improvement for FAN control.
+
+
 ## 2023-11-13, Nvidia problems
 
 https://bugs.launchpad.net/ubuntu/+source/linux-nvidia/+bug/2016924
@@ -46,7 +76,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 add -
 ```
 
-## 2023-06-26, Remove Xubuntu 
+## 2023-06-26, Remove Xubuntu
 
 * `sudo update-alternatives --config default.plymouth`
 * `sudo dpkg-reconfigure lightdm`
@@ -67,7 +97,7 @@ sudo update-initramfs -u -k all
 ## 2023-01-31, remove TLP
 
 * After installing the mainline kernel 6.1.x everything seems more stable
-* TLP does some strange things every now and again. 
+* TLP does some strange things every now and again.
 ```
 sudo apt remove tlp tlp-rdw tlpui
 sudo apt install power-profiles-daemon
@@ -81,7 +111,7 @@ sudo apt update
 sudo apt install tlpui
 ```
 
-## 2023-jan-02, External screen 
+## 2023-jan-02, External screen
 
 It is possible to control the brightness of an external screen. First find the names of the screens:
 ```
@@ -95,7 +125,7 @@ Then set the brightness:
 xrandr --output DP-1-0 --brightness 0.80
 ```
 
-Alternatively install `gddccontrol` or `ddcutil` and the gnome extension called `Adjust Display Brightness`: 
+Alternatively install `gddccontrol` or `ddcutil` and the gnome extension called `Adjust Display Brightness`:
 * https://extensions.gnome.org/extension/4652/adjust-display-brightness/
 
 ## 2022-dec-30, crashing
