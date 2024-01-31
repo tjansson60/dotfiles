@@ -135,7 +135,7 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export GIT_EDITOR=vim
 export VISUAL=vim
-alias vim="vim -p" # Open multiple files in tabs
+alias vim="vim -p -X" # Open multiple files in tabs and avoid X
 # If vim have been build then use this instead
 if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
     export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
@@ -150,8 +150,9 @@ if [ $HOSTNAME == "pascal" ]; then
 elif [ $HOSTNAME == "VirtualBox" ]; then
     alias sshdyn="ssh -X 192.168.0.160"
 else
+    # Removed X as it was needed and slowed something down (vim)
     # alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
-    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 22" # port 443 avoids firewalls
+    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -C -p 22" # port 443 avoids firewalls
 fi
 
 ################
