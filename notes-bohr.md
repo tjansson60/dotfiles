@@ -9,3 +9,6 @@ tested:
 * Extra cooling by adding more Noctua fans etc. 
 * Updated PSU in case the current version could not support the higher power draw from the CPU
 * Disabled XMP profiles in BIOS and other BIOS settings related to low-power states. 
+
+See reddit thread: https://www.reddit.com/r/ryzen/comments/18rcs6u/comment/kf2qklg/ from
+https://www.reddit.com/r/ryzen/comments/18rcs6u/ryzen_9_5900x_issues/
