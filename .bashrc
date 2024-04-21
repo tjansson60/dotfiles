@@ -113,7 +113,11 @@ alias llz="ls -lrSh"
 alias tgrep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
-alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
+if [ $HOSTNAME == "Thomass-MBP" ]; then
+    alias df='df -hIl'
+else
+    alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
+fi 
 alias black='black -l 120'
 
 # https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
@@ -141,6 +145,7 @@ if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
     export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
 fi
+    
 
 #####################
 # Host specific setup

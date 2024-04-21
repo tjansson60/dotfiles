@@ -173,6 +173,9 @@ endfunction
 " Toggle code folding on and off
 nnoremap <F10> :call ToogleFold()<CR>
 
+" MacOS specific instructions to make yank and paste work
+set clipboard=unnamed
+
 " Move between tabs
 set tabpagemax=50
 
