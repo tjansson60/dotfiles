@@ -62,8 +62,10 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 export MANPAGER="vim -M +MANPAGER -"
 
 # Try to load git __git_ps1 if possible
-if [ -f /usr/lib/git-core/git-sh-prompt  ]; then
+if [ -f /usr/lib/git-core/git-sh-prompt  ]; then # LINUNX
     source /usr/lib/git-core/git-sh-prompt
+elif [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]; then # MAC OS
+    source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 fi
 
 # Set up the prompt with GIT niceness if available
@@ -92,7 +94,7 @@ if [ "$TERM" != "dumb" ]; then
     fi
 
     # Hack to support Mac not having dircolors
-        if dircolors 1> /dev/null 2>&1; then
+    if dircolors 1> /dev/null 2>&1; then
         eval "`dircolors -b`"
         alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users.
     else
@@ -113,7 +115,7 @@ alias llz="ls -lrSh"
 alias tgrep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
-if [ $HOSTNAME == "Thomass-MBP" ]; then
+if [ $HOSTNAME == "Thomass-MBP" ]; then # MAC
     alias df='df -hIl'
 else
     alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
@@ -167,10 +169,16 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-if [ $HOSTNAME == "x1" ]; then
-#    # export REGION='EU1'
+
+# MAC - Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# if [ $HOSTNAME == "x1" ]; then
+if [ -f ~/code/docker-python/.connections ]; then
+    # export REGION='EU1'
     source ~/code/docker-python/.connections
 fi
+
 # If possible try to load conda aliases
 if [ -f ~/code/connectedcars/docker-python/.conda_aliases ]; then
     source ~/code/connectedcars/docker-python/.conda_aliases
@@ -202,7 +210,7 @@ unset __conda_setup
 if [ -f "~/miniconda3/etc/profile.d/conda.sh" ]; then
     if [ $HOSTNAME != "kelvin" ]; then
         conda activate dev
-    elif [ $HOSTNAME = "Thomas-MBP.local" ]; then
+    elif [ $HOSTNAME = "Thomas-MBP" ]; then
         conda activate dev
     fi
 fi
