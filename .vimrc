@@ -60,7 +60,7 @@ Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lin
 "Plug 'maralla/completor.vim' " Completor is an asynchronous code completion framework for vim8.
 "Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
 Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
-"Plug 'SirVer/ultisnips' " Code snippiets
+Plug 'SirVer/ultisnips' " Code snippiets
 Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
 call plug#end()
 
