@@ -1,3 +1,9 @@
+## 2024-04-25
+
+* Shortcut - Datagrip - Search and open database objects `Cmd O` or double tab `Shift`
+* Shortcut - Datagrip - Execute `Cmd - Enter`
+* Shortcut - Datagrip - Open SQL editor `Cmd-Shift-N`
+
 ## 2024-04-24
 * iterm2: Problem using Ctrl-leftarrow to get back one word. See: https://apple.stackexchange.com/questions/463712/is-there-a-way-to-jump-within-a-word-using-option-with-arrow-keys-in-iterm2
     https://apple.stackexchange.com/questions/173275/delete-key-doesnt-work-in-vim-on-iterm2/351434#351434

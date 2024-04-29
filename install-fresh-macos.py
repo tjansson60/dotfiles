@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-brew install bash vim git htop flameshot
+brew install bash git git htop flameshot
+brew install flameshot # Fantastic screenshot tool
+brew install stats # Menubar CPU stats
 
 # Enable iTerm2 shell integration
 # https://iterm2.com/documentation-shell-integration.html
