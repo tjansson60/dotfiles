@@ -116,7 +116,6 @@ alias tgrep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
 if [ $HOSTNAME == "Thomas-MBP.local" ]; then # MAC
-    echo $HOSTNAME
     alias df='df -hIl'
 else
     alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
