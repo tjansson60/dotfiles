@@ -165,6 +165,7 @@ fi
 if [ $HOSTNAME == "x1" ]; then
 #    # export REGION='EU1'
     source ~/code/docker-python/.connections
+    source ~/code/data-quality/python_module_autocomplete.sh
 fi
 # If possible try to load conda aliases
 if [ -f ~/code/connectedcars/docker-python/.conda_aliases ]; then
