@@ -115,7 +115,8 @@ alias llz="ls -lrSh"
 alias tgrep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
-if [ $HOSTNAME == "Thomass-MBP" ]; then # MAC
+if [ $HOSTNAME == "Thomas-MBP.local" ]; then # MAC
+    echo $HOSTNAME
     alias df='df -hIl'
 else
     alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
@@ -190,29 +191,9 @@ fi
 ##############
 # CONDA python
 ##############
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("~/miniconda3/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "~/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "~/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="~/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Execute the dev enviroment if possible
-if [ -f "~/miniconda3/etc/profile.d/conda.sh" ]; then
-    if [ $HOSTNAME != "kelvin" ]; then
-        conda activate dev
-    elif [ $HOSTNAME = "Thomas-MBP" ]; then
-        conda activate dev
-    fi
+if [ $HOSTNAME != "kelvin" ]; then
+    source ~/miniconda3/etc/profile.d/conda.sh
+    conda activate dev
 fi
 
 export NVM_DIR="$HOME/.nvm"
