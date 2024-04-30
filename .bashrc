@@ -62,8 +62,10 @@ export PATH=$PATH:/usr/sbin/:/sbin/:~/bin/
 export MANPAGER="vim -M +MANPAGER -"
 
 # Try to load git __git_ps1 if possible
-if [ -f /usr/lib/git-core/git-sh-prompt  ]; then
+if [ -f /usr/lib/git-core/git-sh-prompt  ]; then # LINUNX
     source /usr/lib/git-core/git-sh-prompt
+elif [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]; then # MAC OS
+    source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 fi
 
 # Set up the prompt with GIT niceness if available
@@ -92,7 +94,7 @@ if [ "$TERM" != "dumb" ]; then
     fi
 
     # Hack to support Mac not having dircolors
-        if dircolors 1> /dev/null 2>&1; then
+    if dircolors 1> /dev/null 2>&1; then
         eval "`dircolors -b`"
         alias ls='ls --color=auto --hide=*~' # Hide the annoying tmp files from emacs users.
     else
@@ -113,7 +115,11 @@ alias llz="ls -lrSh"
 alias tgrep='grep -i -n --exclude-dir=".git" --exclude="*.pyc" --color=auto'
 alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
-alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
+if [ $HOSTNAME == "Thomas-MBP.local" ]; then # MAC
+    alias df='df -hIl'
+else
+    alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
+fi 
 alias black='black -l 120'
 
 # https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
@@ -141,6 +147,7 @@ if [ -d "$HOME/.vimbuild/vim/runtime" ]; then
     export VIMRUNTIME="$HOME/.vimbuild/vim/runtime"
     alias vim="$HOME/.vimbuild/vim/src/vim -p"
 fi
+    
 
 #####################
 # Host specific setup
@@ -162,11 +169,17 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-if [ $HOSTNAME == "x1" ]; then
-#    # export REGION='EU1'
+
+# MAC - Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# if [ $HOSTNAME == "x1" ]; then
+if [ -f ~/code/docker-python/.connections ]; then
+    # export REGION='EU1'
     source ~/code/docker-python/.connections
     source ~/code/data-quality/python_module_autocomplete.sh
 fi
+
 # If possible try to load conda aliases
 if [ -f ~/code/connectedcars/docker-python/.conda_aliases ]; then
     source ~/code/connectedcars/docker-python/.conda_aliases
@@ -178,27 +191,9 @@ fi
 ##############
 # CONDA python
 ##############
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("/home/$USER/miniconda3/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/$USER/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/$USER/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/$USER/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Execute the dev enviroment if possible
-if [ -f "/home/$USER/miniconda3/etc/profile.d/conda.sh" ]; then
-    if [ $HOSTNAME != "kelvin" ]; then
-        conda activate dev
-    fi
+if [ $HOSTNAME != "kelvin" ]; then
+    source ~/miniconda3/etc/profile.d/conda.sh
+    conda activate dev
 fi
 
 export NVM_DIR="$HOME/.nvm"
