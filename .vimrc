@@ -206,7 +206,7 @@ set hlsearch
 set backspace+=start,eol,indent
 set backupdir=./.backup,.,/tmp
 set directory=.,./.backup,/tmp
-set expandtab
+set expandtab " Remember to use :retab to replace tabs with spaces
 set ignorecase
 set noerrorbells
 set novisualbell
