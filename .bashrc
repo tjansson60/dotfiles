@@ -117,6 +117,7 @@ alias pylab="echo 'Remember bpython'; ipython --pylab"
 alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/11/did-txt-file/
 if [ $HOSTNAME == "Thomas-MBP.local" ]; then # MAC
     alias df='df -hIl'
+    . $HOMEBREW_PREFIX/etc/profile.d/z.sh # Tracks most-used directories to make cd smarter
 else
     alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
 fi 
