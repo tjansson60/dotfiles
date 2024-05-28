@@ -103,6 +103,15 @@ if [ "$TERM" != "dumb" ]; then
     fi
 fi
 
+# Check if ripgrep is installed
+if command -v rg > /dev/null 2>&1; then
+    # If ripgrep is installed, alias grep to use ripgrep
+    alias grep='rg --color=auto'
+else
+    # If ripgrep is not installed, use the default grep
+    alias grep='grep --color=auto'
+fi
+
 # User specific aliases and functions
 alias pwgen="pwgen 12"
 alias ccat="pygmentize -g" # Color highlighting cat function, requires pygmentize python program
