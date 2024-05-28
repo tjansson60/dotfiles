@@ -46,7 +46,7 @@ sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evi
     texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common\
     pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes3 isort build-essential\
     tilix cloudsql-proxy smartmontools \
-    flameshot, solaar, duf, xournalpp
+    flameshot, solaar, duf, xournalpp, ripgrep
 
 # Using tillix as a quake alternative - https://gnunn1.github.io/tilix-web/manual/quake/
 # When you register the hot key, simply bind it to the following command: `tilix --quake`
