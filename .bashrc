@@ -201,7 +201,10 @@ fi
 ##############
 # CONDA python
 ##############
-if [ $HOSTNAME != "kelvin" ]; then
+if [ $HOSTNAME == "kelvin" ]; then
+    source ~/miniconda3/etc/profile.d/conda.sh
+    conda activate base
+else 
     source ~/miniconda3/etc/profile.d/conda.sh
     conda activate dev
 fi
