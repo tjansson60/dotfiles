@@ -130,7 +130,7 @@ if [ $HOSTNAME == "Thomas-MBP.local" ]; then # MAC
 else
     alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
 fi 
-alias black='black -l 120'
+alias black='black --line-length 120'
 
 # https://stackoverflow.com/questions/17983068/delete-local-git-branches-after-deleting-them-on-the-remote-repo
 alias gitpurge_deleted_branched="    git fetch --all -p; git branch -vv | grep ': gone]' | awk '{ print \$2 }' | xargs -n 1 git branch -d"
