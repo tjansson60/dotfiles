@@ -1,4 +1,12 @@
-# 2024-06-30
+## 2024-07-02
+Further debugging attempts:
+* Nvidia power management mode to `Prefer maximum performance`
+    * https://www.reddit.com/r/buildapc/comments/1106nrb/rtx_4070ti_crashing_black_screen_restarts/
+*  Disable Re-Size BAR support
+* https://www.reddit.com/r/Amd/comments/136h5od/7800x3d_in_eco_mode_65_watt_with_ryzen_master_how/
+* https://www.reddit.com/r/starcitizen/comments/102tw9z/gaming_on_an_amd_5900x_in_eco_mode_w_nvidia_4080/
+
+## 2024-06-30
 Proshop er rasende ligeglade, så indtil jeg for skaffet en ny CPU har jeg nu prøvet sætte den til `Eco-mode (65 Watt)` i bios for at se om det gør den mere stabil.
 
 ## 2024-03-15
