@@ -212,7 +212,7 @@ if [ $HOSTNAME == "kelvin" ]; then
     conda activate base
 else 
     source ~/miniconda3/etc/profile.d/conda.sh
-    conda activate dev
+    conda activate prod
 fi
 
 export NVM_DIR="$HOME/.nvm"
