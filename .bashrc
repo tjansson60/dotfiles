@@ -21,6 +21,12 @@ else
     bind 'set completion-ignore-case on' # Ignores the case in the above
 fi
 
+# Terminal languages
+export LANGUAGE="en_US:en"
+export LC_ALL="en_DK.UTF-8"
+export LC_CTYPE="UTF-8"
+export LANG="en_DK.UTF-8"
+
 set -C # The noclobber option prevents you from overwriting existing files with the > operator.
 shopt -s dirspell # attempts spelling correction on directory names during word completion if the directory name initially supplied does not exist.
 shopt -s cdspell # automatically corrects small typos in directory names
