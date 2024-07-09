@@ -22,12 +22,12 @@ else
 fi
 
 # Terminal languages
-export LC_CTYPE="UTF-8"
 if [[ "$(uname)" == "Linux" ]]; then
     export LANGUAGE="en_US:en"
     export LC_ALL="en_DK.UTF-8"
     export LANG="en_DK.UTF-8"
 elif [[ "$(uname)" == "Darwin" ]]; then
+    export LC_CTYPE="UTF-8"
     export LC_TERMINAL="iTerm2"
 fi
 
