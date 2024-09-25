@@ -21,6 +21,16 @@ else
     bind 'set completion-ignore-case on' # Ignores the case in the above
 fi
 
+# Terminal languages
+if [[ "$(uname)" == "Linux" ]]; then
+    export LANGUAGE="en_US:en"
+    export LC_ALL="en_DK.UTF-8"
+    export LANG="en_DK.UTF-8"
+elif [[ "$(uname)" == "Darwin" ]]; then
+    export LC_CTYPE="UTF-8"
+    export LC_TERMINAL="iTerm2"
+fi
+
 set -C # The noclobber option prevents you from overwriting existing files with the > operator.
 shopt -s dirspell # attempts spelling correction on directory names during word completion if the directory name initially supplied does not exist.
 shopt -s cdspell # automatically corrects small typos in directory names
@@ -206,7 +216,7 @@ if [ $HOSTNAME == "kelvin" ]; then
     conda activate base
 else 
     source ~/miniconda3/etc/profile.d/conda.sh
-    conda activate dev
+    conda activate prod
 fi
 
 export NVM_DIR="$HOME/.nvm"
