@@ -1,3 +1,7 @@
+## 2024-09-25
+
+Random reddit post suggested to download chipset drivers directly from AMD and not Motherboard manufacturer.
+
 ## 2024-07-02
 Further debugging attempts:
 * Nvidia power management mode to `Prefer maximum performance`
