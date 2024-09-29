@@ -17,7 +17,9 @@
     * Create password for the needed migrated users: `sudo smbpasswd -a tjansson`
     * After updating `/etc/groups` and setting the rights on the share remember to restart `smbd`
 * The user crontabs are stored in `/var/spool/cron/crontabs/`
-    *
+* Python is installed, but only works using `python3`. 
+* Used http://www.dropbox.com/install-linux to get the Dropbox cli. 
+
 
 Roles:
 * Run python code
@@ -31,3 +33,4 @@ ToDo:
 - [x] Set up automatic updates
 - [ ] Set up mail alerts
 - [ ] Set up fail2ban or similar
+- [ ] Set up Dropbox
