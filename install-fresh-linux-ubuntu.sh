@@ -1,7 +1,6 @@
 #!/bin/sh
-       
+
 # ## Installation
-#
 # * Install Anaconda: https://www.anaconda.com/download
 # * Install ReMarkable: https://remarkableapp.github.io/linux/download.html
 #
@@ -15,7 +14,7 @@
 # In Ubuntu MATE, you can customise what key is the compose key by opening “Keyboard”, clicking “Layouts”, then “Options…”
 # and checking a box under “Position of compose key”. I checked “Right Alt”, meaning my “AltGr” key is now the compose
 # key. See:  https://help.ubuntu.com/community/GtkComposeTable
-# 
+#
 # In vanilla ubuntu (gnome shell) the tool to install is gnome-tweaks and read:
 # https://help.ubuntu.com/stable/ubuntu-help/tips-specialchars.html.en
 # * Open the Activities overview and start typing Tweaks.
@@ -40,19 +39,23 @@
 # comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
 # Standard tools needed for install
-sudo apt install autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince baobab htop\
-    vlc redshift-gtk guake gkrellm nmap recordmydesktop \
-    iptraf sshfs bmon nethogs gparted build-essential fdupes flake8 git pwgen\
-    texlive-latex-extra texlive-latex-recommended texlive-lang-european ubuntu-restricted-extras nfs-common\
-    pylint curl eog fonts-hack fonts-hack-ttf cmake exuberant-ctags ack-grep pep8 pyflakes3 isort build-essential\
-    tilix cloudsql-proxy smartmontools \
-    flameshot, solaar, duf, xournalpp, ripgrep
+sudo apt install -y autofs fonts-powerline fonts-roboto vim meld keepassxc gimp evince
+sudo apt install -y baobab htop btop vlc redshift-gtk guake gkrellm nmap recordmydesktop
+sudo apt install -y iptraf-ng sshfs bmon nethogs gparted build-essential fdupes flake8 git
+sudo apt install -y texlive-latex-extra texlive-latex-recommended texlive-lang-european
+sudo apt install -y ubuntu-restricted-extras
+sudo apt install -y nfs-common pylint curl eog fonts-hack fonts-hack-ttf
+sudo apt install -y cmake exuberant-ctags ack grep
+#sudo apt install -y pep8 pyflakes3
+sudo apt install -y isort tilix cloudsql-proxy smartmontools pwgen
+sudo apt install -y flameshot solaar duf xournalpp
+sudo apt install -y ripgrep
 
 # Using tillix as a quake alternative - https://gnunn1.github.io/tilix-web/manual/quake/
 # When you register the hot key, simply bind it to the following command: `tilix --quake`
 # When Tilix is run with the --quake switch, it will check if a quake style window is already running and if so simply toggle the window’s visibility. If no quake style window has been created, then Tilix will create one and display it.
 # Configuring this hot key for GNOME is quite simple, simply open the Keyboard settings and configure a hot key as per the example in the screenshot below:
-sudo apt install gnome-shell-extension-tilix-shortcut gnome-shell-extension-tilix-dropdown
+# sudo apt install -y gnome-shell-extension-tilix-shortcut gnome-shell-extension-tilix-dropdown
 
 # Mate i3 setup
 # sudo apt install i3 diodon
@@ -77,13 +80,12 @@ sudo apt install ./keybase_amd65.deb
 run_keybase
 
 # Avoid annoying ubuntu ads or news when using apt
-pro config set apt_news=false
+sudo pro config set apt_news=false
 
 # VS code and SQL operations
-sudo snap install vscode --classic
+sudo snap install code --classic 
 sudo snap install slack --classic
 sudo snap install kubectl --classic
-sudo snap install aws-cli --classic
 sudo snap install datagrip --classic
 sudo snap install node --classic --edge  # Needed for jupyter
 
@@ -95,7 +97,7 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 #########################################
 # I3 - Use mate with an i3 window manager
 # https://mattgreer.dev/blog/mate-and-i3/
-# Use the dconf-editor. 
+# Use the dconf-editor.
 # * Change  org > mate > desktop > session > required-components. Change windowmanager from marco to i3.
 # * Change  org > mate > desktop > session and in required-component-list, delete filemanager
 #########################################
@@ -126,7 +128,7 @@ dconf load /org/mate/desktop/background/ < settings-mate-desktop-background.dcon
 
 # Make Gnome Shell start a interactive screenshot tool and not the annoying automatic save to home default
 # dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > settings-gnome-screenshot.dconf
-dconf load /org/gnome/settings-daemon/plugins/media-keys/ < settings-gnome-screenshot.dconf 
+dconf load /org/gnome/settings-daemon/plugins/media-keys/ < settings-gnome-screenshot.dconf
 
 # Extra media
 # sudo apt install gimp-ufraw acidrip calibre darktablehandbrake mediainfo
