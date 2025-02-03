@@ -1,3 +1,8 @@
+## 2025-02-03
+
+Installed stats: https://github.com/exelban/stats
+`brew install stats`
+
 ## 2024-04-25
 
 * Shortcut - Datagrip - Search and open database objects `Cmd O` or double tab `Shift`
