@@ -49,7 +49,7 @@ sudo apt install -y cmake exuberant-ctags ack grep
 #sudo apt install -y pep8 pyflakes3
 sudo apt install -y isort tilix cloudsql-proxy smartmontools pwgen
 sudo apt install -y flameshot solaar duf xournalpp
-sudo apt install -y ripgrep
+sudo apt install -y ripgrep ncftp
 
 # Using tillix as a quake alternative - https://gnunn1.github.io/tilix-web/manual/quake/
 # When you register the hot key, simply bind it to the following command: `tilix --quake`
