@@ -50,6 +50,7 @@ sudo apt install -y cmake exuberant-ctags ack grep
 sudo apt install -y isort tilix cloudsql-proxy smartmontools pwgen
 sudo apt install -y flameshot solaar duf xournalpp
 sudo apt install -y ripgrep ncftp
+sudo apt install -y fonts-noto-color-emoj # Used for emoticons in console, for weather curl appi
 
 # Using tillix as a quake alternative - https://gnunn1.github.io/tilix-web/manual/quake/
 # When you register the hot key, simply bind it to the following command: `tilix --quake`
