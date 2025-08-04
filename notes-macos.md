@@ -1,3 +1,8 @@
+## 2025-08-04, Home and End button behavior
+
+Using the https://www.reddit.com/r/MacOS/comments/pz9vnu/behavior_of_the_home_and_end_keys/ I created a
+`DefaultKeyBinding.dict` in `~/Library/KeyBindings/` which remaps the buttons to end of line instead of end of file.
+
 ## 2025-02-03
 
 Installed stats: https://github.com/exelban/stats
