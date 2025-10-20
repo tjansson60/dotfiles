@@ -132,7 +132,7 @@ fi
 # User specific aliases and functions
 alias weather="curl wttr.in/Copenhagen"
 alias weather_detailed="curl v2d.wttr.in/Copenhagen"
-alias pwgen="pwgen 12"
+# alias pwgen="pwgen 12"
 alias ccat="pygmentize -g" # Color highlighting cat function, requires pygmentize python program
 alias mv="mv -i"
 alias cp="cp -i"
