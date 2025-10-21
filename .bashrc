@@ -146,6 +146,7 @@ alias did="vim +'normal Go' +'r!date' ~/did.txt" # https://theptrk.com/2018/07/1
 if [ $HOSTNAME == "Thomas-MBP.local" ]; then # MAC
     alias df='df -hIl'
     . $HOMEBREW_PREFIX/etc/profile.d/z.sh # Tracks most-used directories to make cd smarter
+    export PATH=$PATH:/Applications/Keybase.app/Contents/SharedSupport/bin
 else
     alias df='df -hT -x squashfs -x tmpfs -x devtmpfs -x fuse' # Avoid all the fake devices
 fi 
