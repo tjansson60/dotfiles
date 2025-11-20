@@ -204,10 +204,12 @@ fi
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # if [ $HOSTNAME == "x1" ]; then
-if [ -f ~/code/docker-python/.connections ]; then
+if [ -f ~/code/docker-python/bin/cloud-connect ]; then
+    export PATH="~/code/docker-python/bin:$PATH"
+    export DOCKER_PYTHON_REPO="$HOME/code/docker-python"
+    source ~/code/docker-python/connections_source
     # export REGION='EU1'
-    source ~/code/docker-python/.connections
-    source ~/code/data-quality/python_module_autocomplete.sh
+    # source ~/code/data-quality/python_module_autocomplete.sh
 fi
 
 # If possible try to load conda aliases
