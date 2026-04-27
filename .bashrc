@@ -188,8 +188,8 @@ elif [ $HOSTNAME == "VirtualBox" ]; then
     alias sshdyn="ssh -X 192.168.0.160"
 else
     # Removed X as it was needed and slowed something down (vim)
-    # alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
-    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -C -p 22" # port 443 avoids firewalls
+    alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -XC -p 443" # port 443 avoids firewalls
+    # alias sshdyn="ssh -o ServerAliveInterval=60 tjansson@tjansson.dyndns.dk -C -p 22"
 fi
 
 ################
@@ -234,3 +234,5 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.local/bin/env"
