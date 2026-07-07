@@ -34,10 +34,10 @@ Plug 'ctrlpvim/ctrlp.vim' "Full path fuzzy file, buffer, mru, tag, ... finder fo
 Plug 'godlygeek/tabular' "Vim script for text filtering and alignment, TODO: consider vim-easy-align
 Plug 'vim-airline/vim-airline' "Lean & mean status/tabline for vim that's light as air.
 Plug 'airblade/vim-gitgutter' "A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows which lines have been added, modified, or removed.
-Plug 'zivyangll/git-blame.vim' " See Git Blame information in the status bar for the currently selected line, Leader +s
-Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files
+" Plug 'zivyangll/git-blame.vim' " See Git Blame information in the status bar for the currently selected line, Leader +s
+" Plug 'dense-analysis/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim 0.2.0+ and Vim 8 while you edit your text files
 Plug 'farmergreg/vim-lastplace' " Intelligently reopen files at your last edit position.
-Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
+" Plug 'takac/vim-hardtime' " Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
 Plug 'shmup/vim-sql-syntax' " SQL syntax checker
 Plug 'tpope/vim-commentary' " Comment stuff out. Use gcc to comment out a line (takes a count), gc to comment out the target
 " Plug 'amdt/vim-niji'  " Niji (Rainbow) is yet another rainbow parentheses plugin for Vim.
@@ -57,11 +57,13 @@ Plug 'yggdroot/indentline' "This plugin is used for displaying thin vertical lin
 " Plug 'jacoborus/tender' " Color theme
 
 "Completion
+" https://matduggan.com/github-copilot-for-vim-2/
+Plug 'github/copilot.vim' " https://github.com/github/copilot.vim. Start setup using Start Vim/Neovim and invoke :Copilot setup.
 "Plug 'maralla/completor.vim' " Completor is an asynchronous code completion framework for vim8.
 "Plug 'ajh17/VimCompletesMe' " A super simple, super minimal, super light-weight tab-completion plugin for Vim.
 Plug 'ervandew/supertab' "Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
-Plug 'SirVer/ultisnips' " Code snippiets
-Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
+" Plug 'SirVer/ultisnips' " Code snippiets
+" Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them
 call plug#end()
 
 " Tips from the article: Learn vim For the Last Time: A Tutorial and Primer
