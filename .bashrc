@@ -134,6 +134,7 @@ alias weather="curl wttr.in/Copenhagen"
 alias weather_detailed="curl v2d.wttr.in/Copenhagen"
 # alias pwgen="pwgen 12"
 alias ccat="pygmentize -g" # Color highlighting cat function, requires pygmentize python program
+alias lsb_release='lsb_release -a' # To make sure useful output is listed
 alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
